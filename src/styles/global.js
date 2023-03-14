@@ -1,0 +1,63 @@
+import {createGlobalStyle} from 'styled-components'
+
+const GlobalStyle = createGlobalStyle`
+:root {
+    --blue-400: #91b0b2;
+    --blue-600: #09738a;
+    --blue-700: #092b5a;
+    --green-400: #9ed1b7;
+    --green-500: #78a890;
+    --beige-500: #e7d9b4;
+    --white-100: #ffffff;
+    --white-300: #ececec;
+    --white-500: #a9a9a9;
+    --gray-600: #49454f;
+    --black-700: #1c1b1f;
+    --black-900: #000000;
+    --error-color: #fe6869;
+    --success-color: #4bc960;
+    --warning-color: #ffc02e;
+  }
+  
+  body {
+    overflow-x: hidden;
+    width: 100vw;
+    font-family: "Inter", sans-serif;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  input {
+    border: none;
+    outline: none;
+  }
+  
+  button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  html{
+      media (max-width: 1808){
+          font-size: 93.75%;
+      }
+
+      @media (max-width: 720px){
+          font-size: 87.5%;
+      }
+  }
+
+  body{
+      -webkit-font-smoothing: antialiased;
+  }
+`
