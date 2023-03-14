@@ -1,11 +1,12 @@
 import styled from 'styled-components'
-import GlobalStyle from './styles/global'
+import { GlobalStyle } from './styles/global'
+import { Header } from './components/headers/header'
 
 export function App(){
     return (
-        <div className="App">
-            <h1>World?</h1>
-            <GlobalStyle></GlobalStyle>
-        </div>
+      <>
+        <Header />
+        <GlobalStyle />
+      </>
     )
 }
