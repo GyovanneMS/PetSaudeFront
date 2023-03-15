@@ -1,10 +1,9 @@
 
-import { Header } from './components/headers/headerEdits'
+import { Header } from './components/headers/headerEdits.jsx/headerEdits'
 
 export function App(){
     return (
       <>
-        <Header />
       </>
     )
 }
