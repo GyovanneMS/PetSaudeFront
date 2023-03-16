@@ -9,8 +9,7 @@ export const Casa = () => {
         <p>home</p>
         <Link to="/pages/CadastroVet">Cadastro do veterinario</Link>
         <Link to="/pages/login">Login do usuario</Link>
-        <Link to="/pages/address">Login do usuario</Link>
-
+        <Link to="/pages/Endereco">Login do usuario</Link>
     </>
   );
 };
