@@ -1,10 +1,9 @@
-import styled from 'styled-components'
-import { Header } from './components/headers/header'
+
+import { Header } from './components/headers/headerEdits.jsx/headerEdits'
 
 export function App(){
     return (
       <>
-        <Header />
       </>
     )
 }
