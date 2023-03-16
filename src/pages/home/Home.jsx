@@ -10,6 +10,7 @@ export const Casa = () => {
         <Link to="/pages/CadastroVet">Cadastro do veterinario</Link>
         <Link to="/pages/login">Login do usuario</Link>
         <Link to="/pages/address">Login do usuario</Link>
+        <Link to="/home">Lading page</Link>
 
     </>
   );
