@@ -1,9 +1,11 @@
 
-import { Header } from './components/headers/headerEdits.jsx/headerEdits'
+import { Main } from './components/mains/mainLogin.jsx'
+
 
 export function App(){
     return (
       <>
+    <Main/>
       </>
     )
 }
