@@ -1,11 +1,9 @@
-
-import { Main } from './components/mains/mainLogin.jsx'
-
+import { Rotas } from "./routes";
 
 export function App(){
     return (
       <>
-    <Main/>
+        <Rotas/>
       </>
     )
 }

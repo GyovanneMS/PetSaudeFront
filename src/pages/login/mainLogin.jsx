@@ -1,3 +1,4 @@
+import React from "react";
 import Google from '../../assets/Google.svg';
 import Login from '../../assets/Login.png';
 
@@ -16,10 +17,13 @@ export function Main() {
                         <img src={Google} alt="Login with Google account" />
                     </a>
                 </div>
-                <div className='flex flex-direction basis-1/2'>
+                <div className='flex flex-direction basis-1/2 bg-black'>
                     <img src={Login} alt="Login image">
                     </img>
                 </div>   
+                <div className=''>
+
+                </div>
         </div>
         
     );
