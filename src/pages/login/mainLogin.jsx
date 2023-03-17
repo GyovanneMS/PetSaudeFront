@@ -1,6 +1,6 @@
 import React from "react";
-import Google from '../../assets/Google.svg';
-import Login from '../../assets/login-register-background.png';
+// import Google from '../../assets/Google.svg';
+// import Login from '../../assets/login-register-background.png';
 
 export function Main() {
     return (
