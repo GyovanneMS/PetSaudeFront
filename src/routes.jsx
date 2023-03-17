@@ -3,10 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {CadastroVet} from "./pages/cadastroVet/cadastroVet";
 import { Casa } from "./pages/home/Home";
 import { LandingPage} from "./pages/home/LandingPage"
-import { Login, Main } from "./pages/login/mainLogin";
-import { NewAdress } from "./pages/login/mainAddAdress";   
-import { HeaderWeb } from "./pages/home/HeaderWeb";
-import { Register } from "./pages/register/register";
+import { Main } from "./pages/login/mainLogin";
+import {NewAdress} from "./pages/register/mainAddAdress/mainAddAdreess"
 
 
 export const Rotas = () => {
