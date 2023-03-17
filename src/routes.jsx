@@ -4,9 +4,13 @@ import {CadastroVet} from "./pages/cadastroVet/cadastroVet";
 import { Casa } from "./pages/home/Home";
 import { LandingPage} from "./pages/home/LandingPage"
 import { Main } from "./pages/login/mainLogin";
+<<<<<<< HEAD
 import { NewAdress } from "./pages/login/mainAddAdress";   
 import { HeaderWeb } from "./pages/home/HeaderWeb";
 import { Register } from "./pages/register/register";
+=======
+import {NewAdress} from "./pages/register/mainAddAdress/mainAddAdreess"
+>>>>>>> 37027bcabd7ca81d5244ca9d5553d8875f0b16bd
 
 
 export const Rotas = () => {
