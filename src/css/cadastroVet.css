@@ -1,29 +1,35 @@
-body{
+.mainVet{
 
     height: 100vh;
     background: linear-gradient(112.87deg, rgba(9, 43, 90, 0.7) 0%, rgba(158, 209, 183, 0.7) 100%);
-
+    
 }
-main{
 
-    display: flex;
-
-}
 .img-forms{
-
+    
     display: flex;
-
-}
-/* DEFINIÇÕES DE IMAGEM BACKGROUND */
-.conteiner-img{
-    display: flex;
-    align-items: center;
-    justify-content: center;
     height: 100%;
+    justify-content: space-between;
+
 }
+.conteiner-img{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+}
+
 .bg-image{
-    height: 70%;
+    height:70%;
 }
+
+.arrow-img{
+
+    display: flex;
+
+}
+
 
 /* FORMULÁRIO DE PROFISSIONAIS */
 
@@ -32,7 +38,7 @@ form{
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    width: 50vw;
+    width: 50%;
     height: 100%;
     background-color: white;
     padding-bottom: 1%;
@@ -41,6 +47,7 @@ form{
 /** Header do Form **/
 .form-header{
     display: flex;
+    text-align: center;
     flex-direction: column;
     align-items: center;
     width: 70%;
@@ -82,13 +89,16 @@ form{
     font-size: 1.2rem;
     font-weight: 400;
 }
+
 .inputs-specialties{
+
     display: flex;
     flex-wrap: wrap;
-    align-items: center ;
     /* justify-content: space-between; */
+
 }
 .inputs-specialties label{
+
     display: flex;
     align-items: center;
     /* width: max-content; */
@@ -97,6 +107,7 @@ form{
     gap: 6px;
     padding-top: 2px;
     padding-right: 40px;
+    
 }
 
 .inputs-specialties input{
@@ -129,8 +140,6 @@ form{
     display: flex;
     flex-wrap: wrap;
     align-items: center ;
-    /* justify-content: space-between; */
-  
 }
 
 .inputs-animals label{
@@ -167,18 +176,15 @@ label input{
 .atuacao-crmv{
     display: flex;
     align-items: center;
-    gap: 200px;
-
+    gap: 35px;
 }
 
 .area {
-    display: flex;
-    width: 200%;
+    width: 100%;
 }
 
 .CRMV {
-    display: flex;
-    width: 140%;
+    width: 100%;
 }
 
 /* ERROR */
@@ -245,34 +251,51 @@ label input{
 
 /* DESKTOP */
 @media (max-width:1920px) {
-
-    main{
-        height: 250%;
-        width: 100%;
-        background-size: 200%;
+    
+    h1{
+        font-size: 0.5rem;
+    }
+    .form-header span{
+        font-size: 1rem;
     }
 
+    .inputs-container{
+        gap:25px
+    }
 
-    /* BOTÃO VOLTAR A TELA ANTERIOR */
+    .inputs-specialties label{
+
+        font-size: 1rem;
+        gap: 3px;
+        padding-right: 20px;
+        
+    }
+
+    .atuacao-container label p{
+
+        font-size: 1rem;
+
+    }
+
+    .inputs-animals label{
+ 
+        font-size: 1rem;
+        gap: 3px;
+        padding-right: 20px;
+    }
+
     .back-view i {
         font-size: 3rem;
     }
-    /* DEFINIÇÃO DE IMAGEM BACKGROUND */
-   
-    /* DEFINIÇÕES DE IMAGEM BACKGROUND */
-    .conteiner-img{
-        display: flex;
-        align-items: flex-start;
-        margin-top: 200px;
-    }
+ 
 
     .bg-image{
-        padding-right: 10%;
-        height: 28%;
+
+        height: 45%;
     }
-    /** Botão de Cadastro **/
+
     .register-button{
-        padding: 6%;
+
         font-size: 1.1rem;
     }
     /* FAZER LOGIN */
@@ -281,24 +304,12 @@ label input{
     }
 }
 
-/* TABLET */
-@media (min-width:768px) and (max-width:1023px){
-    
-}
-
 /* MOBILE */
 @media (max-width:767px) {
     /* DEFINIÇÕES DE TAMANHO E FONTE */
-    body{
-        height: 100%;
-        width: 100%;
-    }
+   
     /* DEFINIÇÕES DE BACKGROUND E TAMANHO */
-    main{
-        flex-direction: column;
-        justify-content: center;
-        background: none;
-    }
+
 
     /* Formação de toda main com seus inputs */
 

@@ -6,13 +6,15 @@ import image from "../../assets/imgVetCadastro.svg";
 
 export const CadastroVet = () => {
   return (
-    <main>
-      <Link to="/">
-        <img src={arrow} alt="" />
-      </Link>
+    <main className="mainVet">
       <div className="img-forms">
-        <div className="conteiner-img">
-          <img className="bg-image" src={image} alt="location-image" />
+        <div className="arrow-img p-10">
+          <Link to="/">
+            <img src={arrow} alt="" />
+          </Link>
+          <div className="conteiner-img">
+            <img className="bg-image" src={image} alt="location-image" />
+          </div>
         </div>
         <form>
           <div className="form-header">
