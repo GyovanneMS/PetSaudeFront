@@ -6,6 +6,7 @@ import { LandingPage} from "./pages/home/LandingPage"
 import { Main } from "./pages/login/mainLogin";
 import { NewAdress } from "./pages/login/mainAddAdress";   
 import { HeaderWeb } from "./pages/home/HeaderWeb";
+import { Register } from "./pages/register/register";
 
 
 export const Rotas = () => {
@@ -18,6 +19,7 @@ export const Rotas = () => {
             <Route path="/pages/CadastroVet" element={<CadastroVet />} />
             <Route path="/home/LandingPage" element={<LandingPage />}/>
             <Route path="/home/HeaderWeb" element={<HeaderWeb />}/>
+            <Route path="/register" element={<Register />}/>
         </Routes>
     </Router>
   );
