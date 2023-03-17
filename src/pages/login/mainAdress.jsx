@@ -1,7 +1,7 @@
 
 import imageAdreess from '../../assets/imageAdreess.svg'
 
-export function newAdress() {
+export function NewAdress() {
 
     return (
 

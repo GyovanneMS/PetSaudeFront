@@ -4,7 +4,7 @@ import React from "react";
 export const LaddingPage = () => {
   return (
     <>
-        <LaddingPage/>
+      <h1>Landing page</h1>
 
     </>
   );
