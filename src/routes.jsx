@@ -5,6 +5,8 @@ import { Casa } from "./pages/home/Home";
 import { LandingPage} from "./pages/home/LandingPage"
 import { Main } from "./pages/login/mainLogin";
 import { NewAdress } from "./pages/login/mainAddAdress";   
+import { HeaderWeb } from "./pages/home/HeaderWeb";
+
 
 export const Rotas = () => {
   return (
@@ -14,7 +16,8 @@ export const Rotas = () => {
             <Route path="/" element={<Casa />}></Route>
             <Route path="/pages/Endereco" element={<NewAdress />} />
             <Route path="/pages/CadastroVet" element={<CadastroVet />} />
-            <Route path="/home" element={<LandingPage />}></Route>
+            <Route path="/home/LandingPage" element={<LandingPage />}/>
+            <Route path="/home/HeaderWeb" element={<HeaderWeb />}/>
         </Routes>
     </Router>
   );
