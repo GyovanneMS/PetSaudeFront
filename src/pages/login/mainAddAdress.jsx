@@ -48,13 +48,13 @@ export function NewAdress() {
                     </form>
                     <div className="flex flex-row w-full gap-3">
                         <form className="flex min-w-1/2 gap-4 basis-1/2 ">
-                            <label className="flex flex-col basis-1/2 min-w-full text-xl basis-1/2 gap-4">
+                            <label className="flex flex-col basis-1/2 min-w-full text-xl gap-4">
                                 Número
                                 <input type="text" className="border-b-2 border-gray-700"/>
                             </label>
                         </form >
                         <form className="flex min-w-1/2 gap-4 basis-1/2">
-                            <label className="flex flex-col basis-1/2 min-w-full text-xl basis-1/2 gap-4">
+                            <label className="flex flex-col basis-1/2 min-w-full text-xl gap-4">
                                 Complemento (se existe)
                                 <input type="text" className="border-b-2 border-gray-700"/>
                             </label>

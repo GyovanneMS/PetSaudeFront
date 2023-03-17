@@ -1,54 +1,63 @@
 import React from "react";
+import "../../css/login.css";
 import Google from '../../assets/Google.svg';
-import Login from '../../assets/login-register-background.png';
+import { Link } from "react-router-dom";
+import backgroundImage from '../../assets/login-register-background.png'
 
-export function Main() {
+// const passwordInput = document.getElementById("password-input");
+// const icon = document.getElementById("icon");
+
+// function showHide() {
+//     if (passwordInput.type === "password") {
+//       passwordInput.setAttribute("type", "text");
+//       icon.classList.add("hide");
+//     } else {
+//       passwordInput.setAttribute("type", "password");
+//       icon.classList.remove("hide");
+//     }
+// }
+// icon.addEventListener("click", showHide);
+
+
+
+export function Login() {    
     return (
-        <div className='flex flex-row w-screen h-screen bg-gradient-to-br from-[#092B5A] to-[#9ED1B7]'>
-            <div className="p-20 flex justify-center flex-col w-1/2 bg-white">
-                <h1 className="font-bold text-4xl">Bem-vindos de volta</h1>
-                <p className="w-30 text-sm">Por favor, insira suas informações abaixo</p>
-
-                {/* <a href=""><img src={Google} alt="Login with Google account" /></a> */}
-                
-                {/* <div class="login-google-button">
-                    <a class="button-login-google" href="###">
-                    <img src={Google} alt="Login with Google account" />
-                    </a>
-                    <span class="text-login-google">Ou use o e-mail</span>
-                </div> */}
-
+        <body>
+            <main className="bg-gradient-to-br from-[#092b5a] to-[#9ed1b7] opacity-90 h-screen w-screen">
                 <form>
-                    <div className="inputConteiner">
-                        <label htmlFor="email">E-mail</label>
-                        <input 
-                            type="text"
-                            name=""
-                            id="email"
-                            placeholder="E-mail" 
-                        />
+                    <div class="form-header">
+                        <h1>Bem-vindo de volta!</h1>
+                        <span>Por favor, insira suas informações abaixo</span>
+                        <div class="login-google-button">
+                            <button class="button-login-google">
+                                <img src={Google} alt="logo-link-google" />
+                            </button>
+                            <span class="text-login-google">Ou use o e-mail</span>
+                        </div>
                     </div>
-                    <div className="inputConteiner">
-                        <label htmlFor="password">Password</label>
-                        <input 
-                            type="password"
-                            name=""
-                            id="password"
-                            placeholder="Senha" 
-                        />
+                    <div class="inputs-container">
+                        <label>
+                            E-mail
+                            <input type="text" name="" id="email"/>
+                        </label>
+                        <label>
+                            Senha
+                            <input type="password" name="" id="password" />
+                            {/* <div id="icon" onclick={showHide}></div> */}
+                        </label>
+                        <div class="reset-pass">
+                            <a href="###">Esqueceu a senha?</a>
+                        </div>
+                        <button class="login-button">
+                            Entrar
+                        </button>
                     </div>
-                    <div class="reset-pass">
-                        <a href="###">Esqueceu a senha?</a>
-                    </div>
-                    <button class="button">
-                        Entrar
-                    </button>
+                    <p class="new-register">Ainda não tem uma conta?<Link to="/register">Cadastre-se</Link></p>
                 </form>
-            </div>
-
-            <div className='flex-direction w-1/2'>
-                {/* <img className="w-24 bg" src={Login} alt="Login image"></img> */}
-            </div>
-        </div>  
+                <div className='w-1/2 h-full flex items-center overflow-hidden'>
+                    <img src={backgroundImage} alt="" className="w-[150%] h-fit mr-32 opacity-50"></img>
+                </div>
+            </main>
+        </body> 
     );
 }

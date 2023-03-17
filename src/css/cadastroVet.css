@@ -306,12 +306,8 @@ label input{
 
 /* MOBILE */
 @media (max-width:767px) {
-    /* DEFINIÇÕES DE TAMANHO E FONTE */
-   
-    /* DEFINIÇÕES DE BACKGROUND E TAMANHO */
 
-
-    /* Formação de toda main com seus inputs */
+    
 
     form{
         display: flex;
