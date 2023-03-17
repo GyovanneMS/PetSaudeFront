@@ -4,13 +4,9 @@ import {CadastroVet} from "./pages/cadastroVet/cadastroVet";
 import { Casa } from "./pages/home/Home";
 import { LandingPage} from "./pages/home/LandingPage"
 import { Main } from "./pages/login/mainLogin";
-<<<<<<< HEAD
-import {NewAdress} from "./pages/login/mainAdress"
-=======
 import { NewAdress } from "./pages/login/mainAddAdress";   
 import { HeaderWeb } from "./pages/home/HeaderWeb";
 import { Register } from "./pages/register/register";
->>>>>>> d5fe843ca6161040ec0eabb9f3ae9846e3de2a36
 
 
 export const Rotas = () => {
@@ -19,17 +15,11 @@ export const Rotas = () => {
         <Routes>
             <Route path="/pages/login" element={<Main />} />
             <Route path="/" element={<Casa />}></Route>
-<<<<<<< HEAD
-            <Route path="/pages/address" element={<NewAdress />}></Route>
-            <Route path="/pages/CadastroVet" element={<CadastroVet />} />
-            <Route path="/pages/LadingPage" element={<LaddingPage />}></Route>
-=======
             <Route path="/pages/Endereco" element={<NewAdress />} />
             <Route path="/pages/CadastroVet" element={<CadastroVet />} />
             <Route path="/home/LandingPage" element={<LandingPage />}/>
             <Route path="/home/HeaderWeb" element={<HeaderWeb />}/>
             <Route path="/register" element={<Register />}/>
->>>>>>> d5fe843ca6161040ec0eabb9f3ae9846e3de2a36
         </Routes>
     </Router>
     
