@@ -2,14 +2,6 @@ import React from "react";
 import imageAdress from '../../assets/imageAdress.svg'
 
 export function NewAdress() {
-
-    const [bgColor, setBgColor] = useState(green);
-    const changeColor =()=>{
-       let green = '#bg-yellow-400';
-       setBgColor(green);
-     }
-
-
     return (
 
         <div className='flex flex-row w-full h-screen'>
@@ -70,8 +62,7 @@ export function NewAdress() {
                     </div>
                </div>
                 <div className="bg-yellow-400 w-full h-1/4 flex items-center justify-center gap-10 ">
-                    <button className="w-45 h-20 bg-[#78A890] px-10 shadow-xl rounded-lg "
-                            onClick={changeColor}>
+                    <button className="w-45 h-20 bg-[#78A890] px-10 shadow-xl rounded-lg ">
                         Cadastrar cliente
                     </button>
                     <button className="w-45 h-20 bg-[#09738A] px-10 shadow-xl rounded-lg ">

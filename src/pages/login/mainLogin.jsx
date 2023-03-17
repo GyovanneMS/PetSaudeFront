@@ -5,7 +5,7 @@ import Login from '../../assets/login-register-background.png';
 export function Main() {
     return (
         <div className='flex flex-row w-screen h-screen bg-gradient-to-br from-[#092B5A] to-[#9ED1B7]'>
-            <div className="p-20 flex justify-center flex-col basis-1/2 bg-white">
+            <div className="p-20 flex justify-center flex-col w-1/2 bg-white">
                 <h1 className="font-bold text-4xl">Bem-vindos de volta</h1>
                 <p className="w-30 text-sm">Por favor, insira suas informações abaixo</p>
 
@@ -40,27 +40,10 @@ export function Main() {
                     <div class="reset-pass">
                         <a href="###">Esqueceu a senha?</a>
                     </div>
-                    <button class="login-button">
+                    <button class="button">
                         Entrar
                     </button>
                 </form>
-                {/* <div class="inputs-container">
-                    <label>
-                        E-mail
-                        <input type="email" name="" id="">
-                    </label>
-                    <label>
-                        Senha
-                        <input type="password" name="" id="password">
-                        <div id="icon" onclick="showHide()"></div>
-                    </label>
-                    <div class="reset-pass">
-                        <a href="###">Esqueceu a senha?</a>
-                    </div>
-                    <button class="login-button">
-                        Entrar
-                    </button>
-                </div> */}
             </div>
 
             <div className='flex-direction w-1/2'>
