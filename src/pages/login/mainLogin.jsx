@@ -1,6 +1,6 @@
 import React from "react";
-import "../../css/login.css";
-import Google from '../../assets/Google.svg';
+import "./css/login.css";
+import Google from '../../assets/svg/Google.svg';
 import { Link } from "react-router-dom";
 import backgroundImage from '../../assets/login-register-background.png'
 

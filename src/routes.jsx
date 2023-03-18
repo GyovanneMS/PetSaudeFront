@@ -1,16 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {CadastroVet} from "./pages/cadastroVet/cadastroVet";
-import { Casa } from "./pages/home/Home";
-import { LandingPage} from "./pages/home/LandingPage"
-import { Main } from "./pages/login/mainLogin";
-<<<<<<< HEAD
-import { NewAdress } from "./pages/login/mainAddAdress";   
-import { HeaderWeb } from "./pages/home/HeaderWeb";
+import { HomePage } from "./pages/home/Home";
 import { Register } from "./pages/register/register";
-=======
-import {NewAdress} from "./pages/register/mainAddAdress/mainAddAdreess"
->>>>>>> 37027bcabd7ca81d5244ca9d5553d8875f0b16bd
+import { HeaderWeb } from "./pages/home/resource/HeaderWeb";
+import { LandingPage} from "./pages/home/LandingPage";
+import { Login } from "./pages/login/mainLogin";
+import {NewAdress} from "./pages/register/resource/mainAddAddress";
+
 
 
 export const Rotas = () => {
@@ -18,7 +15,7 @@ export const Rotas = () => {
     <Router>
         <Routes>
             <Route path="/pages/login" element={<Login />} />
-            <Route path="/" element={<Casa />}></Route>
+            <Route path="/" element={<HomePage />}></Route>
             <Route path="/pages/Endereco" element={<NewAdress />} />
             <Route path="/pages/CadastroVet" element={<CadastroVet />} />
             <Route path="/home/LandingPage" element={<LandingPage />}/>

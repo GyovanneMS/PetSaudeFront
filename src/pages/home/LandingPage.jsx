@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { HeaderWeb } from "./HeaderWeb";
-import Footprint from "../../assets/petPaws.svg";
-import Dog from "../../assets/dogAndCat.svg";
+import { HeaderWeb } from "./resource/HeaderWeb";
+import Footprint from "../../assets/svg/petPaws.svg";
+import Dog from "../../assets/svg/dogAndCat.svg";
 
 
 export const LandingPage = () => {

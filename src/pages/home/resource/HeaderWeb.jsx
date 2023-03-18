@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Photo from '../../assets/Frame 17.svg';
+import Photo from '../../../assets/svg/userAnonimo.svg';
 
 export const HeaderWeb = () => {
   return (

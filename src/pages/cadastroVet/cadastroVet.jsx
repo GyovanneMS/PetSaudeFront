@@ -1,8 +1,8 @@
 import React from "react";
-import "../../css/cadastroVet.css";
+import "./css/cadastroVet.css";
 import { Link } from "react-router-dom";
-import arrow from "../../assets/Vectorwhite.svg";
-import image from "../../assets/imgVetCadastro.svg";
+import arrow from "../../assets/svg/Vectorwhite.svg";
+import image from "../../assets/svg/imgVetCadastro.svg";
 
 export const CadastroVet = () => {
   return (

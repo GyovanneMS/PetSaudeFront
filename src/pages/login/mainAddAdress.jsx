@@ -1,5 +1,5 @@
 import React from "react";
-import imageAdress from '../../assets/imageAdress.svg'
+import imageAdress from '../../assets/svg/imageAdress.svg'
 
 export function NewAdress() {
     return (

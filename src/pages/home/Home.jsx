@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import { Header } from '../../components/headers/headerEdits.jsx/headerEdits'
+import { Header } from '../../components/headers/headerEdits'
 
-export const Casa = () => {
+export const HomePage = () => {
   return (
     <>
         <Header/>

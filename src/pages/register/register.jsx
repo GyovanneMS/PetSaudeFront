@@ -1,4 +1,4 @@
-import googleLogo from '../../assets/Google.svg'
+import googleLogo from '../../assets/svg/Google.svg'
 import backgroundImage from '../../assets/login-register-background.png'
 import {useState} from "react";
 
