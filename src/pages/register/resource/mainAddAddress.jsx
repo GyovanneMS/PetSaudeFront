@@ -2,7 +2,7 @@ import React from "react";
 import imageAdress from '../../../assets/svg/imageAdress.svg'
 import { Link } from "react-router-dom";
 
-export function NewAdress() {
+export function NewAddress() {
     return (
 
         <div className='flex flex-row w-screen h-screen'>
