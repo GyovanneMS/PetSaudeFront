@@ -54,10 +54,10 @@ export function Register() {
 
     return(
         <section className='flex flex-row w-screen h-screen bg-gradient-to-br from-[#092b5a] to-[#9ed1b7] opacity-90 overflow-x-hidden'>
-            <div className='lg:w-1/2 md:w-2/3 w-full min-h-fit h-full bg-white flex flex-col md:justify-center justify-between items-center lg:gap-6 md:gap-4 sm:gap-2 z-10 p-4'>
+            <div className='lg:w-1/2 md:w-2/3 w-full min-h-screen h-fit bg-white flex flex-col md:justify-center justify-between items-center lg:gap-6 md:gap-4 sm:gap-2 z-10 p-4'>
                 <AuthHeader title='É novo por aqui?' subtitle='Insira suas informações abaixo e cadastre-se!' />
-                <form className='h-fit lg:w-2/3 w-3/4 gap-2 p-0 lg:mt-12 md:mt-6' onSubmit={handleSubmit(submitForm)}>
-                    <div className='flex lg:flex-row flex-col justify-between lg:gap-8 gap-2 w-full'>
+                <form className='h-fit lg:w-3/4 xl:w-2/3 w-full gap-2 p-0 lg:mt-12 md:mt-6' onSubmit={handleSubmit(submitForm)}>
+                    <div className='flex xl:flex-row flex-col justify-between lg:gap-8 gap-2 w-full'>
                         <label className='w-full'>
                             Primeiro nome
                             <input className={errors.firstName ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200' : 'h-12 px-2'} type="text" name="firstName" {...register('firstName', {required: true})}/>
@@ -91,7 +91,7 @@ export function Register() {
                             }
                         </div>
                     </label>
-                    <div className='flex lg:flex-row flex-col justify-between lg:gap-8 gap-2 w-full'>
+                    <div className='flex xl:flex-row flex-col justify-between lg:gap-8 gap-2 w-full'>
                         <label className='w-full'>
                             Celular
                             <input className={errors.cellphoneNumber ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200' : 'h-12 px-2'} type="tel" name="cellphoneNumber" {...register('cellphoneNumber', {required: true})} />
@@ -103,7 +103,7 @@ export function Register() {
                     </div>
                     <button type="submit" onClick={validateForm} className='w-full h-fit bg-[#09738A] text-center text-white font-bold text-2xl rounded lg:mt-12 mt-6 transition py-3 hover:bg-[#78A890]'>Continuar</button>
                 </form>
-                <p>Já tem uma conta?<Link to='/login' className='pl-1 font-bold'>Faça login</Link></p>
+                <p className='mt-8 mb-4'>Já tem uma conta?<Link to='/login' className='pl-1 font-bold'>Faça login</Link></p>
             </div>
             <div className='absolute w-full h-full overflow-hidden flex items-center justify-end'>
                 <img src={backgroundImage} alt="" className='w-2/3 h-fit opacity-50' />

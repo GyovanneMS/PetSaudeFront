@@ -62,9 +62,9 @@ export function Login() {
             {/*    <img src={backgroundImage} alt="" className="w-[150%] h-fit mr-32 opacity-50"></img>*/}
             {/*</div>*/}
             <div
-                className='lg:w-1/2 md:w-2/3 w-full min-h-fit h-full bg-white flex flex-col md:justify-center justify-between items-center lg:gap-6 md:gap-4 sm:gap-2 z-10 p-4'>
-                <AuthHeader title='É novo por aqui?' subtitle='Insira suas informações abaixo e cadastre-se!'/>
-                <form className='h-fit lg:w-2/3 w-3/4 gap-2 p-0 lg:mt-12 md:mt-6' onSubmit={handleSubmit(submitForm)}>
+                className='lg:w-1/2 md:w-2/3 w-full min-h-fit h-full bg-white flex flex-col md:justify-center justify-around items-center lg:gap-6 md:gap-4 gap-2 z-10 p-4'>
+                <AuthHeader title='Bem vindo de volta!' subtitle='Por favor, insira suas informações abaixo'/>
+                <form className='h-fit lg:w-3/4 xl:w-2/3 w-full gap-2 p-0 lg:mt-12 mt-6' onSubmit={handleSubmit(submitForm)}>
                     <label className='w-full'>
                         E-mail
                         <input
@@ -89,7 +89,7 @@ export function Login() {
                             className='w-full h-fit bg-[#09738A] text-center text-white font-bold text-2xl rounded lg:mt-12 mt-6 transition py-3 hover:bg-[#78A890]'>Continuar
                     </button>
                 </form>
-                <p className=''>Ainda não tem uma conta?<Link to='/register'
+                <p>Ainda não tem uma conta?<Link to='/register'
                                                               className='pl-1 font-bold'>Cadastre-se</Link></p>
             </div>
             <div className='absolute w-full h-full overflow-hidden flex items-center justify-end'>
