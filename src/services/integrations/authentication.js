@@ -1,4 +1,4 @@
-const _BASE_URL = 'http://localhost:3333/'
+const _BASE_URL = 'http://localhost:8080/'
 export const getAllUsers = async () => {
     const url = `${_BASE_URL}user/all`
     const response = await fetch(url)
@@ -6,13 +6,15 @@ export const getAllUsers = async () => {
 }
 
 export const login = async (loginInfos) => {
-    if (loginInfos) {
-        const url = `${_BASE_URL}signup`
-        return await fetch(url, {
-            method: 'POST',
-            body: loginInfos
-        })
-    } else return null
+    const url = `${_BASE_URL}signup`
+    const response = await fetch('http://localhost:8080/signup', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({email: loginInfos.email, password: loginInfos.password})
+    })
+    return await response.json()
 }
 
 export const signup = async (token) => {
