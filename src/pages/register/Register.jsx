@@ -1,4 +1,3 @@
-import googleLogo from '../../assets/svg/Google.svg'
 import backgroundImage from '../../assets/login-register-background.png'
 // import {type} from "@testing-library/user-event/dist/type";
 import { IoEye, IoEyeOff } from 'react-icons/io5';
@@ -10,8 +9,10 @@ import { AuthHeader } from "../../components/headers/AuthHeader";
 export function Register() {
     const { register, handleSubmit, formState: {errors} } = useForm()
     const submitForm = data => {
-        if (validateForm(data))
+        if (validateForm(data)) {
             localStorage.setItem('__user_register_infos', JSON.stringify(data))
+            document.location.href = '/register/address'
+        }
     }
 
     let [isPasswordVisible, setPasswordVisibility] = useState(false)
@@ -68,6 +69,10 @@ export function Register() {
                         </label>
                     </div>
                     <label className='w-full'>
+                        CPF
+                        <input className={errors.cpf ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200' : 'h-12 px-2'} type="text" name="cpf" {...register('cpf', {required: true})}/>
+                    </label>
+                    <label className='w-full'>
                         E-mail
                         <input className={errors.email ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200' : 'h-12 px-2'} type="email" name="email" {...register('email', {required: true})} />
                     </label>
@@ -101,7 +106,7 @@ export function Register() {
                             <input className='h-12 px-2' type="tel" name="phoneNumber" {...register('phoneNumber')} />
                         </label>
                     </div>
-                    <button type="submit" onClick={validateForm} className='w-full h-fit bg-[#09738A] text-center text-white font-bold text-2xl rounded lg:mt-12 mt-6 transition py-3 hover:bg-[#78A890]'>Continuar</button>
+                    <button type="submit" className='w-full h-fit bg-[#09738A] text-center text-white font-bold text-2xl rounded lg:mt-12 mt-6 transition py-3 hover:bg-[#78A890]'>Continuar</button>
                 </form>
                 <p className='mt-8 mb-4'>Já tem uma conta?<Link to='/login' className='pl-1 font-bold'>Faça login</Link></p>
             </div>

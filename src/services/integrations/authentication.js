@@ -1,9 +1,4 @@
 const _BASE_URL = 'http://localhost:8080/'
-export const getAllUsers = async () => {
-    const url = `${_BASE_URL}user/all`
-    const response = await fetch(url)
-    return await response.json()
-}
 
 export const login = async (loginInfos) => {
     const url = `${_BASE_URL}signup`

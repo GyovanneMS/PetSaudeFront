@@ -115,7 +115,7 @@ label input {
 .reset-pass a {
     font-size: 1.1rem;
 }
-  
+
 /*** BOTÃO DE LOGIN ***/
 .login-button {
     height: 50px;
@@ -152,7 +152,7 @@ label input {
     height: 30px;
     cursor: pointer;
 }
-  
+
 #icon.hide {
     /* background: url("/assets/img/closed-eye.png"); */
     background-size: cover;

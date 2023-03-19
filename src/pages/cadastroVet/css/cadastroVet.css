@@ -2,11 +2,11 @@
 
     height: 100vh;
     background: linear-gradient(112.87deg, rgba(9, 43, 90, 0.7) 0%, rgba(158, 209, 183, 0.7) 100%);
-    
+
 }
 
 .img-forms{
-    
+
     display: flex;
     height: 100%;
     justify-content: space-between;
@@ -17,7 +17,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
- 
+
 }
 
 .bg-image{
@@ -107,16 +107,16 @@ form{
     gap: 6px;
     padding-top: 2px;
     padding-right: 40px;
-    
+
 }
 
 .inputs-specialties input{
-    
+
     width: 20px;
     border: none;
     background-color: #A9A9A9;
 
-    
+
 }
 
 /*****************************/
@@ -251,7 +251,7 @@ label input{
 
 /* DESKTOP */
 @media (max-width:1920px) {
-    
+
     h1{
         font-size: 0.5rem;
     }
@@ -268,7 +268,7 @@ label input{
         font-size: 1rem;
         gap: 3px;
         padding-right: 20px;
-        
+
     }
 
     .atuacao-container label p{
@@ -278,7 +278,7 @@ label input{
     }
 
     .inputs-animals label{
- 
+
         font-size: 1rem;
         gap: 3px;
         padding-right: 20px;
@@ -287,7 +287,7 @@ label input{
     .back-view i {
         font-size: 3rem;
     }
- 
+
 
     .bg-image{
 
@@ -335,7 +335,7 @@ label input{
     .form-header span{
         font-size: 0.9rem;
         text-align: center;
-        
+
     }
 
     .form-group{
@@ -358,7 +358,7 @@ label input{
     }
 
     .inputs-animals{
-        
+
         display: flex;
         flex-wrap: wrap;
         align-items: center ;
@@ -376,7 +376,7 @@ label input{
         width: 210px;
         font-weight: bold;
     }
-    
+
     /* Area de atuação */
 
     .atuacao-container{
@@ -412,7 +412,7 @@ label input{
     .back-view{
         display: none;
     }
-    
+
     /* DEFINIÇÕES DE IMAGEM BACKGROUND */
     .conteiner-img{
         display: none;
@@ -444,7 +444,7 @@ label input{
         display: flex;
         font-size: 1.1rem;
         margin-top: 10%;
-        
+
     }
-}   
+}
 
