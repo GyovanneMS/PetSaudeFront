@@ -8,7 +8,11 @@ export const HomePage = () => {
         <Header/>
 
         <p>home</p>
+<<<<<<< HEAD
         <Link to="/pages/CadastroVet">Cadastro do veterinario</Link>
+=======
+        <Link to="/CadastroVet">Cadastro do veterinario</Link>
+>>>>>>> 038a48c (_)
         <Link to="/login">Login do usuario</Link>
         <Link to="/Endereco">Endereço do usuario</Link>
         <Link to="/login/mainLogin">Main Login</Link>
