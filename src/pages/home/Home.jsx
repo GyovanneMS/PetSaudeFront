@@ -13,7 +13,7 @@ export const HomePage = () => {
         <Link to="/Endereco">Endereço do usuario</Link>
         <Link to="/login/mainLogin">Main Login</Link>
         <Link to="/home/HeaderWeb">Header das telas Web</Link>
-        <Link to="/home/LandingPage">Landing Page</Link>
+        <Link to="/home">Landing Page</Link>
     </>
   );
 };
