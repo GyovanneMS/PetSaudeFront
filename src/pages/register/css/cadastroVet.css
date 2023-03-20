@@ -69,7 +69,7 @@ form{
     display: flex;
     flex-direction: column;
     width: 50%;
-    gap: 50px;
+    gap: 20px;
 }
 
 .checkbox-container{
@@ -83,7 +83,7 @@ form{
 .specialties{
     display: flex;
     flex-direction: column;
-    gap: 16px;
+
 }
 .specialties span{
     font-size: 1.2rem;
@@ -103,11 +103,8 @@ form{
     align-items: center;
     /* width: max-content; */
     font-size: 1.2rem;
-    font-weight: 400vw;
-    gap: 6px;
-    padding-top: 2px;
-    padding-right: 40px;
-
+    gap: 5px;
+    padding-right: 15px;
 }
 
 .inputs-specialties input{
@@ -125,15 +122,15 @@ form{
 
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    padding-top: 10px;
+
+
 }
 
 .animals span{
 
     font-size: 1.2rem;
     font-weight: 400;
-    padding-top: 5%;
+    padding-top: 10px;
 }
 
 .inputs-animals{
@@ -146,10 +143,8 @@ form{
     display: flex;
     align-items: center;
     font-size: 1.2rem;
-    font-weight: 400;
     gap: 6px;
-    padding-top: 2px;
-    padding-right: 40px;
+    padding-right: 15px;
 }
 .inputs-animals input{
     width: 20px;
@@ -163,7 +158,7 @@ label{
 label input{
     font-size: 1.1rem;
     height: 60px;
-    width: 100%;
+    width: 80%;
     border-bottom: 1px solid black;
 }
 
@@ -252,9 +247,10 @@ label input{
 /* DESKTOP */
 @media (max-width:1920px) {
 
-    h1{
-        font-size: 0.5rem;
+    .form-header h1{
+        font-size: 2rem;
     }
+
     .form-header span{
         font-size: 1rem;
     }
@@ -270,6 +266,17 @@ label input{
         padding-right: 20px;
 
     }
+    .inputs-specialties label input {
+        height: 60%;
+    }
+
+    .inputs-animals label input {
+        height: 70%;
+    }
+    
+    /* input[type = "checkbox"]{
+        height: 80%;
+    } */
 
     .atuacao-container label p{
 
@@ -291,7 +298,7 @@ label input{
 
     .bg-image{
 
-        height: 45%;
+        height: 60%;
     }
 
     .register-button{
@@ -304,98 +311,64 @@ label input{
     }
 }
 
-/* MOBILE */
-@media (max-width:767px) {
+@media (max-width: 1600px) {
+    
+    .bg-image{
 
+        height: 40%;
 
-
-    form{
-        display: flex;
-        align-items: flex-start;
-        font-size: 10rem;
-        width: 100%;
-        height: 100%;
-        background-color: white;
-        padding-top: 4%;
-        padding-left: 10%;
-        padding-bottom: 1%;
-        z-index: 2;
     }
-
-    form .form-header{
-        margin: 20px;
-    }
-
     .form-header h1{
-        font-size: 1.6rem;
-        text-align: center;
-        letter-spacing: 0.05em;
+        font-size: 2rem;
     }
 
-    .form-header span{
-        font-size: 0.9rem;
-        text-align: center;
-
+    
+}
+@media (max-width: 1130px){
+    
+    .mainVet{
+    
+        height: 100%;
+    
     }
-
-    .form-group{
-       display: flex;
-       flex-direction: column;
-    }
-
-    /* Especialidades e caracteristicas dos animais */
-    .inputs-specialties {
-        display: flex;
-        flex-wrap: wrap;
-        width: 190%;
-    }
-
-
-    .specialties span{
-        padding-top: 40px;
-        font-size: 1.3rem;
-        font-weight: bold;
-    }
-
-    .inputs-animals{
+    .inputs-container{
 
         display: flex;
-        flex-wrap: wrap;
-        align-items: center ;
-        width: 160%;
+        flex-direction: column;
+        justify-content: space-around;
+
     }
 
-    .inputs-animals input{
-        align-items: flex-start;
+    .form-header h1 {
+        font-size: 1.9rem;
     }
 
+    .img-forms{
 
-    .animals span{
-        padding-top: 40px;
-        font-size: 1.3rem;
-        width: 210px;
-        font-weight: bold;
-    }
-
-    /* Area de atuação */
-
-    .atuacao-container{
         display: flex;
         justify-content: center;
-        flex-direction: column;
-        width: 100%;
+        align-items: center;
+
     }
 
-    .atuacao-container input{
-        width: 170%;
+    .arrow-img{
+    
+        display: none;
+    
     }
-
-    /* Area de atuação e CRMV em conjuto*/
-    .atuacao-crmv{
+    .atuacao-container{
         display: flex;
         flex-direction: column;
-        padding-top: 0%;
-        gap: 10%;
+
+        gap: 30px;
+
+    }
+
+    .atuacao-crmv{
+        display: grid;
+        align-items: start;
+        flex-direction: column;
+        gap: 0;
     }
 
     .atuacao-crmv p{
@@ -403,48 +376,34 @@ label input{
       width: 180px;
     }
 
-    .atuacao-crmv input{
-        display: flex;
-        width: 160%;
-    }
+    .atuacao-container label input{
 
-    /* BOTÃO VOLTAR A TELA ANTERIOR */
-    .back-view{
-        display: none;
-    }
-
-    /* DEFINIÇÕES DE IMAGEM BACKGROUND */
-    .conteiner-img{
-        display: none;
-    }
-
-    /* CONTEINER DOS BOTÕES */
-    .user{
-        display: flex;
-        align-items: center;
         width: 100%;
+
+    }
+
+
+
+    .form-group{
         flex-direction: column;
-        margin-top: 20%;
-        gap: 10px;
     }
 
-    .atuacao-crmv{
-        display: flex;
-        align-items: center;
-    }
+ 
 
-    /** Botão de Cadastro **/
-    .register-button{
-        width: 150%;
-        margin-left: 60%;
-    }
-
-    /* FAZER LOGIN */
-    .text-login{
-        display: flex;
-        font-size: 1.1rem;
-        margin-top: 10%;
-
-    }
 }
 
+/* MOBILE */
+
+@media (max-width: 770px){
+
+    form{
+        width: 100%;
+        height: 100%;
+    }
+    .inputs-container{
+
+        width: 80%;
+
+    }
+
+}

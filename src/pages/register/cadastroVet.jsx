@@ -1,10 +1,58 @@
-import React from "react";
+import React, { useState } from "react";
 import "./css/cadastroVet.css";
 import { Link } from "react-router-dom";
+import { useForm } from 'react-hook-form';
 import arrow from "../../assets/svg/Vectorwhite.svg";
 import image from "../../assets/svg/imgVetCadastro.svg";
 
 export const CadastroVet = () => {
+
+  const [areaAtuacao, setAreaAtuacao] = useState("")
+  const [crmv, setCrmv] = useState("")
+  const [formacao, setFormacao] = useState("")
+  const [instituicao, setInstituicao] = useState("")
+  const [dataFormacao, setDataFormacao] = useState("")
+  const [dataAtuacao, setdata] = useState("")
+
+  const handleChange = (event) => {
+
+    console.log(event.target.value);
+
+    setAreaAtuacao(event.target.value)
+
+  }
+
+  const { register, handleSubmit, formState: {errors} } = useForm()
+  const submitForm = data => {
+      if (validateForm(data)) {
+          localStorage.setItem('__user_register_infos', JSON.stringify(data))
+          document.location.href = '/register/address'
+      }
+  }
+
+  const validateForm = (data) => {
+    let error = {
+        status: false,
+        message: '',
+    };
+
+    if (data) {
+        let {
+            password,
+            confirmPassword,
+        } = data
+
+        if (password !== confirmPassword) error = {status: true, message: 'Password needs to be the same'}
+
+        if (error.status)
+            throw new Error(error.message)
+        else return true
+    }
+    return false
+}
+
+
+
   return (
     <main className="mainVet">
       <div className="img-forms">
@@ -88,7 +136,7 @@ export const CadastroVet = () => {
               <div className="atuacao-crmv">
                 <label>
                   <p>Área de atuação</p>
-                  <input type="text" name="" className="area" />
+                  <input type="text" name="" className="area" {...register('areaAtuacao', {minLenght: 6, required: true})} />
                 </label>
 
                 <label>
