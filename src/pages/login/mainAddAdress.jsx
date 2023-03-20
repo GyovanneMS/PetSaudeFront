@@ -1,9 +1,9 @@
 // import React from "react";
 // import imageAdress from '../../assets/svg/imageAdress.svg'
-//
+
 // export function NewAdress() {
 //     return (
-//
+
 //         <div className='flex flex-row w-full h-screen'>
 //             <div className='flex justify-center content-center basis-1/2 bg-gradient-to-br from-[#092B5A] to-[#9ED1B7]'>
 //                 <img src={imageAdress} alt="Login with Google account" />
@@ -71,12 +71,12 @@
 //                 </div>
 //             </div>
 //         </div>
-//
+
 //     )
-//
+
 // }
-// export function NewTest() {
-//     return (
-//         <div className={''}
-//     )
-// }
+// // export function NewTest() {
+// //     return (
+// //         <div className={''}
+// //     )
+// // }

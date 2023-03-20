@@ -1,6 +1,8 @@
 import {AuthHeader} from "../../components/headers/AuthHeader";
 import {useForm} from "react-hook-form";
 import {registerUser} from "../../services/integrations/user";
+import Endereco from "../../assets/address-image.png"
+import { Link } from "react-router-dom";
 
 export function RegisterAddress() {
     const {register, handleSubmit, formState: errors, setValue} = useForm()
@@ -45,7 +47,10 @@ export function RegisterAddress() {
 
     return (
         <section className='flex flex-row w-screen h-screen bg-gradient-to-br from-[#092b5a] to-[#9ed1b7] opacity-90 overflow-x-hidden'>
-            <div className='lg:w-1/2 md:w-2/3 w-full min-h-screen h-fit bg-white flex flex-col md:justify-center justify-between items-center lg:gap-6 md:gap-4 sm:gap-2 z-10 p-4'>
+            <div className="invisible lg:visible lg:w-1/2 md:w-0 w-1/2 h-screen flex items-center ">
+                <img src={Endereco} alt="Imagem decorativa" className="w-full  "/>
+            </div>
+            <div className='lg:w-1/2 md:w-full w-full min-h-screen h-fit bg-white flex flex-col md:justify-center justify-between items-center lg:gap-6 md:gap-4 sm:gap-2 z-10 p-4'>
                 <AuthHeader title='Podemos saber a sua localização?' subtitle='Para a experiência na plataforma, informe-nos a sua localização' />
                 <form onSubmit={handleSubmit(submitForm)} className='h-fit lg:w-3/4 w-full gap-2 p-0 lg:mt-12 md:mt-6' >
                     <label className='w-full'>
@@ -81,9 +86,17 @@ export function RegisterAddress() {
                         </label>
                     </div>
                     <div className='flex xl:flex-row flex-col justify-between gap-2 w-full lg:mt-12 mt-6'>
-                        <button id='client' type="submit" onClick={event => localStorage.setItem('__register_type', event.target.id)} className='w-full h-fit bg-[#09738A] text-center text-white font-bold text-2xl rounded transition py-3 hover:bg-[#78A890]'>Cadastrar cliente</button>
-                        <button id='professional' type="submit" onClick={event => localStorage.setItem('__register_type', event.target.id)} className='w-full h-fit bg-[#09738A] text-center text-white font-bold text-2xl rounded transition py-3 hover:bg-[#78A890]'>Cadastrar profissional</button>
+                        <button id='client' type="submit" onClick={event => localStorage.setItem('__register_type', event.target.id)} className='w-full h-fit bg-[#09738A] text-center text-white font-bold text-2xl rounded transition drop-shadow-xl py-3 hover:bg-[#78A890]'>Cadastrar cliente</button>
+                        <button id='professional' type="submit" onClick={event => localStorage.setItem('__register_type', event.target.id)} className='w-full h-fit bg-[#09738A] text-center text-white font-bold text-2xl rounded transition py-3 drop-shadow-xl hover:bg-[#78A890]'>Cadastrar profissional</button>
                     </div>
+                    <div className="w-full h-10 flex flex-row gap-1 justify-center pt-40">
+                    Já tem uma conta?
+                    <Link to="/">
+                        <p className="font-bold">
+                            Faça Login
+                        </p>
+                    </Link>
+                </div>
                 </form>
             </div>
         </section>
