@@ -9,9 +9,9 @@ export const LandingPage = () => {
   return (
     <div>
       <HeaderWeb/>
-    <div className="flex flex-row space-x-20 pl-200">
-      <input className=" placeholder:italic placeholder:text-slate-400 block bg-white w-1/2 border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" type="text" placeholder="Pesquisar especialistas"/>
-      <input className="basis-1/2 placeholder:italic placeholder:text-slate-400 block bg-white w-1/2 border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" type="text" id="Search-Vet" placeholder="Pesquisar veterinários próximos"/> 
+    <div className="flex flex-row space-x-20 p-10 justify-around font-normal texto-2xl">
+      <input className="block bg-white w-1/4 border border-slate-200 p-5 rounded-lg border-black border-2 hover:border-green-200" placeholder="Pesquisar especialistas"/>
+      <input className="block bg-white w-1/4 border border-slate-300 p-5 rounded-lg border-black border-2 hover:border-green-200" placeholder="Pesquisar especialistas"/> 
     </div>
     <div className="flex justify-between pt-15 w-auto h-30">
 
