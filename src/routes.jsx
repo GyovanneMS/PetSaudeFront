@@ -16,7 +16,7 @@ export const Rotas = () => {
     <Router>
         <Routes>
             <Route path="/" element={<HomePage />}></Route>
-            <Route path="/home" element={<LandingPage />}/>
+            <Route path="//home" element={<LandingPage />}/>
             <Route path="/home/HeaderWeb" element={<HeaderWeb />}/>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />}/>
