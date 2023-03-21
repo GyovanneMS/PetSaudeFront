@@ -43,7 +43,7 @@ export function Login() {
     return (
         <section className='flex flex-row w-screen h-screen bg-gradient-to-br from-[#092b5a] to-[#9ed1b7] opacity-90 overflow-x-hidden'>
             <div className='lg:w-1/2 md:w-2/3 w-full min-h-fit h-full bg-white flex flex-col md:justify-center justify-around items-center lg:gap-6 md:gap-4 gap-2 z-10 p-4'>
-                <AuthHeader title='Bem vindo de volta!' subtitle='Por favor, insira suas informações abaixo'/>
+                <AuthHeader title='Bem vindo de volta!' subtitle='Por favor, insira suas informações abaixo' firebaseFeature={true} />
                 <form className='h-fit lg:w-3/4 xl:w-2/3 w-full gap-2 p-0 lg:mt-12 mt-6'
                       onSubmit={handleSubmit(submitForm)}>
                     <label className='w-full flex flex-col'>

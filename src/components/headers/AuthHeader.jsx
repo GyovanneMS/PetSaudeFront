@@ -12,6 +12,15 @@ export function AuthHeader(props) {
                 <h1 className='xl:text-4xl text-3xl font-bold text-center'>{props.title}</h1>
                 <h3 className='xl:text-2xl text-xl lg:mt-0 mt-[-6px] font-normal text-[#A9A9A9] text-center'>{props.subtitle}</h3>
             </span>
+            {props.firebaseFeature ? firebaseFeature() : <></>
+            }
+        </div>
+    )
+}
+
+function firebaseFeature() {
+    return (
+        <>
             <button onClick={handleGoogleButtonClick}>
                 <img src={googleLogo} alt='Google Button' className='lg:w-20 md:w-16 w-14'/>
             </button>
@@ -20,6 +29,6 @@ export function AuthHeader(props) {
                     after:grow after:h-0.5 after:block after:bg-gray-300'>
                 Ou use o e-mail
             </span>
-        </div>
+        </>
     )
 }

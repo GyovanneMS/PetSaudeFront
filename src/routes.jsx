@@ -9,8 +9,6 @@ import { RegisterAddress } from "./pages/register/RegisterAddress";
 import {CadastroVet} from "./pages/register/cadastroVet";
 import UserVet from "./pages/profile/userVet";
 
-
-
 export const Rotas = () => {
   return (
     <Router>
