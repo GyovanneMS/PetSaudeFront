@@ -6,7 +6,7 @@ import { LandingPage} from "./pages/home/LandingPage";
 import { Login } from "./pages/login/Login";
 import { Register } from "./pages/register/Register";
 import { RegisterAddress } from "./pages/register/RegisterAddress";
-import {CadastroVet} from "./pages/register/cadastroVet";
+import { RegisterVeterinary } from "./pages/register/RegisterVeterinary";
 import UserVet from "./pages/profile/userVet";
 
 export const Rotas = () => {
@@ -19,7 +19,7 @@ export const Rotas = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />}/>
             <Route path="/register/address" element={<RegisterAddress />} />
-            <Route path="/register/veterinary" element={<CadastroVet />} />
+            <Route path="/register/veterinary" element={<RegisterVeterinary />} />
             <Route path="/profile/veterinary" element={<UserVet />} />
         </Routes>
     </Router>
