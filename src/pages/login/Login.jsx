@@ -41,48 +41,22 @@ export function Login() {
     }
 
     return (
-        <section
-            className='flex flex-row w-screen h-screen bg-gradient-to-br from-[#092b5a] to-[#9ed1b7] opacity-90 overflow-x-hidden'>
-            {/*<form onSubmit={handleSubmit(submitForm)}>*/}
-            {/*    <AuthHeader title='Bem-vindo de volta!' subtitle='Por favor, insira suas informações abaixo' />*/}
-            {/*    <div class="inputs-container">*/}
-            {/*        <label>*/}
-            {/*            E-mail*/}
-            {/*            <input type="text" name="" id="email" {...register('email', {required: true})}/>*/}
-            {/*        </label>*/}
-            {/*        <label>*/}
-            {/*            Senha*/}
-            {/*            <input type="password" name="" id="password" {...register('password', {required: true})} />*/}
-            {/*            /!* <div id="icon" onclick={showHide}></div> *!/*/}
-            {/*        </label>*/}
-            {/*        <div class="reset-pass">*/}
-            {/*            <a href="#">Esqueceu a senha?</a>*/}
-            {/*        </div>*/}
-            {/*        <button type="submit" className='w-full h-fit bg-[#09738A] text-center text-white font-bold text-2xl rounded lg:mt-12 mt-6 transition py-3 hover:bg-[#78A890]'>*/}
-            {/*            Entrar*/}
-            {/*        </button>*/}
-            {/*    </div>*/}
-            {/*    <p class="new-register">Ainda não tem uma conta?<Link to="/register">Cadastre-se</Link></p>*/}
-            {/*</form>*/}
-            {/*<div className='w-1/2 h-full flex items-center overflow-hidden'>*/}
-            {/*    <img src={backgroundImage} alt="" className="w-[150%] h-fit mr-32 opacity-50"></img>*/}
-            {/*</div>*/}
-            <div
-                className='lg:w-1/2 md:w-2/3 w-full min-h-fit h-full bg-white flex flex-col md:justify-center justify-around items-center lg:gap-6 md:gap-4 gap-2 z-10 p-4'>
+        <section className='flex flex-row w-screen h-screen bg-gradient-to-br from-[#092b5a] to-[#9ed1b7] opacity-90 overflow-x-hidden'>
+            <div className='lg:w-1/2 md:w-2/3 w-full min-h-fit h-full bg-white flex flex-col md:justify-center justify-around items-center lg:gap-6 md:gap-4 gap-2 z-10 p-4'>
                 <AuthHeader title='Bem vindo de volta!' subtitle='Por favor, insira suas informações abaixo'/>
                 <form className='h-fit lg:w-3/4 xl:w-2/3 w-full gap-2 p-0 lg:mt-12 mt-6'
                       onSubmit={handleSubmit(submitForm)}>
-                    <label className='w-full'>
+                    <label className='w-full flex flex-col'>
                         E-mail
                         <input
-                            className={errors.firstName ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200' : 'h-12 px-2'}
+                            className={errors.firstName ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200 w-full' : 'h-12 px-2 w-full'}
                             type="email" name="email" {...register('email', {required: true})}/>
                     </label>
-                    <label className='w-full'>
+                    <label className='w-full flex flex-col'>
                         Senha
                         <div className='relative'>
                             <input
-                                className={errors.password ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200' : 'h-12 px-2'}
+                                className={errors.password ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200 w-full' : 'h-12 px-2 w-full'}
                                 type={isPasswordVisible ? 'text' : 'password'}
                                 name="password" {...register('password', {minLength: 6, required: true})} />
                             {isPasswordVisible

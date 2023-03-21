@@ -59,37 +59,37 @@ export function Register() {
                 <AuthHeader title='É novo por aqui?' subtitle='Insira suas informações abaixo e cadastre-se!' />
                 <form className='h-fit lg:w-3/4 xl:w-2/3 w-full gap-2 p-0 lg:mt-12 md:mt-6' onSubmit={handleSubmit(submitForm)}>
                     <div className='flex xl:flex-row flex-col justify-between lg:gap-8 gap-2 w-full'>
-                        <label className='w-full'>
+                        <label className='w-full flex flex-col'>
                             Primeiro nome
-                            <input className={errors.firstName ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200' : 'h-12 px-2'} type="text" name="firstName" {...register('firstName', {required: true})}/>
+                            <input className={errors.firstName ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200 w-full' : 'h-12 px-2 w-full'} type="text" name="firstName" {...register('firstName', {required: true})}/>
                         </label>
-                        <label className='w-full'>
+                        <label className='w-full flex flex-col'>
                             Sobrenome
-                            <input className={errors.lastName ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200' : 'h-12 px-2'} type="text" name="lastName" {...register('lastName', {required: true})} />
+                            <input className={errors.lastName ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200 w-full' : 'h-12 px-2 w-full'} type="text" name="lastName" {...register('lastName', {required: true})} />
                         </label>
                     </div>
-                    <label className='w-full'>
+                    <label className='w-full flex flex-col'>
                         CPF
-                        <input className={errors.cpf ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200' : 'h-12 px-2'} type="text" name="cpf" {...register('cpf', {required: true})}/>
+                        <input className={errors.cpf ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200 w-full' : 'h-12 px-2 w-full'} type="text" name="cpf" {...register('cpf', {required: true})}/>
                     </label>
-                    <label className='w-full'>
+                    <label className='w-full flex flex-col'>
                         E-mail
-                        <input className={errors.email ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200' : 'h-12 px-2'} type="email" name="email" {...register('email', {required: true})} />
+                        <input className={errors.email ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200 w-full' : 'h-12 px-2 w-full'} type="email" name="email" {...register('email', {required: true})} />
                     </label>
-                    <label className='w-full'>
+                    <label className='w-full flex flex-col'>
                         Senha
                         <div className='relative'>
-                            <input className={errors.password ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200' : 'h-12 px-2'} type={isPasswordVisible ? 'text' : 'password'} name="password" {...register('password', {minLength: 6, required: true})} />
+                            <input className={errors.password ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200 w-full' : 'h-12 px-2 w-full'} type={isPasswordVisible ? 'text' : 'password'} name="password" {...register('password', {minLength: 6, required: true})} />
                             {isPasswordVisible
                                 ? <IoEye className='w-7 h-7 absolute right-4 top-2.5' onClick={togglePasswordVisibility} />
                                 : <IoEyeOff className='w-7 h-7 absolute right-4 top-2.5' onClick={togglePasswordVisibility}/>
                             }
                         </div>
                     </label>
-                    <label className='w-full'>
+                    <label className='w-full flex flex-col'>
                         Confirme a senha
                         <div className='relative'>
-                            <input className={errors.confirmPassword ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200' : 'h-12 px-2'} type={isConfirmPasswordVisible ? 'text' : 'password'} name="confirmPassword" {...register('confirmPassword', {required: true})} />
+                            <input className={errors.confirmPassword ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200 w-full' : 'h-12 px-2 w-full'} type={isConfirmPasswordVisible ? 'text' : 'password'} name="confirmPassword" {...register('confirmPassword', {required: true})} />
                             {isConfirmPasswordVisible
                                 ? <IoEye className='w-7 h-7 absolute right-4 top-2.5' onClick={toggleConfirmPasswordVisibility} />
                                 : <IoEyeOff className='w-7 h-7 absolute right-4 top-2.5' onClick={toggleConfirmPasswordVisibility}/>
@@ -99,11 +99,11 @@ export function Register() {
                     <div className='flex xl:flex-row flex-col justify-between lg:gap-8 gap-2 w-full'>
                         <label className='w-full'>
                             Celular
-                            <input className={errors.cellphoneNumber ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200' : 'h-12 px-2'} type="tel" name="cellphoneNumber" {...register('cellphoneNumber', {required: true})} />
+                            <input className={errors.cellphoneNumber ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200 w-full' : 'h-12 px-2 w-full'} type="tel" name="cellphoneNumber" {...register('cellphoneNumber', {required: true})} />
                         </label>
                         <label className='w-full'>
                             Telefone
-                            <input className='h-12 px-2' type="tel" name="phoneNumber" {...register('phoneNumber')} />
+                            <input className='h-12 px-2 w-full' type="tel" name="phoneNumber" {...register('phoneNumber')} />
                         </label>
                     </div>
                     <button type="submit" className='w-full h-fit bg-[#09738A] text-center text-white font-bold text-2xl rounded lg:mt-12 mt-6 transition py-3 hover:bg-[#78A890]'>Continuar</button>

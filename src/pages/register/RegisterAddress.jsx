@@ -53,36 +53,36 @@ export function RegisterAddress() {
             <div className='lg:w-1/2 md:w-full w-full min-h-screen h-fit bg-white flex flex-col md:justify-center justify-between items-center lg:gap-6 md:gap-4 sm:gap-2 z-10 p-4'>
                 <AuthHeader title='Podemos saber a sua localização?' subtitle='Para a experiência na plataforma, informe-nos a sua localização' />
                 <form onSubmit={handleSubmit(submitForm)} className='h-fit lg:w-3/4 w-full gap-2 p-0 lg:mt-12 md:mt-6' >
-                    <label className='w-full'>
+                    <label className='w-full flex flex-col'>
                         CEP
-                        <input onBlurCapture={getAddressFromZipCode} className={errors.zipCode ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200' : 'h-12 px-2'} type="text" name="zipCode" {...register('zipCode', {required: true})}/>
+                        <input onBlurCapture={getAddressFromZipCode} className={errors.zipCode ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200 w-full' : 'h-12 px-2 w-full'} type="text" name="zipCode" {...register('zipCode', {required: true})}/>
                     </label>
                     <div className='flex xl:flex-row flex-col justify-between lg:gap-8 gap-2 w-full'>
-                        <label className='w-full'>
+                        <label className='w-full flex flex-col'>
                             Cidade
-                            <input className={errors.city ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200' : 'h-12 px-2'} type="text" name="city" {...register('city', {required: true})} />
+                            <input className={errors.city ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200 w-full' : 'h-12 px-2 w-full'} type="text" name="city" {...register('city', {required: true})} />
                         </label>
-                        <label className='w-full'>
+                        <label className='w-full flex flex-col'>
                             Estado
-                            <input className={errors.state ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200' : 'h-12 px-2'} type="text" name="state" {...register('state', {required: true})} />
+                            <input className={errors.state ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200 w-full' : 'h-12 px-2 w-full'} type="text" name="state" {...register('state', {required: true})} />
                         </label>
                     </div>
-                    <label className='w-full'>
+                    <label className='w-full flex flex-col'>
                         Rua
-                        <input className={errors.street ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200' : 'h-12 px-2'} type="text" name="street" {...register('street', {required: true})} />
+                        <input className={errors.street ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200 w-full' : 'h-12 px-2 w-full'} type="text" name="street" {...register('street', {required: true})} />
                     </label>
-                    <label className='w-full'>
+                    <label className='w-full flex flex-col'>
                         Bairro
-                        <input className={errors.neighborhood ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200' : 'h-12 px-2'} type="text" name="neighborhood" {...register('neighborhood', {required: true})} />
+                        <input className={errors.neighborhood ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200 w-full' : 'h-12 px-2 w-full'} type="text" name="neighborhood" {...register('neighborhood', {required: true})} />
                     </label>
                     <div className='flex xl:flex-row flex-col justify-between lg:gap-8 gap-2 w-full'>
-                        <label className='w-full'>
+                        <label className='w-full flex flex-col'>
                             Número
-                            <input className={errors.number ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200' : 'h-12 px-2'} type="text" name="number" {...register('number', {required: true})} />
+                            <input className={errors.number ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200 w-full' : 'h-12 px-2 w-full'} type="text" name="number" {...register('number', {required: true})} />
                         </label>
-                        <label className='w-full'>
+                        <label className='w-full flex flex-col'>
                             Complemento (Se houver)
-                            <input className={errors.complement ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200' : 'h-12 px-2'} type="text" name="complement" {...register('complement', {required: false})} />
+                            <input className={errors.complement ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200 w-full' : 'h-12 px-2 w-full'} type="text" name="complement" {...register('complement', {required: false})} />
                         </label>
                     </div>
                     <div className='flex xl:flex-row flex-col justify-between gap-2 w-full lg:mt-12 mt-6'>
