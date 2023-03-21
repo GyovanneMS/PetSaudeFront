@@ -1,8 +1,6 @@
-import SetaSair from '../../../assets/SetaSairEdit.svg'
-import SingOut from '../../../assets/SingOut.svg'
+import SetaSair from '../../assets/svg/SetaSairEdit.svg'
+import SingOut from '../../assets/svg/SingOut.svg'
 import * as React from 'react';
-import * as Popover from '@radix-ui/react-popover';
-
 
 export function Header() {
     return (
