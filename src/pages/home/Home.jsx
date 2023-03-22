@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Header } from '../../components/headers/headerEdits'
 
 export const HomePage = () => {
+
   return (
     <>
         <Header/>
@@ -16,4 +17,5 @@ export const HomePage = () => {
         <Link to="/home">Landing Page</Link>
     </>
   );
+  
 };

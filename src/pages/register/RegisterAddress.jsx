@@ -1,34 +1,46 @@
-import {AuthHeader} from "../../components/headers/AuthHeader";
-import {useForm} from "react-hook-form";
-import {registerUser} from "../../services/integrations/user";
+import { AuthHeader } from "../../components/headers/AuthHeader";
+import { useForm } from "react-hook-form";
+import { registerUser } from "../../services/integrations/user";
 import backgroundImage from "../../assets/address-image.png"
 import { Link } from "react-router-dom";
 
 export function RegisterAddress() {
-    const {register, handleSubmit, formState: errors, setValue} = useForm()
+    const { register, handleSubmit, formState: errors, setValue } = useForm()
     const submitForm = async (data) => {
         const registerType = localStorage.getItem('__register_type')
         let userInfos = JSON.parse(localStorage.getItem('__user_register_infos'))
         let allInfos;
-        if (registerType === 'client') {
-            allInfos = {
-                personName: `${userInfos.firstName} ${userInfos.lastName}`,
-                cpf: userInfos.cpf,
-                email: userInfos.email,
-                password: userInfos.password,
-                cellphoneNumber: userInfos.cellphoneNumber,
-                phoneNumber: userInfos.phoneNumber,
-                address: {
-                    ...data
-                }
+
+
+        allInfos = {
+            personName: `${userInfos.firstName} ${userInfos.lastName}`,
+            cpf: userInfos.cpf,
+            email: userInfos.email,
+            password: userInfos.password,
+            cellphoneNumber: userInfos.cellphoneNumber,
+            phoneNumber: userInfos.phoneNumber,
+            isVet: false,
+            address: {
+                ...data
             }
-            const response = await registerUser(allInfos)
+
         }
-        else {
+
+        if (registerType === 'professional') {
+
+            allInfos.isVet = 'true'
+
+            const response = await registerUser(allInfos)
+
             userInfos.address = data
+            localStorage.setItem('Id', JSON.stringify(response.id))
             localStorage.setItem('__user_register_infos', JSON.stringify(userInfos))
             document.location.href = '/register/veterinary'
+
         }
+
+
+
     }
 
     const getAddressFromZipCode = async (event) => {
@@ -38,7 +50,7 @@ export function RegisterAddress() {
             .then(data => setFormValues(data))
     }
 
-    const setFormValues = data =>  {
+    const setFormValues = data => {
         setValue('street', data.logradouro)
         setValue('neighborhood', data.bairro)
         setValue('city', data.localidade)
@@ -55,34 +67,34 @@ export function RegisterAddress() {
                 <form onSubmit={handleSubmit(submitForm)} className='h-fit lg:w-3/4 w-full gap-2 p-0 lg:mt-12 md:mt-6' >
                     <label className='w-full flex flex-col'>
                         CEP
-                        <input onBlurCapture={getAddressFromZipCode} className={errors.zipCode ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200 w-full' : 'h-12 px-2 w-full'} type="text" name="zipCode" {...register('zipCode', {required: true})}/>
+                        <input onBlurCapture={getAddressFromZipCode} className={errors.zipCode ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200 w-full' : 'h-12 px-2 w-full'} type="text" name="zipCode" {...register('zipCode', { required: true })} />
                     </label>
                     <div className='flex xl:flex-row flex-col justify-between lg:gap-8 gap-2 w-full'>
                         <label className='w-full flex flex-col'>
                             Cidade
-                            <input className={errors.city ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200 w-full' : 'h-12 px-2 w-full'} type="text" name="city" {...register('city', {required: true})} />
+                            <input className={errors.city ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200 w-full' : 'h-12 px-2 w-full'} type="text" name="city" {...register('city', { required: true })} />
                         </label>
                         <label className='w-full flex flex-col'>
                             Estado
-                            <input className={errors.state ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200 w-full' : 'h-12 px-2 w-full'} type="text" name="state" {...register('state', {required: true})} />
+                            <input className={errors.state ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200 w-full' : 'h-12 px-2 w-full'} type="text" name="state" {...register('state', { required: true })} />
                         </label>
                     </div>
                     <label className='w-full flex flex-col'>
                         Rua
-                        <input className={errors.street ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200 w-full' : 'h-12 px-2 w-full'} type="text" name="street" {...register('street', {required: true})} />
+                        <input className={errors.street ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200 w-full' : 'h-12 px-2 w-full'} type="text" name="street" {...register('street', { required: true })} />
                     </label>
                     <label className='w-full flex flex-col'>
                         Bairro
-                        <input className={errors.neighborhood ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200 w-full' : 'h-12 px-2 w-full'} type="text" name="neighborhood" {...register('neighborhood', {required: true})} />
+                        <input className={errors.neighborhood ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200 w-full' : 'h-12 px-2 w-full'} type="text" name="neighborhood" {...register('neighborhood', { required: true })} />
                     </label>
                     <div className='flex xl:flex-row flex-col justify-between lg:gap-8 gap-2 w-full'>
                         <label className='w-full flex flex-col'>
                             Número
-                            <input className={errors.number ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200 w-full' : 'h-12 px-2 w-full'} type="text" name="number" {...register('number', {required: true})} />
+                            <input className={errors.number ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200 w-full' : 'h-12 px-2 w-full'} type="text" name="number" {...register('number', { required: true })} />
                         </label>
                         <label className='w-full flex flex-col'>
                             Complemento (Se houver)
-                            <input className={errors.complement ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200 w-full' : 'h-12 px-2 w-full'} type="text" name="complement" {...register('complement', {required: false})} />
+                            <input className={errors.complement ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200 w-full' : 'h-12 px-2 w-full'} type="text" name="complement" {...register('complement', { required: false })} />
                         </label>
                     </div>
                     <div className='flex xl:flex-row flex-col justify-between gap-2 w-full lg:mt-12 mt-6'>

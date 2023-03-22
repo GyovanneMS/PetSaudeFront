@@ -8,8 +8,12 @@ import {AuthHeader} from "../../components/headers/AuthHeader";
 export const RegisterVeterinary = () => {
 
   const { register, handleSubmit, formState: {errors} } = useForm()
+
+  console.log(localStorage.getItem('Id'));
+
   const submitForm = data => {
       console.log(data)
+
       // TODO: INTEGRAÇÃO
   }
 
