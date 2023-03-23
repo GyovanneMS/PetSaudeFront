@@ -11,22 +11,22 @@ import "./css/LandingPage.css";
 export const LandingPage = () => {
   return (
     <div className="">
-     
-       <HeaderWeb />
-    
-    <div className=" flex flex-col pt-10 justify-center gap-5 pl-10 
-    xl:flex-row font-normal texto-2xl  md:flex-row" >
-      <div className=" flex flex-row gap-5 bg-white border rounded-lg border-black hover:border-green-200 p-5 pl-5 w-80 md:w-1/2 xl:w-1/4">
-        <img className="w-10" src={Doctor} />
-        <input className=" xl:pt-1 w-full h-full text-2xl" placeholder="Pesquisar especialistas"/>
-      </div>
 
-      <div className=" flex flex-row bg-white border rounded-lg border-black hover:border-green-200  p-5 w-80 md:w-1/2 xl:w-1/4 ">
-        <img className="w-10" src={Local}/>
-        <input className="xl:w-full h-10 text-2xl" placeholder="Pesquisar veterinários próximos"/>
+      <HeaderWeb />
+
+      <div className=" flex flex-col pt-10 justify-center gap-5 pl-10 
+    xl:flex-row font-normal texto-2xl  md:flex-row" >
+        <div className=" flex flex-row gap-5 bg-white border rounded-lg border-black hover:border-green-200 p-5 pl-5 w-80 md:w-1/2 xl:w-1/4">
+          <img className="w-10" src={Doctor} />
+          <input className=" xl:pt-1 w-full h-full text-2xl" placeholder="Pesquisar especialistas" />
+        </div>
+
+        <div className=" flex flex-row bg-white border rounded-lg border-black hover:border-green-200  p-5 w-80 md:w-1/2 xl:w-1/4 ">
+          <img className="w-10" src={Local} />
+          <input className="xl:w-full h-10 text-2xl" placeholder="Pesquisar veterinários próximos" />
+        </div>
+
       </div>
-    
-    </div>
 
       <div className="flex flex-row justify-between content center w-auto h-4/5 mt-10  ">
 
@@ -37,13 +37,13 @@ export const LandingPage = () => {
 
 
         <div className="invisible md:flex justify-end content-center basis-1/2 lg:bg-none ">
-          <img className="mt-10 invisible md:visible xl:visible w-5/6" src={Dog}/>
+          <img className="mt-10 invisible md:visible xl:visible w-5/6" src={Dog} />
         </div>
-    </div>
+      </div>
 
-    <div>
-      <img className=" w-3/2 mt-5 xl:w-2/4" src={Footprint}/>
-    </div>
+      <div>
+        <img className=" w-3/2 mt-5 xl:w-2/4" src={Footprint} />
+      </div>
     </div>
   );
 };
