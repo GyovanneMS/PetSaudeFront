@@ -23,24 +23,18 @@ export function RegisterAddress() {
             address: {
                 ...data
             }
-
         }
 
         if (registerType === 'professional') {
-
             allInfos.isVet = 'true'
-
-            const response = await registerUser(allInfos)
-
             userInfos.address = data
-            localStorage.setItem('Id', JSON.stringify(response.id))
             localStorage.setItem('__user_register_infos', JSON.stringify(userInfos))
             document.location.href = '/register/veterinary'
-
+        } else {
+            const response = await registerUser(allInfos)
+            localStorage.setItem('__user_id', response.id)
+            document.location.href = '/home'
         }
-
-
-
     }
 
     const getAddressFromZipCode = async (event) => {

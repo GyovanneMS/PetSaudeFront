@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useForm } from 'react-hook-form';
 import backgroundImage from "../../assets/svg/imgVetCadastro.svg";
 import {AuthHeader} from "../../components/headers/AuthHeader";
+import {createVeterinaryInfosIntoExistingUser, registerUser} from "../../services/integrations/user";
 
 export const RegisterVeterinary = () => {
 
@@ -11,9 +12,34 @@ export const RegisterVeterinary = () => {
 
   console.log(localStorage.getItem('Id'));
 
-  const submitForm = data => {
-      console.log(data)
+  const submitForm = async data => {
+      const userInfos = JSON.parse(localStorage.getItem('__user_register_infos'))
 
+      const allInfos = {
+          personName: `${userInfos.firstName} ${userInfos.lastName}`,
+          cpf: userInfos.cpf,
+          email: userInfos.email,
+          password: userInfos.password,
+          cellphoneNumber: userInfos.cellphoneNumber,
+          phoneNumber: userInfos.phoneNumber,
+          isVet: false,
+          address: {
+              ...userInfos.address
+          }
+      }
+
+      if (validateForm(data)) {
+          const createUserResponse = await registerUser(allInfos)
+          if (createUserResponse) {
+              const { id } = createUserResponse
+              const createVeterinaryInfos = await createVeterinaryInfosIntoExistingUser(id, data)
+              if (createVeterinaryInfos) {
+                  document.location.href = '/login'
+              }
+              else alert('Erro no cadastro das informações de veterinário')
+          }
+          else alert('Erro na criação do usuário')
+      } else alert('Formulário inválido')
       // TODO: INTEGRAÇÃO
   }
 
@@ -85,7 +111,7 @@ export const RegisterVeterinary = () => {
                   <div className='flex xl:flex-row flex-col justify-between lg:gap-8 gap-2 w-full'>
                       <label className='w-full flex flex-col'>
                           Área de atuação
-                          <input className={errors.actuationArea ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200 w-full' : 'h-12 px-2 w-full'} type="text" name="actuationArea" {...register('actuationArea', {required: true})} />
+                          <input className={errors.occupationArea ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200 w-full' : 'h-12 px-2 w-full'} type="text" name="occupationArea" {...register('occupationArea', {required: true})} />
                       </label>
                       <label className='w-full flex flex-col'>
                           CRMV
@@ -107,7 +133,7 @@ export const RegisterVeterinary = () => {
                       </label>
                       <label className='w-full flex flex-col'>
                           Início de atuação
-                          <input className={errors.startActuatingDate ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200 w-full' : 'h-12 px-2 w-full'} type="date" name="startActuatingDate" {...register('startActuatingDate', {required: true})} />
+                          <input className={errors.startActingDate ? 'h-12 px-2 border-b-2 border-b-red-700 bg-red-200 w-full' : 'h-12 px-2 w-full'} type="date" name="startActingDate" {...register('startActingDate', {required: true})} />
                       </label>
                   </div>
                   <button type="submit" className='w-full h-fit bg-[#09738A] text-center text-white font-bold text-2xl rounded transition drop-shadow-xl py-3 hover:bg-[#78A890] mt-4'>Cadastrar-se</button>
