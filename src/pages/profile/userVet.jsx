@@ -1,16 +1,15 @@
 import React from 'react';
-import { Header } from '../../components/headers/headerEdits';
+import { HeaderProfile } from "./resource/header.jsx";
 
 
 const UserVet = () => {
     
     return (
-        <body>
-            <Header />
+        <>
+            <HeaderProfile/>
             <main>
-                <h1>teste</h1>
             </main>
-        </body>
+        </>
     )
 
 }

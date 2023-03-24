@@ -14,7 +14,8 @@ export const HomePage = () => {
         <Link to="/register/address">Endereço do usuario</Link>/
         <Link to="/register">Main Login</Link>/
         <Link to="/home/HeaderWeb">Header das telas Web</Link>/
-        <Link to="/home">Landing Page</Link>
+        <Link to="/home">Landing Page</Link>/
+        <Link to="/profile/veterinary">profile veterinary</Link>
     </>
   );
   
