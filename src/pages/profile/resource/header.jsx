@@ -7,7 +7,9 @@ import Menu from "../../../assets/svg/leading-icon.svg";
 export const HeaderProfile = () => {
     return (
 
-        <header className="flex font-normal justify-around bg-white h-30 text-4xl ">
+        <header className="px-12 flex font-normal justify-between h-30 text-4xl items-center"> 
+        
+        {/* flex font-normal justify-around bg-white h-30 text-4xl*/}
 
             <img className="visible md:hidden " src={Menu}></img>
             <h1 className=" text-1xl sm:flex justify-start font-bold">PetSaúde</h1>
@@ -35,8 +37,8 @@ export const HeaderProfile = () => {
                 </div>
             </nav>
 
-            <div className=" w-10 md:flex flex-direction " >
-                <img className="pt-10 pr-1 md:pt-1 " src={configIcon} />
+            <div className=" md:flex flex-direction " >
+                <img className="md:pt-1 " src={configIcon} />
                 <Link to="../login" class=" invisible xl:visible home-btn p-1 ">
                     Configurações
                 </Link>
