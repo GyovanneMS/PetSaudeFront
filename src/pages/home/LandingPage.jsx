@@ -14,7 +14,7 @@ export const LandingPage = () => {
      
        <HeaderWeb />
     
-    <div className=" flex flex-col pt-10 justify-center gap-5 pl-10 
+    <div className=" flex flex-col pt-20 justify-center gap-5 pl-10 
     xl:flex-row font-normal texto-2xl  md:flex-row" >
       <div className=" flex flex-row gap-5 bg-white border rounded-lg border-black hover:border-green-200 p-5 pl-5 w-80 md:w-1/2 xl:w-1/4">
         <img className="w-10" src={Doctor} />
@@ -31,7 +31,7 @@ export const LandingPage = () => {
       <div className="flex flex-row justify-between content center w-auto h-4/5 mt-10  ">
 
         <div className=" flex flex-col justify-center items-center w-50 ">
-          <h1 className="basis-2/4 flex justify-center items-center font-bold text-3xl h-20 w-full pl-3 xl:text-7xl ">Agende suas consultas e forneça o melhor para o seu Pet!</h1>
+          <h1 className="basis-2/4 flex justify-center items-center font-bold text-3xl h-20 w-full pl-60 xl:text-7xl ">Agende suas consultas e forneça o melhor para o seu Pet!</h1>
           <Link className="flex text-center justify-center items-center border-2 rounded-3xl border-[#9ED1B7] p-1 xl: basis-1-6 mt-10 xl:h-20 w-96 basis-1/6 text-3xl " to="/">Procure um veterinário próximo!</Link>
         </div>
 
