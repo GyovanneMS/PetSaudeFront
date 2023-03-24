@@ -7,7 +7,7 @@ import { Login } from "./pages/login/Login";
 import { Register } from "./pages/register/Register";
 import { RegisterAddress } from "./pages/register/RegisterAddress";
 import { RegisterVeterinary } from "./pages/register/RegisterVeterinary";
-import UserVet from "./pages/profile/userVet";
+import { UserVet } from "./pages/profile/UserVet";
 
 export const Rotas = () => {
   return (
