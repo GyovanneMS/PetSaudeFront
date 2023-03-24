@@ -68,7 +68,7 @@ export function Login() {
                         </div>
                     </label>
                     <button type="submit"
-                            className='w-full h-fit bg-[#09738A] text-center text-white font-bold text-2xl rounded lg:mt-12 mt-6 transition py-3 hover:bg-[#78A890]'>Continuar
+                            className='w-full h-fit bg-[#09738A] text-center text-white font-bold text-2xl rounded lg:mt-12 mt-6 transition py-3 hover:bg-[#78A890]'>Entrar
                     </button>
                 </form>
                 <p>Ainda não tem uma conta?<Link to='/register'
