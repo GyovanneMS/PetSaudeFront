@@ -22,10 +22,24 @@ export const LandingPage = () => {
 					<input className=" xl:pt-1 w-full h-full text-2xl" placeholder="Pesquisar especialistas"/>
 				</div>
 
-        <div className=" flex flex-col justify-center items-center w-50 ">
-          <h1 className="basis-2/4 flex justify-center items-center font-bold text-3xl h-20 w-full xl:text-7xl ">Agende suas consultas e forneça o melhor para o seu Pet!</h1>
-          <Link className="flex text-center justify-center items-center border-2 rounded-3xl border-[#9ED1B7] p-1 xl: basis-1-6 mt-10 xl:h-20 w-96 basis-1/6 text-3xl " to="/">Procure um veterinário próximo!</Link>
-        </div>
+				<div
+					className=" flex flex-row bg-white border rounded-lg border-black transition hover:border-green-200  p-5 w-80 md:w-1/2 xl:w-1/4 ">
+					<img className="w-10" src={Local}/>
+					<input className="xl:w-full h-10 text-2xl" placeholder="Pesquisar veterinários próximos"/>
+				</div>
+
+			</div>
+
+			<div className="flex flex-row justify-between content center w-auto h-4/5 mt-10  ">
+
+				<div className=" flex flex-col justify-center items-center w-50 ">
+					<h1
+						className="basis-2/4 flex justify-center items-center font-bold text-3xl h-20 w-full lg:pl-60 pl-4 xl:text-7xl ">Agende
+						suas consultas e forneça o melhor para o seu Pet!</h1>
+					<Link
+						className="flex text-center justify-center items-center border-2 rounded-xl border-[#9ED1B7] p-1 xl: basis-1-6 mt-10 xl:h-20 w-96 basis-1/6 text-3xl transition hover:bg-[#9ED1B7] hover:text-white hover:shadow-xl hover:scale-110"
+						to="/">Procure um veterinário próximo!</Link>
+				</div>
 
 
 				<div className="invisible md:flex justify-end content-center basis-1/2 lg:bg-none ">
