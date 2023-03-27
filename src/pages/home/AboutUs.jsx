@@ -2,10 +2,13 @@ import { HeaderWeb } from "./resource/HeaderWeb";
 import groupTalking from "../../assets/grupo_conversando.png"
 import catFoot from "../../assets/svg/Cat Footprint.svg"
 import planejamento from "../../assets/roda de conversa.png"
+import { HeaderInfo } from "./resource/HeaderInfo";
+import { Footer } from "./resource/Footer";
 
 export const AboutUs = () => {
     return (
         <>
+            <HeaderInfo/>
             <div className="w-full h-full p-0 xl:p-10">
                 <div className="bg-[#9ED1B7] p-3 md:p-20">
                     <img src={groupTalking} alt="Imagem decorativa" className="w-full"/>
@@ -45,6 +48,7 @@ export const AboutUs = () => {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </>
     );
 }

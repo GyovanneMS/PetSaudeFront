@@ -59,7 +59,7 @@ export const HeaderInfo = () => {
 
             <div className="pt-5 xl:pt-40 ">
                 <div className="flex flex-col justify-center text-center align-center">
-                <h1 className="flex justify-center pt-10 font-bold text-7xl w-full h-3/4 rounded bg-[#78A890] xl:text-9xl p-50"> Blog</h1>
+                <h1 className="flex justify-center pt-10 font-bold text-7xl basis-1/8 h-3/4 rounded bg-[#78A890] xl:text-9xl p-50"> Blog</h1>
                 <p className="flex justify-center xl:text-center text-4xl pl-20 mt-20 w-1/2 h-40">Tudo o que você precisa saber sobre os cuidados
                 com seu animal de estimação e curiosidas interressantes </p>
                 </div>
