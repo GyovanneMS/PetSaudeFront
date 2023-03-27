@@ -7,7 +7,12 @@ import { Login } from "./pages/login/Login";
 import { Register } from "./pages/register/Register";
 import { RegisterAddress } from "./pages/register/RegisterAddress";
 import { RegisterVeterinary } from "./pages/register/RegisterVeterinary";
-import { UserVet } from "./pages/profile/UserVet";
+import { UserVet } from "./pages/profile/userVet";
+import { HeaderInfo } from "./pages/home/resource/HeaderInfo";
+import { Footer } from "./pages/home/resource/Footer";
+import { AboutUs } from "./pages/home/AboutUs";
+
+
 
 export const Rotas = () => {
   return (
@@ -21,6 +26,10 @@ export const Rotas = () => {
             <Route path="/register/address" element={<RegisterAddress />} />
             <Route path="/register/veterinary" element={<RegisterVeterinary />} />
             <Route path="/profile/veterinary" element={<UserVet />} />
+            <Route path="/home/HeaderInfo" element={<HeaderInfo />} />
+            <Route path="/home/Footer" element={<Footer />} />
+            <Route path="/home/aboutUs" element={<AboutUs />} />
+          
         </Routes>
     </Router>
     

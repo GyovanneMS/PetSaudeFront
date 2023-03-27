@@ -13,6 +13,10 @@ module.exports = {
       },
       maxHeight:{
         "400": "400px"
+      },
+      fontFamily: {
+        'montserrat': ['Montserrat'],
+        'body': ['"Open Sans"']
       }
     },
   },

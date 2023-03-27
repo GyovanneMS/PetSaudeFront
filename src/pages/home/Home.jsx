@@ -15,7 +15,10 @@ export const HomePage = () => {
         <Link to="/register">Main Login</Link>/
         <Link to="/home/HeaderWeb">Header das telas Web</Link>/
         <Link to="/home">Landing Page</Link>/
-        <Link to="/profile/veterinary">profile veterinary</Link>
+        <Link to="/profile/veterinary">profile veterinary</Link>/
+        <Link to="/home/HeaderInfo">Header with Infos</Link>/
+        <Link to="/home/Footer">Footer</Link>/
+        <Link to="/home/aboutUs">About Us</Link>
     </>
   );
   
