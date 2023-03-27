@@ -10,7 +10,7 @@ import { RegisterVeterinary } from "./pages/register/RegisterVeterinary";
 import { UserVet } from "./pages/profile/userVet";
 import { HeaderInfo } from "./pages/home/resource/HeaderInfo";
 import { Footer } from "./pages/home/resource/Footer";
-
+import { AboutUs } from "./pages/home/AboutUs";
 
 
 
@@ -28,6 +28,7 @@ export const Rotas = () => {
             <Route path="/profile/veterinary" element={<UserVet />} />
             <Route path="/home/HeaderInfo" element={<HeaderInfo />} />
             <Route path="/home/Footer" element={<Footer />} />
+            <Route path="/home/aboutUs" element={<AboutUs />} />
           
         </Routes>
     </Router>
