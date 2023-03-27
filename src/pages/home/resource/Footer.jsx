@@ -10,15 +10,36 @@ export const Footer = () => {
                 <div>
                     <div>
                         <p className="flex flex-row align-middle "><img className="w-20" src={logo} alt="" /> PetSaude</p>
-                        <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
+                        <p>Nossos serviços estão dispóniveis a qualquer hora e em qualque lugar!</p>
+                      
                     </div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <div>
+                        <h5>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </h5>
+                    </div>
+                    <div>
+                        <h5>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </h5>
+                    </div>
+                    <div>
+                        <h5>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </h5>
+                    </div>
                 </div>
                 <div className="flex justify-center  flex-col">
                     <img src={linha} alt="" className="flex mx-28"/>
