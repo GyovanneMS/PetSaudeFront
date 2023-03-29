@@ -1,12 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import iconVet from './img/iconVet.png'
 //import TextTruncate from 'react-text-truncate';
 
 
 
 export const TopContainer = (props) => {
+
+    const [biografia, setBiografia] = useState("truncate")
+    const [lerMais, setLerMais] = useState("")
+    const [lerMenos, setLerMenos] = useState("hidden")
+
+    const textTruncate = () => {
+
+        const biografia = document.getElementById('biografia')
+
+        if (biografia.classList.contains("truncate")) {
+            setBiografia("")
+            setLerMais("hidden")
+            setLerMenos("")
+
+        }
+        else {
+            setBiografia("truncate")
+            setLerMais("")
+            setLerMenos("hidden")
+        }
+
+    }
+
     return (
-        <div className='flex flex-col items-center px-44'>
+        <div className=' flex flex-col'>
             <img src={props.profilePhoto} className='w-full max-h-[400px] rounded-b-lg ' />
             <div className='flex self-start w-full z-10 mt-[-80px] px-9'>
                 <img src={props.userPhoto} className=" relative border-4 h-48 border-white border-solid rounded-full" />
@@ -19,26 +42,19 @@ export const TopContainer = (props) => {
                 </div>
             </div>
             <div className='w-full h-[1px] bg-gray-400 mt-2'></div>
-            <span onClick={
-                (event) => {
-                const teste = event.target.innerText
-                console.log(teste.slice(80));
-                 
-            }
-            }>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi risus erat, ultrices at risus euismod, gravida faucibus enim. Curabitur tincidunt ipsum eu pellentesque tempor. Ut molestie in ante non fringilla. Sed at tempor sapien. In feugiat tristique leo ac hendrerit. Integer a mollis leo, nec scelerisque lorem. Etiam pharetra sit amet neque porta sodales.
-                Ut malesuada tincidunt ornare. In et malesuada mauris. Nunc commodo volutpat ipsum, non pharetra lorem dictum quis. Fusce ac volutpat sapien. Ut et nulla et enim tristique pharetra a a lorem. Etiam maximus, lectus mollis condimentum dignissim, velit tortor ultricies quam, vel sollicitudin metus orci a risus. Curabitur bibendum quam in massa pharetra fermentum. Phasellus suscipit viverra dui. Praesent non est eget velit rutrum lobortis a et arcu.
-            </span>
-            {/* <TextTruncate
-                onClick={(event) => {console.log(event.target.text)}}
-                line={2}
-                element="p"
-                truncateText="…"
-                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi risus erat, ultrices at risus euismod, gravida faucibus enim. Curabitur tincidunt ipsum eu pellentesque tempor. Ut molestie in ante non fringilla. Sed at tempor sapien. In feugiat tristique leo ac hendrerit. Integer a mollis leo, nec scelerisque lorem. Etiam pharetra sit amet neque porta sodales.
-                Ut malesuada tincidunt ornare. In et malesuada mauris. Nunc commodo volutpat ipsum, non pharetra lorem dictum quis. Fusce ac volutpat sapien. Ut et nulla et enim tristique pharetra a a lorem. Etiam maximus, lectus mollis condimentum dignissim, velit tortor ultricies quam, vel sollicitudin metus orci a risus. Curabitur bibendum quam in massa pharetra fermentum. Phasellus suscipit viverra dui. Praesent non est eget velit rutrum lobortis a et arcu."
-                textTruncateChild={<a href="#">ler mais</a>}
-            /> */}
-
-        </div>
+            <h2 className='text-3xl pt-5 pb-2'>Sobre Mim</h2>
+            <div className='flex w-full'>
+                <span className={`w-11/12 ${biografia}`} id="biografia">
+                    {props.biografia}
+                    <a href="#" className={`text-sky-600 ${lerMenos}`} onClick={textTruncate} >
+                        ler menos
+                    </a>
+                </span>
+                <a href="#" className={`w-auto text-sky-600 ${lerMais}`} onClick={textTruncate} >
+                    ler mais
+                </a>
+            </div>
+        </div >
     );
 }
 
