@@ -18,8 +18,8 @@ export const HomePage = () => {
         <Link to="/profile/veterinary">profile veterinary</Link>/
         <Link to="/home/HeaderInfo">Header with Infos</Link>/
         <Link to="/home/Footer">Footer</Link>/
-        <Link to="/home/aboutUs">About Us</Link>
-        <Link to="/profile/upgradeUser">About Us</Link>
+        <Link to="/home/aboutUs">About Us</Link>/
+        <Link to="/profile/upgradeUser">Upgrade User</Link>
     </>
   );
   
