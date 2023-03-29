@@ -1,20 +1,22 @@
-import { HeaderWeb } from "./resource/HeaderWeb";
+
 import groupTalking from "../../assets/grupo_conversando.png"
 import catFoot from "../../assets/svg/Cat Footprint.svg"
 import planejamento from "../../assets/roda de conversa.png"
 import { HeaderInfo } from "./resource/HeaderInfo";
 import { Footer } from "./resource/Footer";
 
+//
+
 export const AboutUs = () => {
     return (
         <>
-            <HeaderInfo/>
-            <div className="w-full h-full p-0 xl:p-10">
+            <HeaderInfo title="Sobre nós" description="A startup que está revolucionando o mercado veterinário e proporcionando os melhores serviços."/>
+            <div className="w-full h-full p-0 xl:p-10 mt-10">
                 <div className="bg-[#9ED1B7] p-3 md:p-20">
                     <img src={groupTalking} alt="Imagem decorativa" className="w-full"/>
                     <div>
                         <div className="flex flex-row items-center h-1/4 gap-4 align-middle">
-                            <img src={catFoot} alt="" />
+                            <img src={catFoot} alt="" className=""/>
                             <h3 className="text-2xl md:text-4xl font-medium">O que oferecemos:</h3>
                         </div>
                         <div className="">
