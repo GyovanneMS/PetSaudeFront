@@ -5,7 +5,7 @@ import { Pessoais } from './resource/editUser/infosPerson';
 import { Prossionais } from './resource/editUser/infosProfissional';
 
 
-export const TopContainer = () => {
+export const UserEdit = () => {
 
 
     return (

@@ -7,7 +7,7 @@ import Menu from "../../../assets/svg/leading-icon.svg";
 export const HeaderProfile = () => {
     return (
 
-        <header className=" flex font-normal justify-between pt-2 h-30 text-4xl items-center md:px-12 pt-10"> 
+        <header className=" flex font-normal justify-between pt-2 h-30 text-4xl items-center md:px-12 md:pt-10"> 
 
             <img className="visible h-40 w-20 md:hidden " src={Menu}></img>
             <Link to="../home">
