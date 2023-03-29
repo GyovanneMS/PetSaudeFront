@@ -1,6 +1,6 @@
 import React from 'react';
 import iconVet from './img/iconVet.png'
-import TextTruncate from 'react-text-truncate';
+//import TextTruncate from 'react-text-truncate';
 
 
 
