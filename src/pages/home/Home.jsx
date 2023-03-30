@@ -21,6 +21,7 @@ export const HomePage = () => {
         <Link to="/home/aboutUs">About Us</Link>/
         <Link to="/profile/upgradeUser">Upgrade User</Link>/
         <Link to="/profile/infosPerson">Infos Person</Link>/
+        <Link to="/profile/headerConfig">Header Config</Link>/
     </>
   );
   

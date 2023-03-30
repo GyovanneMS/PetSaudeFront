@@ -13,6 +13,7 @@ import { Footer } from "./pages/home/resource/Footer";
 import { AboutUs } from "./pages/home/AboutUs";
 import { UpgradeUser } from "./pages/profile/upgradeUser";
 import { Pessoais } from "./pages/profile/resource/editUser/infosPerson";
+import { Config } from "./pages/profile/resource/editUser/headerConfig";
 
 
 
@@ -33,6 +34,7 @@ export const Rotas = () => {
             <Route path="/home/aboutUs" element={<AboutUs />} />
             <Route path="/profile/upgradeUser" element={<UpgradeUser />} />
             <Route path="/profile/infosPerson" element={<Pessoais />} />
+            <Route path="/profile/headerConfig" element={<Config />} />
         </Routes>
     </Router>
     
