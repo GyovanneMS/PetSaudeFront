@@ -13,7 +13,7 @@ export const Pessoais = (props) => {
                         Editar
                     </button>
                 </div>
-                <div className='flex space-x-52'>
+                <div className='flex space-x-96'>
                     <p className='flex flex-col text-xl text-[#A9A9A9]'> Primeiro nome
                         <div className='text-3xl text-[#000]'>{props.name}</div>
                     </p>
