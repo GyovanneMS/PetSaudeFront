@@ -3,7 +3,7 @@ import { Address } from './resource/editUser/address';
 import { CardPets } from './resource/editUser/cardPets';
 import { Pessoais } from './resource/editUser/infosPerson';
 import { Prossionais } from './resource/editUser/infosProfissional';
-
+import './css/UpgradeUser.css'
 
 export const UpgradeUser = () => {
 
