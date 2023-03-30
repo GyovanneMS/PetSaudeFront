@@ -12,7 +12,10 @@ import { HeaderInfo } from "./pages/home/resource/HeaderInfo";
 import { Footer } from "./pages/home/resource/Footer";
 import { AboutUs } from "./pages/home/AboutUs";
 import { UpgradeUser } from "./pages/profile/upgradeUser";
+<<<<<<< HEAD
+=======
 import { Pessoais } from "./pages/profile/resource/editUser/infosPerson";
+>>>>>>> 4fd02b1a58291c1284f5efe2362684d3b933b728
 
 
 
@@ -32,7 +35,10 @@ export const Rotas = () => {
             <Route path="/home/Footer" element={<Footer />} />
             <Route path="/home/aboutUs" element={<AboutUs />} />
             <Route path="/profile/upgradeUser" element={<UpgradeUser />} />
+<<<<<<< HEAD
+=======
             <Route path="/profile/infosPerson" element={<Pessoais />} />
+>>>>>>> 4fd02b1a58291c1284f5efe2362684d3b933b728
         </Routes>
     </Router>
     
