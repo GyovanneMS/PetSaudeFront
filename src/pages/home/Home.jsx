@@ -19,7 +19,8 @@ export const HomePage = () => {
         <Link to="/home/HeaderInfo">Header with Infos</Link>/
         <Link to="/home/Footer">Footer</Link>/
         <Link to="/home/aboutUs">About Us</Link>/
-        <Link to="/profile/upgradeUser">Upgrade User</Link>
+        <Link to="/profile/upgradeUser">Upgrade User</Link>/
+        <Link to="/profile/infosPerson">Infos Person</Link>/
     </>
   );
   
