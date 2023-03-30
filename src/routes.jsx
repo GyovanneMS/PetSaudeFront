@@ -11,7 +11,7 @@ import { UserVet } from "./pages/profile/userVet";
 import { HeaderInfo } from "./pages/home/resource/HeaderInfo";
 import { Footer } from "./pages/home/resource/Footer";
 import { AboutUs } from "./pages/home/AboutUs";
-import { UserEdit } from "./pages/profile/upgradeUser";
+import { UpgradeUser } from "./pages/profile/upgradeUser";
 
 
 
@@ -30,7 +30,7 @@ export const Rotas = () => {
             <Route path="/home/HeaderInfo" element={<HeaderInfo />} />
             <Route path="/home/Footer" element={<Footer />} />
             <Route path="/home/aboutUs" element={<AboutUs />} />
-            <Route path="/profile/upgradeUser" element={<UserEdit />} />
+            <Route path="/profile/upgradeUser" element={<UpgradeUser />} />
         </Routes>
     </Router>
     
