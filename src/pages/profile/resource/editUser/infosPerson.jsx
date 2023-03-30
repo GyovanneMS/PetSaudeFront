@@ -6,14 +6,8 @@ export const Pessoais = (props) => {
 
         <>
             <section className='w-full h-full border-4 rounded-lg border-black flex flex-col gap-10 pl-20 py-8'>
-                <h2 className='text-5xl text-start p-10 font-semibold'>Informações Pessoais</h2>
-                <div className='flex flex-col content-start'>
-                    <button className='w-52 h-12 flex flex-row justify-center items-center gap-4 bg-[#ECECEC] rounded-full drop-shadow-lg'>
-                        <img src={lapis} alt="" />
-                        Editar
-                    </button>
-                </div>
-                <div className='flex space-x-52'>
+                <h2 className='text-5xl text-start font-semibold'>Informações Pessoais</h2>
+                <div className='flex space-x-20'>
                     <p className='flex flex-col text-xl text-[#A9A9A9]'> Primeiro nome
                         <div className='text-3xl text-[#000]'>{props.name}</div>
                     </p>
