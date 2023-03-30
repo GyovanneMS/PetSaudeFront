@@ -58,17 +58,17 @@ export const Pets = (props) => {
     }
 
     return ( 
-        <div className='flex items-center gap-2 w-full h-full border-4 rounded-lg border-black flex-col pl-20 py-8'>
-            <img src={arrow} onClick={handleLeftClick} className='-ml-12 border cursor-pointer py-3 px-4 rounded-full drop-shadow-[0px 4px 4px rgba(0, 0, 0, 0.25), 0px 1px 2px rgba(0, 0, 0, 0.3)]' />
-            <div className='flex flex-col  '>
+        <div className='flex flex-col gap-2'>
             <h2 className='text-6xl pt-4 pb-3 font-bold'>Pets</h2>
-            <div className='flex overflow-x-hidden scroll-smooth gap-2' ref={carrossel}>
-                {jsonAnimais.map(item =>
-                    <CardPets personImage={props.personImage} animalName={item.animalName} animalImage={item.animalImage}/>
-                )}
+            <div className='flex items-center  '>
+                <img src={arrow} onClick={handleLeftClick} className='border cursor-pointer py-3 px-4 rounded-full drop-shadow-[0px 4px 4px rgba(0, 0, 0, 0.25), 0px 1px 2px rgba(0, 0, 0, 0.3)]' />
+                <div className='flex overflow-x-hidden scroll-smooth gap-2' ref={carrossel}>
+                    {jsonAnimais.map(item =>
+                        <CardPets personImage={props.personImage} animalName={item.animalName} animalImage={item.animalImage}/>
+                    )}
+                </div>
+                <img src={arrow} onClick={handleRightClick} className='border rotate-180 cursor-pointer py-3 px-4 rounded-full' />
             </div>
-        </div>
-            <img src={arrow} onClick={handleRightClick} className='border rotate-180 cursor-pointer py-3 px-4 rounded-full' />
         </div>
 
      );
