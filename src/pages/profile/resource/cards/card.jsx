@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import icon from "./img/Iconbutton.png"
-import img from "./img/Ellipse.png"
+import icon from "../img/Iconbutton.png"
+import img from "../img/Ellipse.png"
 import TextTruncate from 'react-text-truncate';
 
 export const Card = (props) => {
@@ -15,7 +15,7 @@ export const Card = (props) => {
                         {props.name}
                     </h3>
                 </div>
-                <img className='' src={icon} alt="" />
+                <img className='cursor-pointer' src={icon} alt="" />
             </div>
             <img src={props.img} alt="" className='max-h-44 w-full' />
             <span className='flex flex-col  gap-4 px-4 py-3' >

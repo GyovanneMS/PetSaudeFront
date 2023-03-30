@@ -1,7 +1,7 @@
-import React, { useState, useRef }  from 'react';
+import React, { useState, useRef } from 'react';
 import { Card } from './card';
-import profiletestePhoto from '../resource/img/profiletestePhoto.webp'
-import arrow from './img/arrow.png';
+import profiletestePhoto from '../img/profilePhotoTeste.avif'
+import arrow from '../img/arrow.png';
 
 
 const jsonTeste = [
@@ -97,27 +97,23 @@ export const Cards = () => {
     const carrossel = useRef(null)
 
     const handleLeftClick = (e) => {
-        console.log(carrossel.current.offsetWidth);
         carrossel.current.scrollLeft -= carrossel.current.offsetWidth
     }
     const handleRightClick = (e) => {
-        console.log(carrossel.current.offsetWidth);
         carrossel.current.scrollLeft += carrossel.current.offsetWidth
     }
-    
-
     return (
-        <div className='flex items-center gap-2'>
-            <img src={arrow} onClick={handleLeftClick} className='-ml-12 border cursor-pointer py-3 px-4 rounded-full drop-shadow-[0px 4px 4px rgba(0, 0, 0, 0.25), 0px 1px 2px rgba(0, 0, 0, 0.3)]' />
-            <div className='flex flex-col  '>
-                <h2 className='text-2xl pt-4 pb-3'>Avaliações</h2>
-                <div className='flex overflow-x-auto gap-2' ref={carrossel}>
+        <div className='flex flex-col gap-2'>
+            <h2 className='text-2xl pt-4 pb-3 px-44'>Avaliações</h2>
+            <div className='flex items-center gap-2 px-32'>
+                <img src={arrow} onClick={handleLeftClick} className='border cursor-pointer py-3 px-4 rounded-full' />
+                <div className='flex overflow-x-hidden gap-x-2 scroll-smooth items-center' ref={carrossel}>
                     {jsonTeste.map(item =>
                         <Card img={item.img} name={item.name} description={item.description} avaliacao={item.avaliacao} />
                     )}
                 </div>
+                <img src={arrow} onClick={handleRightClick} className='border rotate-180 cursor-pointer py-3 px-4 rounded-full' />
             </div>
-            <img src={arrow} onClick={handleRightClick} className='border rotate-180 cursor-pointer py-3 px-4 rounded-full' />
         </div>
     );
 }
