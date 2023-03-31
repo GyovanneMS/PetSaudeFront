@@ -14,6 +14,7 @@ import { AboutUs } from "./pages/home/AboutUs";
 import { UpgradeUser } from "./pages/profile/upgradeUser";
 import { Pessoais } from "./pages/profile/resource/editUser/infosPerson";
 import { Config } from "./pages/profile/resource/editUser/headerConfig";
+import { Pet } from "./pages/profile/pet";
 
 
 
@@ -35,6 +36,7 @@ export const Rotas = () => {
             <Route path="/profile/upgradeUser" element={<UpgradeUser />} />
             <Route path="/profile/infosPerson" element={<Pessoais />} />
             <Route path="/profile/headerConfig" element={<Config />} />
+            <Route path="/profile/pet" element={<Pet />} />
         </Routes>
     </Router>
     
