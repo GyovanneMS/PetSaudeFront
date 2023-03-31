@@ -8,30 +8,44 @@ export const Address = (props) => {
             <div className='flex flex-row justify-between pr-20'>
                 <div className='flex flex-col gap-5'>
                     <div>
-                        <p className='text-xl text-[#A9A9A9]'>CEP</p>
-                        <div id='cep' className='text-3xl'> {props.cep} </div>
+                        
+                        <label className='flex flex-col text-xl text-[#A9A9A9]'>
+                            CEP
+                            <input type="text" name="firstName" value={props.cep} className='bg-transparent border-none text-2xl text-[#000]' />
+                        </label>
                     </div>
                     <div>
-                        <p className='text-xl text-[#A9A9A9]'>Bairro</p>
-                        <div id='cep' className='text-3xl'> {props.bairro} </div>
+                        <label className='flex flex-col text-xl text-[#A9A9A9]'>
+                            Bairro
+                            <input type="text" name="firstName" value={props.bairro} className='bg-transparent border-none text-2xl text-[#000]' />
+                        </label>
                     </div>
                     <div>
-                        <p className='text-xl text-[#A9A9A9]'>Rua</p>
-                        <div id='cep' className='text-3xl'> {props.rua}</div>
+                        <label className='flex flex-col text-xl text-[#A9A9A9]'>
+                            Rua
+                            <input type="text" name="firstName" value={props.rua} className='bg-transparent border-none text-2xl text-[#000]' />
+                        </label>
                     </div>
                 </div>
                 <div className='flex flex-col gap-5'>
                     <div>
-                        <p className='text-xl text-[#A9A9A9]'>Cidade</p>
-                        <div id='cep' className='text-3xl'> {props.cidade} </div>
+                        <label className='flex flex-col text-xl text-[#A9A9A9]'>
+                            Cidade
+                            <input type="text" name="firstName" value={props.cidade} className='bg-transparent border-none text-2xl text-[#000]' />
+                        </label>
                     </div>
                     <div>
-                        <p className='text-xl text-[#A9A9A9]'>Estado</p>
-                        <div id='estado' className='text-3xl'> {props.estado} </div>
+                        <label className='flex flex-col text-xl text-[#A9A9A9]'>
+                            Estado
+                            <input type="text" name="firstName" value={props.estado} className='bg-transparent border-none text-2xl text-[#000]' />
+                        </label>
                     </div>
                     <div>
-                        <p className='text-xl text-[#A9A9A9]'>Complemento</p>
-                        <div id='complemento' className='text-3xl'> {props.complemento} </div>
+                    
+                        <label className='flex flex-col text-xl text-[#A9A9A9]'>
+                            Complemento
+                            <input type="text" name="firstName" value={props.complemento} className='bg-transparent border-none text-2xl text-[#000]' />
+                        </label>
                     </div>
                 </div>
                 <div className='flex flex-col content-start'>

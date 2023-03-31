@@ -22,39 +22,39 @@ export const Config = (props) => {
                 <div className="w-5 h-1 bg-[#000] mb-1 md:w-10 md:h-1.5"></div>
                 <div className="w-5 h-1 bg-[#000] mb-1 md:w-10 md:h-1.5"></div>
                 <div className="w-5 h-1 bg-[#000] mb-1 md:w-10 md:h-1.5"></div>
-              <div className="absolute top-0 -left-full opacity-0 h-screen w-8/12 bg-[#ECECEC] border transform 
+              <div className="absolute top-0 -left-full opacity-0 h-full w-96 bg-[#ECECEC] border transform 
                 group-focus:left-0 group-focus:opacity-100 transition-all duration-300">
-                <h2 className="pt-10 pl-5 text-left  text-2xl font-semibold">Menu</h2>
+                <h2 className="pt-10 pl-5 text-left  text-2xl font-semibold md:font-5xl">Menu</h2>
                     <ul className="flex flex-col items-center w-full text-base cursor-pointer pt-5 space-y-3">
                     <li className="flex hover:bg-[#9ED1B7]  py-2 px-6 bg-[#D9D9D9] h-30 w-5/6 text-left rounded-full">
-                      <img src={Home} className="pr-3"></img>
+                      <img src={Home} className="pr-3  w-14"></img>
                       Home
                     </li>
                     <li className="flex hover:bg-[#9ED1B7] py-2 px-6 bg-[#D9D9D9] h-30 w-5/6 text-left rounded-full">
-                    <img src={Work} className="pr-3"></img>
+                    <img src={Work} className="pr-3  w-14"></img>
                       Profissionais
                     </li>
                     <li className="flex hover:bg-[#9ED1B7] py-2 px-6 bg-[#D9D9D9] h-30 w-5/6 text-left rounded-full">
-                    <img src={Blog} className="pr-3"></img>
+                    <img src={Blog} className="pr-3 w-14"></img>
                       Blog
                     </li>
                     <li className="flex hover:bg-[#9ED1B7] py-2 px-6 bg-[#D9D9D9] h-30 w-5/6 text-left rounded-full">
-                    <img src={Info} className="pr-3"></img>
+                    <img src={Info} className="pr-3 w-14"></img>
                       Sobre nós
                     </li>
                     <li className="flex hover:bg-[#9ED1B7] py-2 px-6 bg-[#D9D9D9] h-30 w-5/6 text-left rounded-full">
-                    <img src={Calendary} className="pr-3"></img>
+                    <img src={Calendary} className="pr-3  w-14"></img>
                       Consultas
                     </li>
                   </ul>
                 <h3 className="pt-5 pl-5 text-left  text-2xl font-semibold">Configurações</h3>
                 <ul className="flex flex-col items-center w-full text-base cursor-pointer pt-5 space-y-3">
                   <li className="flex hover:bg-[#9ED1B7] py-2 px-6 bg-[#D9D9D9] h-30 w-5/6 text-left rounded-full">
-                  <img src={Person} className="pr-3"></img>
+                  <img src={Person} className="pr-3 w-14"></img>
                     Perfil
                   </li>
-                  <li className="flex hover:bg-[#9ED1B7] py-2 px-6 bg-[#D9D9D9] h-30 w-5/6 text-left rounded-full">
-                  <img src={Lock} className="pr-3"></img>
+                  <li className="flex hover:bg-[#9ED1B7] py-2 px-6 bg-[#D9D9D9]  h-30 w-5/6 text-left rounded-full ">
+                  <img src={Lock} className="pr-3 w-14"></img>
                     Segurança
                   </li>
                 </ul>
@@ -67,7 +67,7 @@ export const Config = (props) => {
        <div className=" md:flex flex-direction gap-5" >
        <img className="w-20 pl-5 pt-20 pr-1 md:pt-1 md:w-14" src={Hayley} />
         <Link to="../login" className=" invisible xl:visible home-btn text-2xl">
-        <input type="text" name="firstName" value={props.hayley} className='bg-transparent border-none' />
+        {props.hayley}
         </Link>
         </div>
     </div>
