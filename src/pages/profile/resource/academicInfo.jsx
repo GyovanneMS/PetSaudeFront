@@ -4,40 +4,40 @@ import formacaoDate from './img/formacaoDate.png'
 import instituicao from './img/instituicao.png'
 import carreira from './img/carreira.png'
 
-export const AcademicInfos = () => {
+export const AcademicInfos = (props) => {
     return (
         <div className='px-44 m-4'>
             <h2 className="text-3xl mb-3">
                 Informações acadêmicas
             </h2>
-            <div className='flex flex-col gap w-1/2 h-full border rounded-lg border-zinc-700'>
-                <div className='flex items-center border rounded-lg border-zinc-700'>
+            <div className='flex flex-col p-4 w-max h-full gap-4 border rounded-lg border-zinc-700'>
+                <div className='flex items-center justify-between gap-x-4 pl-4 border rounded-lg border-zinc-700'>
                     <span className='flex flex-col'>
-                        <h3>Formação</h3>
-                        <p></p>
+                        <h3>Formação:</h3>
+                        <p>{props.formacao}</p>
                     </span>
-                    <img className='p-4 border rounded-lg border-zinc-700' src={formacao} />
+                    <img className='p-4 border rounded-lg' src={formacao} />
                 </div>
-                <div className='flex items-center border rounded-lg border-zinc-700'>
+                <div className='flex items-center justify-between border gap-x-4 pl-4 rounded-lg border-zinc-700'>
                     <span className='flex flex-col'>
-                        <h3>Data de Formação</h3>
-                        <p></p>
+                        <h3>Data de Formação:</h3>
+                        <p>{props.dataFormacao}</p>
                     </span>
-                    <img className='p-4 border rounded-lg border-zinc-700' src={formacaoDate}  />
+                    <img className='p-4 border rounded-lg' src={formacaoDate}  />
                 </div>
-                <div className='flex items-center border rounded-lg border-zinc-700'>
+                <div className='flex items-center border justify-between gap-x-4 pl-4 rounded-lg border-zinc-700'>
                     <span className='flex flex-col'>
-                        <h3>Instituição</h3>
-                        <p></p>
+                        <h3>Instituição:</h3>
+                        <p>{props.instituicao}</p>
                     </span>
-                    <img className='p-4 border rounded-lg border-zinc-700' src={instituicao}  />
+                    <img className='py-4 px-[22px] border rounded-lg' src={instituicao}  />
                 </div>
-                <div className='flex items-center border rounded-lg border-zinc-700'>
+                <div className='flex items-center border justify-between rounded-lg gap-x-4 pl-4 border-zinc-700'>
                     <span className='flex flex-col'>
-                        <h3>Inicio de Carreira</h3>
-                        <p></p>
+                        <h3>Inicio de Carreira:</h3>
+                        <p>{props.carreiraInicio}</p>
                     </span>
-                    <img className='p-4 border rounded-lg border-zinc-700' src={carreira}  />
+                    <img className='p-4 border rounded-lg' src={carreira}  />
                 </div>
             </div>
         </div>
