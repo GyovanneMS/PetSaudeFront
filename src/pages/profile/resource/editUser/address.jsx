@@ -3,7 +3,7 @@ import lapis from "../../../../assets/svg/pencil.svg"
 
 export const Address = (props) => {
     return ( 
-        <div className='w-full h-full border-4 rounded-lg border-black flex flex-col gap-10 pl-20 py-8'>
+        <div className='w-full h-full border-2 rounded-lg border-black flex flex-col gap-10 pl-20 py-8'>
             <h2 className='font-bold text-6xl font-sans'>Endereço</h2>
             <div className='flex flex-row justify-between pr-20'>
                 <div className='flex flex-col gap-5'>

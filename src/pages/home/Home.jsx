@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import { Header } from '../../components/headers/headerEdits'
+import { useForm } from "react-hook-form";
 
 export const HomePage = () => {
-
   return (
     <>
         <Header/>
@@ -19,9 +19,11 @@ export const HomePage = () => {
         <Link to="/home/HeaderInfo">Header with Infos</Link>/
         <Link to="/home/Footer">Footer</Link>/
         <Link to="/home/aboutUs">About Us</Link>/
-        <Link to="/profile/upgradeUser">Upgrade User</Link>/
+        <Link to="/profile/upgradeUser">Upgrade User Vets</Link>/
+        <Link to="/profile/upgradeUser">Upgrade User Not vets</Link>/
         <Link to="/profile/infosPerson">Infos Person</Link>/
         <Link to="/profile/headerConfig">Header Config</Link>/
+        <Link to="/profile/pet">Pet</Link>/
     </>
   );
   

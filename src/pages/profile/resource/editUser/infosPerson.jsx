@@ -5,7 +5,7 @@ export const Pessoais = (props) => {
     return (
 
         <>
-            <section className='w-full h-full border-4 rounded-lg border-black flex flex-row gap-10 pl-20 py-8'>
+            <section className='w-full h-full border-2 rounded-lg border-black flex flex-row gap-10 pl-20 py-8'>
                 <div>
                 <h2 className='text-6xl  font-bold font-sans'>Informações Pessoais</h2>
                 <div className='flex flex-row justify-between  pr-26'>

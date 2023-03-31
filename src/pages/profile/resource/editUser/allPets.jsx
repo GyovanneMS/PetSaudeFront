@@ -49,20 +49,18 @@ export const Pets = (props) => {
     const carrossel = useRef(null)
 
     const handleLeftClick = (e) => {
-        console.log(carrossel.current.offsetWidth);
         carrossel.current.scrollLeft -= carrossel.current.offsetWidth
     }
     const handleRightClick = (e) => {
-        console.log(carrossel.current.offsetWidth);
         carrossel.current.scrollLeft += carrossel.current.offsetWidth
     }
 
     return ( 
-        <div className='flex flex-col gap-2'>
-            <h2 className='text-6xl pt-4 pb-3 font-bold'>Pets</h2>
-            <div className='flex items-center  '>
+        <div className='flex flex-col gap-2 border-2 rounded-lg border-black py-8'>
+            <h2 className='text-6xl pt-4 pb-3 font-bold pl-20'>Pets</h2>
+            <div className='flex items-center'>
                 <img src={arrow} onClick={handleLeftClick} className='border cursor-pointer py-3 px-4 rounded-full drop-shadow-[0px 4px 4px rgba(0, 0, 0, 0.25), 0px 1px 2px rgba(0, 0, 0, 0.3)]' />
-                <div className='flex overflow-x-hidden scroll-smooth gap-2' ref={carrossel}>
+                <div className='flex overflow-x-auto scroll-smooth gap-2' ref={carrossel}>
                     {jsonAnimais.map(item =>
                         <CardPets personImage={props.personImage} animalName={item.animalName} animalImage={item.animalImage}/>
                     )}
