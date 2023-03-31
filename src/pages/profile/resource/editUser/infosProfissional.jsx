@@ -10,7 +10,7 @@ export const Prossionais = (props) => {
                     <div>
                         <p className='text-xl text-[#A9A9A9]'>Área de Atuação</p>
                         <div id='cep' className='text-3xl'> {props.area} </div>
-    
+        
                     </div>
                     <div>
                         <p className='text-xl text-[#A9A9A9]'>Instituição</p>
