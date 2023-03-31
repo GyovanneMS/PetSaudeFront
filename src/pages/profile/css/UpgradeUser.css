@@ -4,3 +4,9 @@ main{
     padding: 90px;
     gap: 10px;
 }
+
+@media (max-width: 768px) {
+    main{
+        padding: 19px;
+    }
+}

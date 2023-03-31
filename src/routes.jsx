@@ -15,7 +15,11 @@ import { UpgradeUser } from "./pages/profile/upgradeUser";
 import { Pessoais } from "./pages/profile/resource/editUser/infosPerson";
 import { Config } from "./pages/profile/resource/editUser/headerConfig";
 import { Pet } from "./pages/profile/pet";
-
+import { ConsultasInfo } from "./pages/profile/resource/editUser/responseUser/consults";
+import { PessoaisInfos } from "./pages/profile/resource/editUser/responseUser/infosPerson";
+import { ProfissonaisInfos } from "./pages/profile/resource/editUser/responseUser/infosProfissionais";
+import { SegurancaInfo } from "./pages/profile/resource/editUser/responseUser/security";
+import { AddressInfos } from "./pages/profile/resource/editUser/responseUser/address";
 
 
 export const Rotas = () => {
@@ -37,6 +41,11 @@ export const Rotas = () => {
             <Route path="/profile/infosPerson" element={<Pessoais />} />
             <Route path="/profile/headerConfig" element={<Config />} />
             <Route path="/profile/pet" element={<Pet />} />
+            <Route path="/profile/upgradeUser/consultas" element={<Pet />} />
+            <Route path="/profile/upgradeUser/infosPessoais" element={<Pet />} />
+            <Route path="/profile/upgradeUser/profissionaisInfos" element={<Pet />} />
+            <Route path="/profile/upgradeUser/address" element={<Pet />} />
+
         </Routes>
     </Router>
     
