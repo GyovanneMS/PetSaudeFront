@@ -11,32 +11,6 @@ import maleta from '../../assets/svg/Work.svg'
 
 export const UpgradeUser = () => {
 
-<<<<<<< HEAD
-    
-
-    return (
-        <>
-            <div>
-
-            </div>
-            <Config hayley="Hayley Williams " user="@HayleyVet"/>
-            <main className='flex flex-col md:gap-10'>
-                <Pessoais name="Hayley" lastName="Williams" cpf="000.000.000-00" rg="000.000.000-00" celular="(88) 88888-8888 " telefone="(88) 88888-8888" text=" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-                            blandit tincidunt urna sit amet ultricies. Nulla nec turpis ultrices,
-                            consequat nunc ut, ultrices purus. Maecenas fermentum, metus sit amet
-                            molestie faucibus, justo massa lobortis orci, eget posuere nibh lectus
-                            nec elit. Nam blandit placerat semper. Nam vel ultricies mauris. Pellentesque
-                            eu imperdiet turpis. Nam congue erat orci, vitae varius eros dictum nec. Suspendisse
-                            pharetra nisl sit amet augue suscipit tincidunt. In egestas ex vitae ipsum aliquet
-                            porttitor. Cras efficitur dolor est, quis auctor sapien accumsan sed. Morbi tristique vitae quam eu pretium."/>
-                <Address cep="06045-420" bairro="Novo Osasco" rua="Via Transversal Sul" estado="São Paulo" cidade="Osasco" complemento="42B"/>
-                
-                <Prossionais area="Psiquiatria de Pets" instituicao="USP" dataFormacao="19/03/2005" formacao="Zootecnia" crmv="1234" dataInicioAtuacao="13/02/2006"/>
-                <Pets personImage="http://s2.glbimg.com/wbweywCFLC0nCUeg67UbQZWhL7Eu36oRp_QAFsTkIqCqLLlE9GfCYsNrnTRPpEUO/i.glbimg.com/og/ig/f/original/2012/12/14/fabiana1.jpg"/>
-            </main>
-        </>
-    );
-=======
     var largura = window.innerWidth
 
     if(largura <= 768){
@@ -115,5 +89,4 @@ export const UpgradeUser = () => {
         }
     }
 
->>>>>>> 4786c9e (Normal page user)
 }
