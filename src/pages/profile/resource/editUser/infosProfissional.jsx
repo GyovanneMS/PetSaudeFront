@@ -30,7 +30,7 @@ export const Prossionais = (props) => {
                     <div>
                     <label className='flex flex-col text-xl text-[#A9A9A9]'>
                             Data de Formação
-                            <input type="text" id='cep' name="area" value={props.dataFormacao} disabled className='bg-transparent border-none text-3xl text-[#000]' />
+                            <input  type="text" id='cep' name="area" value={props.dataFormacao} disabled className='bg-transparent border-none text-3xl text-[#000]' />
                         </label> 
                     </div>
                 </div>

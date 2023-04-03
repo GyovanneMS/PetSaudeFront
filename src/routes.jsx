@@ -14,7 +14,8 @@ import { AboutUs } from "./pages/home/AboutUs";
 import { UpgradeUser } from "./pages/profile/upgradeUser";
 import { Pessoais } from "./pages/profile/resource/editUser/infosPerson";
 import { Config } from "./pages/profile/resource/editUser/headerConfig";
-import { Pet } from "./pages/profile/pet";
+import { PetAdd } from "./pages/profile/pet/petAdd";
+import { PetConfig } from "./pages/profile/pet/petConfig";
 import { ConsultasInfo } from "./pages/profile/resource/editUser/responseUser/consults";
 import { PessoaisInfos } from "./pages/profile/resource/editUser/responseUser/infosPerson";
 import { ProfissonaisInfos } from "./pages/profile/resource/editUser/responseUser/infosProfissionais";
@@ -41,13 +42,8 @@ export const Rotas = () => {
             <Route path="/profile/upgradeUser" element={<UpgradeUser />} />
             <Route path="/profile/infosPerson" element={<Pessoais />} />
             <Route path="/profile/headerConfig" element={<Config />} />
-            <Route path="/profile/pet" element={<Pet />} />
-            <Route path="/profile/upgradeUser/consultas" element={<Pet />} />
-            <Route path="/profile/upgradeUser/infosPessoais" element={<Pet />} />
-            <Route path="/profile/upgradeUser/profissionaisInfos" element={<Pet />} />
-            <Route path="/profile/upgradeUser/address" element={<Pet />} />
-            <Route path="/profile/EditProfile" element={<EditProfile />} />
-            
+            <Route path="/profile/pet/Add" element={<PetAdd />} />
+            <Route path="/profile/pet/Config" element={<PetConfig />} />
 
         </Routes>
     </Router>

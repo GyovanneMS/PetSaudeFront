@@ -23,19 +23,11 @@ export const HomePage = () => {
       <Link to="/home/Footer">Footer</Link>/
       <Link to="/home/aboutUs">About Us</Link>/
       <Link to="/profile/upgradeUser" onClick={() => {
-
-
         tipoUser = "veterinario"
-        
-
         localStorage.setItem("user", tipoUser)
-
       }}>Upgrade User Vets</Link>/
       <Link to="/profile/upgradeUser" onClick={() => {
-
-    
         tipoUser = "cliente"
-     
         localStorage.setItem("user", tipoUser)
       }}>Upgrade User Not vets</Link>/
       <Link to="/profile/infosPerson">Infos Person</Link>/
