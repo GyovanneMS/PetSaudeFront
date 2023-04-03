@@ -5,8 +5,8 @@ import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
 export const Maps = () => {
 
     const containerStyle = {
-        width: '400px',
-        height: '300px'
+        width: "100%", 
+        height: "400px"
     };
 
     const center = {
@@ -20,9 +20,9 @@ export const Maps = () => {
     })
 
     return isLoaded ? (
-        <div className="flex flex-col">
-            <h2>Localização</h2>
-            <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={15}>
+        <div className="flex flex-col mt-4 w-full">
+            <h2 className='text-3xl mb-3'>Localização</h2>
+            <GoogleMap mapContainerClassName='drop-shadow-xl rounded-lg' mapContainerStyle={containerStyle} center={center} zoom={19}>
                 <Marker position={center} />
             </GoogleMap>
         </div>

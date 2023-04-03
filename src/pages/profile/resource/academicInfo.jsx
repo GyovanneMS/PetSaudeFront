@@ -6,11 +6,11 @@ import carreira from './img/carreira.png'
 
 export const AcademicInfos = (props) => {
     return (
-        <div className='px-44 m-4'>
-            <h2 className="text-3xl mb-3">
+        <div className='flex flex-col items-center w-1/3 mt-4'>
+            <h2 className="text-3xl mb-3 w-max">
                 Informações acadêmicas
             </h2>
-            <div className='flex flex-col p-4 w-max h-full gap-4 border rounded-lg border-zinc-700'>
+            <div className='flex flex-col p-4 w-full h-min gap-4 border rounded-lg border-zinc-700'>
                 <div className='flex items-center justify-between gap-x-4 pl-4 border rounded-lg border-zinc-700'>
                     <span className='flex flex-col'>
                         <h3>Formação:</h3>

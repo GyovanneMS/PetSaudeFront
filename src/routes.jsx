@@ -20,6 +20,7 @@ import { PessoaisInfos } from "./pages/profile/resource/editUser/responseUser/in
 import { ProfissonaisInfos } from "./pages/profile/resource/editUser/responseUser/infosProfissionais";
 import { SegurancaInfo } from "./pages/profile/resource/editUser/responseUser/security";
 import { AddressInfos } from "./pages/profile/resource/editUser/responseUser/address";
+import { EditProfile } from "./pages/profile/editProfile";
 
 
 export const Rotas = () => {
@@ -45,6 +46,8 @@ export const Rotas = () => {
             <Route path="/profile/upgradeUser/infosPessoais" element={<Pet />} />
             <Route path="/profile/upgradeUser/profissionaisInfos" element={<Pet />} />
             <Route path="/profile/upgradeUser/address" element={<Pet />} />
+            <Route path="/profile/EditProfile" element={<EditProfile />} />
+            
 
         </Routes>
     </Router>
