@@ -1,13 +1,21 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Address } from './resource/editUser/address';
 import { Pessoais } from './resource/editUser/infosPerson';
 import { Prossionais } from './resource/editUser/infosProfissional';
-import { Config } from './resource/editUser/headerConfig';
-import './css/UpgradeUser.css'
+import './css/UpgradeUser.css';
 import { Pets } from './resource/editUser/allPets';
-import Person from '../../assets/svg/Person.svg'
-import Cadeado from '../../assets/svg/Lock.svg'
-import maleta from '../../assets/svg/Work.svg'
+import Person from '../../assets/svg/Person.svg';
+import Cadeado from '../../assets/svg/Lock.svg';
+import Work from '../../assets/svg/Work.svg';
+import Calendary from '../../assets/svg/calendary.svg';
+import Local from '../../assets/svg/Gps.svg';
+import Logout from '../../assets/svg/Logout.svg';
+import {Config} from "./resource/editUser/headerConfig.jsx";
+import Arrow from '../../assets/svg/Arrow.svg';
+
+
+
 
 export const UpgradeUser = () => {
 
@@ -17,30 +25,77 @@ export const UpgradeUser = () => {
         
         return (
             <>
-                <div>HEADER</div>
+            <Config/>
+    
                 <main>
                     <div>
-                        <p className='text-base font-bold font-sans'>Configurações</p>
-                        <div className='border-2 border-[#CAC4D0] rounded-full py-5 px-5 flex flex-row  '>
+                        <p className=' font-bold font-sans  h-10 text-2xl'>Configurações</p>
+                        <div className='border-2 border-[#CAC4D0] rounded-full py-5 px-5 flex flex-row  mt-2'>
                             <div className='flex flex-row  gap-5'>
                                 <img src={Person} alt="" />
                                 Informações pessoais
+
+                                <Link>
+                                <img className='pl-16' src={Arrow} alt="" />
+                                </Link>
+
                             </div>
                         </div>
-                        <div className='border-2 border-[#CAC4D0] rounded-full py-5 px-5 flex flex-row  '>
+                        <div className='border-2 border-[#CAC4D0] rounded-full py-5 px-5 flex flex-row  mt-2'>
                             <div className='flex flex-row  gap-5'>
                                 <img src={Cadeado} alt="" />
                                 Segurança
+
+                                <Link>
+                                <img className='pl-36' src={Arrow} alt="" />
+                                </Link>
+
                             </div>
                         </div>
-                        <div>Localização</div>
+                        <div className='border-2 border-[#CAC4D0] rounded-full py-5 px-5 flex flex-row  mt-2'>
+                        <div className='flex flex-row  gap-5'>
+                                <img src={Local} alt="" />
+                            Localização
+
+                            <Link>
+                                <img className='pl-36' src={Arrow} alt="" />
+                            </Link>
+
+                            </div>
+                        </div>
                     </div>
                     <div>
-                        <p>Adicionais</p>
-                        <div>Consultas</div>
-                        <div>Informações Profissionais</div>
+                    <p className=' font-bold font-sans  h-10 text-2xl pt-10'>Adicionais</p>
+                        <div className='border-2 border-[#CAC4D0] rounded-full py-5 px-5 flex flex-row mt-10'>
+                            <div className='flex flex-row  gap-5'>
+                            <img src={Calendary} alt="" />
+                            Consultas
+
+                            <Link>
+                                <img className='pl-36' src={Arrow} alt="" />
+                            </Link>
+
+                            </div>
+                           
+                        </div>
+                        <div className='border-2 border-[#CAC4D0] rounded-full py-5 px-5 flex flex-row mt-2 '>
+                            <div className='flex flex-row  gap-5'>
+                                    <img src={Work} alt="" />
+                                Informações Profissionais
+                                
+                                <Link>
+                                <img className='pl-10' src={Arrow} alt="" />
+                                </Link>
+                            
+                            </div>
+                        </div>
                     </div>
-                    <div>Botão sair</div>
+                    <div className='border-2 border-[#B3261E] rounded-full py-5 px-5 flex flex-row  mt-10 text-[#B3261E] font-semibold'>
+                    <div className='flex flex-row  gap-5'>
+                            <img src={Logout} alt="" />
+                            Sair
+                        </div>
+                    </div>
                 </main>
             </>
         )
