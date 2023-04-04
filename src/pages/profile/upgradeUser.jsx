@@ -21,6 +21,8 @@ export const UpgradeUser = () => {
 
     var largura = window.innerWidth
 
+
+
     if(largura <= 768){
         
         return (

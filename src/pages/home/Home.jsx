@@ -32,7 +32,8 @@ export const HomePage = () => {
       }}>Upgrade User Not vets</Link>/
       <Link to="/profile/infosPerson">Infos Person</Link>/
       <Link to="/profile/headerConfig">Header Config</Link>/
-      <Link to="/profile/pet">Pet</Link>/
+      <Link to="/profile/pet/Add">Pet add</Link>/
+      <Link to="/profile/pet/Config"> Pet Config</Link>/
       <Link to="/profile/EditProfile">editProfile</Link>
     </>
   );
