@@ -58,8 +58,8 @@ export const PetConfig = (props) => {
             <main className='static'>
                 <div>
                     <div className='flex justify-start p-10'>
-                    <div className='border-black border-2 w-52 h-52 content-center'>
-                        <img src={addMais} className="rounded-full w-full h-full bg-yellow-900" />
+                    <div className='border-black border-2 w-52 h-52 content-center' style={{ backgroundImage:  'url(https://lh3.googleusercontent.com/p/AF1QipOFbA1h2Y14661Wc3Kvj4C8aS-8syoJAEjqZDxy=w768-h768-n-o-v1)' }}>
+                        <img src={addMais} className="rounded-full w-full h-full " />
                     </div>
                         <div className='flex flex-col p-10'>
                             <label>
@@ -80,14 +80,14 @@ export const PetConfig = (props) => {
                             <div>
                                 <label className='flex flex-col text-xl text-[#A9A9A9]'>
                                     Nome
-                                    <input type="text" onBlurCapture={newName} disabled name="nameAnimal" id="nameAnimal" placeholder='Nome' className='bg-transparent placeholder:text-black placeholder:text-3xl border-none text-2xl text-[#000]' />
+                                    <input type="text" onBlurCapture={newName} disabled value={props.name} name="nameAnimal" id="nameAnimal" placeholder='Nome' className='bg-transparent placeholder:text-black placeholder:text-3xl border-none text-2xl text-[#000]' />
                                 </label>
                             </div>
                             <div>
                                 <label className='flex flex-col text-xl text-[#A9A9A9]'>
                                     Sexo
                                     <DropdownMenu.Root className="w-full">
-                                        <DropdownMenu.Trigger disabled className='flex justify-start text-black text-3xl'>{sexo}</DropdownMenu.Trigger>
+                                        <DropdownMenu.Trigger disabled className='flex justify-start text-black text-3xl'>{props.sexo}</DropdownMenu.Trigger>
                                         <StyledContent disabled>
                                         <StyledItem onSelect={() => setSexo("Feminino")}>Feminino</StyledItem>
                                         <StyledItem onSelect={() => setSexo("Masculino")}>Masculino</StyledItem>
@@ -100,7 +100,7 @@ export const PetConfig = (props) => {
                             <div>
                                 <label className='flex flex-col text-xl text-[#A9A9A9]'>
                                     Espécie
-                                    <input type="text" disabled onBlurCapture={newSpecie} name="especieAnimal" id="specisAnimal" placeholder='Espécie' className='bg-transparent placeholder:text-black placeholder:text-3xl border-none text-2xl text-[#000]' />
+                                    <input type="text" disabled onBlurCapture={newSpecie} value={props.specie} name="especieAnimal" id="specisAnimal" placeholder='Espécie' className='bg-transparent placeholder:text-black placeholder:text-3xl border-none text-2xl text-[#000]' />
                                 </label>
                             </div>
                         </div>
@@ -108,14 +108,14 @@ export const PetConfig = (props) => {
                             <div>
                                 <label className='flex flex-col text-xl text-[#A9A9A9] w-1/4'>
                                     Data de Nascimento
-                                    <input type="date" disabled name="firstName" className='bg-transparent border-none text-2xl text-[#000] w-full' />
+                                    <input type="date" disabled name="firstName" value={props.dateBorn} className='bg-transparent border-none text-2xl text-[#000] w-full' />
                                 </label>
                             </div>
                             <div>
                                 <label className='flex flex-col text-xl text-[#A9A9A9] w-1/4'>
                                     Tamanho
                                     <DropdownMenu.Root disabled className="w-full">
-                                        <DropdownMenu.Trigger disabled className='flex justify-start text-black text-3xl'>{tamanho}</DropdownMenu.Trigger>
+                                        <DropdownMenu.Trigger disabled className='flex justify-start text-black text-3xl'>{props.tamanho}</DropdownMenu.Trigger>
                                         <StyledContent>
                                         <StyledItem onSelect={() => setTamanho("Grande")}>Grande</StyledItem>
                                         <StyledItem onSelect={() => setTamanho("Médio")}>Médio</StyledItem>
