@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { Card } from './card';
-import profiletestePhoto from '../img/profilePhotoTeste.avif'
+import profiletestePhoto from '../img/profiletestePhoto.webp'
 import arrow from '../img/arrow.png';
 
 

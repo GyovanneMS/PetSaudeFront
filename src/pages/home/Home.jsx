@@ -33,7 +33,7 @@ export const HomePage = () => {
       <Link to="/profile/infosPerson">Infos Person</Link>/
       <Link to="/profile/headerConfig">Header Config</Link>/
       <Link to="/profile/pet">Pet</Link>/
-      <Link to="/profile/EditProfile">editProfile</Link>
+      <Link to="/profile/editProfile">editProfile</Link>
     </>
   );
 
