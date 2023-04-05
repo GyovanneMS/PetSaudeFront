@@ -24,3 +24,5 @@ export async function createVeterinaryInfosIntoExistingUser(userID, vetInfos) {
 
     return await response.json()
 }
+
+

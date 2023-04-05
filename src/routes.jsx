@@ -22,6 +22,7 @@ import { ProfissonaisInfos } from "./pages/profile/resource/editUser/responseUse
 import { SegurancaInfo } from "./pages/profile/resource/editUser/responseUser/security";
 import { AddressInfos } from "./pages/profile/resource/editUser/responseUser/address";
 import { EditProfile } from "./pages/profile/editProfile";
+import { Appointment } from "./pages/profile/resource/appointment/appointment";
 
 
 export const Rotas = () => {
@@ -47,6 +48,7 @@ export const Rotas = () => {
             <Route path="/profile/Consultas" element={<ConsultasInfo />} />
             <Route path="/profile/editProfile" element={<EditProfile />} />
             <Route path="/profile/editAdress" element={<AddressInfos />} />
+            <Route path="/profile/appointment" element={<Appointment />} />
         </Routes>
     </Router>
 

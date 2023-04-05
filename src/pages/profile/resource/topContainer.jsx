@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import iconVet from './img/iconVet.png'
+import * as Dialog from '@radix-ui/react-dialog';
+import { Appointment } from './appointment/appointment';
 //import TextTruncate from 'react-text-truncate';
 
 
@@ -40,7 +42,18 @@ export const TopContainer = (props) => {
                             <p className=' text-4xl'>{props.name}</p>
                             <img src={iconVet} />
                         </div>
-                        <button className='bg-lime-500 rounded-md px-3 py-2 text-4xl shadow-lg justify-center self-center'>Agendar uma consulta</button>
+                        <Dialog.Root>
+                        <Dialog.Trigger asChild>
+                        <button className='bg-lime-500 rounded-md px-3 py-2 text-4xl shadow-lg justify-center self-center'>Agendar uma consulta</button> 
+                        </Dialog.Trigger>
+                        <Dialog.Portal >
+                        <Dialog.Overlay className="DialogOverlay"/>
+                        <Dialog.Content className="DialogContent">
+                            <Appointment/>
+                        </Dialog.Content>
+                        </Dialog.Portal>
+                    </Dialog.Root>
+                       
                     </div>
                 </div>
                 <div className='w-full h-[1px] bg-gray-400 mt-2'></div>

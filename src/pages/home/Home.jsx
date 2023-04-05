@@ -34,7 +34,8 @@ export const HomePage = () => {
       <Link to="/profile/headerConfig">Header Config</Link>/
       <Link to="/profile/pet/Add">Pet add</Link>/
       <Link to="/profile/pet/Config"> Pet Config</Link>/
-      <Link to="/profile/editProfile">editProfile</Link>
+      <Link to="/profile/editProfile">editProfile</Link>/
+      <Link to="/profile/appointment">Appointment</Link>/
     </>
   );
 
