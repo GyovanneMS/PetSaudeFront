@@ -59,7 +59,7 @@ export const UpgradeUser = () => {
                                 <img src={Local} alt="" />
                             Localização
 
-                            <Link>
+                            <Link to="/profile/editAdress">
                                     <img className='pl-36' src={Arrow} alt="" />
                                 </Link>
 
