@@ -46,6 +46,7 @@ export const Rotas = () => {
             <Route path="/profile/pet/Config" element={<PetConfig />} />
             <Route path="/profile/Consultas" element={<ConsultasInfo />} />
             <Route path="/profile/editProfile" element={<EditProfile />} />
+            <Route path="/profile/editAdress" element={<AddressInfos />} />
         </Routes>
     </Router>
 
