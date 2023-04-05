@@ -8,8 +8,10 @@ import * as Popover from '@radix-ui/react-popover';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import { styled } from '@stitches/react';
 import certo from '../resource/img/Certo.jpg'
+import lixeira from '../resource/img/Excluir.png'
 import { PetAddSucess } from './cards/sucess';
 import * as Dialog from '@radix-ui/react-dialog';
+import { PetAddWarn } from './cards/warn';
 
 export const PetConfig = (props) => {
 
@@ -128,7 +130,20 @@ export const PetConfig = (props) => {
                         </div>
                     </div>
                 </div>
-                <div className='w-full flex justify-end mb-30'>
+                <div className='w-full flex justify-between mb-30'>
+                <Dialog.Root>
+                        <Dialog.Trigger asChild>
+                        <button asChild>
+                            <img src={lixeira} alt=""/>
+                        </button>
+                        </Dialog.Trigger>
+                        <Dialog.Portal >
+                        <Dialog.Overlay className="DialogOverlay"/>
+                        <Dialog.Content className="DialogContent">
+                            <PetAddWarn />
+                        </Dialog.Content>
+                        </Dialog.Portal>
+                    </Dialog.Root>
                     <Dialog.Root>
                         <Dialog.Trigger asChild>
                         <button asChild>

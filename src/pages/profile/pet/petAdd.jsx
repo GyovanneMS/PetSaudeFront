@@ -10,14 +10,22 @@ import { styled } from '@stitches/react';
 import certo from '../resource/img/Certo.jpg'
 import { PetAddSucess } from './cards/sucess';
 import * as Dialog from '@radix-ui/react-dialog';
+import { petAdd } from "../../../services/integrations/pet.js";
 
-export const PetAdd = () => {
+
+export const PetAdd = (props) => {
 
     const [name, setName] = useState("Nome")
     function newName(event) {
         setName(event.target.value);
     }
+
     const [sexo, setSexo] = useState("Sexo")
+
+    const [bornDate, setBornDate] = useState("DataDeNascimento")
+    function newBornDate(event) {
+        setBornDate(event.target.value);
+    }
 
     const [tamanho, setTamanho] = useState("Tamanho")
 
@@ -50,6 +58,24 @@ export const PetAdd = () => {
       const StyledArrow = styled(DropdownMenu.Arrow, {
         fill: 'white',
       });
+
+    const submitPet = async data => {
+        const petInfos = {
+            name: name,
+            birthDate: bornDate,
+            photo: '',
+            microship: false,
+            size: tamanho,
+            gender: sexo,
+            specie: specie,
+            ownerID: 1
+        }
+
+        console.log(petInfos)
+
+        const addPet = await petAdd(petInfos)
+        console.log(addPet)
+    }
 
     return (
         <>
@@ -107,7 +133,7 @@ export const PetAdd = () => {
                             <div>
                                 <label className='flex flex-col text-xl text-[#A9A9A9] w-1/4'>
                                     Data de Nascimento
-                                    <input type="date" name="firstName" className='bg-transparent border-none text-2xl text-[#000] w-full' />
+                                    <input type="date" onBlurCapture={newBornDate}  name="firstName" className='bg-transparent border-none text-2xl text-[#000] w-full' />
                                 </label>
                             </div>
                             <div>
@@ -130,7 +156,7 @@ export const PetAdd = () => {
                 <div className='w-full flex justify-end mb-30'>
                     <Dialog.Root>
                         <Dialog.Trigger asChild>
-                        <button asChild>
+                        <button asChild onClick={submitPet}>
                             <img src={certo} alt=""/>
                         </button>
                         </Dialog.Trigger>

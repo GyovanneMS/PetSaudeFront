@@ -12,7 +12,7 @@ export const RegisterVeterinary = () => {
 
   console.log(localStorage.getItem('Id'));
 
-  const submitForm = async data => {
+    const submitForm = async data => {
       const userInfos = JSON.parse(localStorage.getItem('__user_register_infos'))
 
       const allInfos = {

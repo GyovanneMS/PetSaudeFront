@@ -17,6 +17,7 @@ import Arrow from '../../assets/svg/Arrow.svg';
 
 
 
+
 export const UpgradeUser = () => {
 
     var largura = window.innerWidth
@@ -37,7 +38,7 @@ export const UpgradeUser = () => {
                                 <img src={Person} alt="" />
                                 Informações pessoais
 
-                                <Link>
+                                <Link to="/profile/editPerson">
                                     <img className='pl-16' src={Arrow} alt="" />
                                 </Link>
 
@@ -48,7 +49,7 @@ export const UpgradeUser = () => {
                                 <img src={Cadeado} alt="" />
                                 Segurança
 
-                                <Link>
+                                <Link to="/profile/editSecurity">
                                     <img className='pl-36' src={Arrow} alt="" />
                                 </Link>
 
@@ -73,7 +74,7 @@ export const UpgradeUser = () => {
                                 <img src={Calendary} alt="" />
                             Consultas
 
-                            <Link>
+                                <Link to="/profile/Consultas">
                                     <img className='pl-36' src={Arrow} alt="" />
                                 </Link>
 
@@ -85,7 +86,7 @@ export const UpgradeUser = () => {
                                 <img src={Work} alt="" />
                                 Informações Profissionais
 
-                                <Link>
+                                <Link to="/profile/editProfissionais">
                                     <img className='pl-10' src={Arrow} alt="" />
                                 </Link>
 

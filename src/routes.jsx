@@ -48,7 +48,13 @@ export const Rotas = () => {
             <Route path="/profile/Consultas" element={<ConsultasInfo />} />
             <Route path="/profile/editProfile" element={<EditProfile />} />
             <Route path="/profile/editAdress" element={<AddressInfos />} />
+<<<<<<< HEAD
             <Route path="/profile/appointment" element={<Appointment />} />
+=======
+            <Route path="/profile/editPerson" element={<PessoaisInfos />} />
+            <Route path="/profile/editSecurity" element={<SegurancaInfo />} />
+            <Route path="/profile/editProfissionais" element={<ProfissonaisInfos />} />
+>>>>>>> 4b044d8 (Upgrate create pet and local of person)
         </Routes>
     </Router>
 
