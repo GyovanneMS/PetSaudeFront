@@ -21,7 +21,7 @@ export const Maps = () => {
 
     return isLoaded ? (
         <div className="flex flex-col mt-4 w-full">
-            <h2 className='text-3xl mb-3'>Localização</h2>
+            <h2 className='pt-30 text-3xl mb-3'>Localização</h2>
             <GoogleMap mapContainerClassName='drop-shadow-xl rounded-lg' mapContainerStyle={containerStyle} center={center} zoom={19}>
                 <Marker position={center} />
             </GoogleMap>

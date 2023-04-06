@@ -2,3 +2,10 @@
     position: relative;
     bottom: 500px; 
 }
+
+.cardConsulta{
+    position: relative;
+    bottom: 1100px;
+    display: flex;
+    justify-content: center;
+}

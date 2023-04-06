@@ -14,7 +14,7 @@ export const LandingPage = () => {
 
 			<HeaderWeb/>
 
-			<div className=" flex flex-col pt-20 justify-center gap-5 pl-10
+			<div className=" flex flex-col pt-20  ml-10 justify-center gap-5 pl-10
     xl:flex-row font-normal texto-2xl  md:flex-row">
 				<div
 					className=" flex flex-row gap-5 bg-white border rounded-lg border-black transition hover:border-green-200 p-5 pl-5 w-80 md:w-1/2 xl:w-1/4">
@@ -30,7 +30,7 @@ export const LandingPage = () => {
 
 			</div>
 
-			<div className="flex flex-row justify-between content center w-auto h-4/5 mt-10  ">
+			<div className="flex flex-row justify-between content center w-auto h-4/5 mt-10 ml-10 ">
 
 				<div className=" flex flex-col justify-center items-center w-50 ">
 					<h1

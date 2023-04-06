@@ -21,7 +21,9 @@ import Arrow from '../../assets/svg/Arrow.svg';
 export const UpgradeUser = () => {
 
     var largura = window.innerWidth
-
+    window.addEventListener('resize', (e) => {
+        console.log(e.target.innerWidth);
+    })
 
 
     if(largura <= 768){
