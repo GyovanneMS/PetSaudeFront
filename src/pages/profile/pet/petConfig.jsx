@@ -12,22 +12,38 @@ import lixeira from '../resource/img/Excluir.png'
 import { PetAddSucess } from './cards/sucess';
 import * as Dialog from '@radix-ui/react-dialog';
 import { PetAddWarn } from './cards/warn';
+import './css/pet.css';
+import lapis from '../../../assets/svg/pencil.svg';
 
-export const PetConfig = (props) => {
+export const PetConfig = () => {
 
+    const animalJson = {
+        name: 'Anastacia',
+        gender: 'Ginandromorfo',
+        size: '10cm',
+        birthDate: "2023-03-10",
+        specie: 'vespa'
+    }
     
-    const [name, setName] = useState("Nome")
+    const [name, setName] = useState(animalJson.name)
     function newName(event) {
         setName(event.target.value);
     }
-    const [sexo, setSexo] = useState("Sexo")
+    const [sexo, setSexo] = useState(animalJson.gender)
 
-    const [tamanho, setTamanho] = useState("Tamanho")
+    const [tamanho, setTamanho] = useState(animalJson.size)
 
-    const [specie, setSpecie] = useState("Especie")
+    const [specie, setSpecie] = useState(animalJson.specie)
     function newSpecie(event) {
         setSpecie(event.target.value);
     }
+
+    const [dateBorn, setDateBorn] = useState(animalJson.birthDate)
+    function newDateBorn(event) {
+        setDateBorn(event.target.value);
+    }
+
+    
 
     const StyledContent = styled(DropdownMenu.Content, {
         minWidth: 130,
@@ -78,18 +94,18 @@ export const PetConfig = (props) => {
                 <div className='w-full h-full border-2 rounded-lg border-black flex flex-col gap-10 pl-20 py-8'>
                     <h2 className='font-bold text-6xl font-sans'>Endereço</h2>
                     <div className='flex flex-row justify-between pr-20'>
-                        <div className='flex flex-col gap-5 justify-startw-1/2'>
+                        <div className='flex flex-col gap-5 justify-startw-1/2 w-1/3'>
                             <div>
                                 <label className='flex flex-col text-xl text-[#A9A9A9]'>
                                     Nome
-                                    <input type="text" onBlurCapture={newName} disabled value={props.name} name="nameAnimal" id="nameAnimal" placeholder='Nome' className='bg-transparent placeholder:text-black placeholder:text-3xl border-none text-2xl text-[#000]' />
+                                    <input type="text" onBlurCapture={newName} disabled value={name} name="nameAnimal" id="nameAnimal" placeholder='Nome' className='bg-transparent placeholder:text-black placeholder:text-3xl border-none text-2xl text-[#000]' />
                                 </label>
                             </div>
                             <div>
                                 <label className='flex flex-col text-xl text-[#A9A9A9]'>
                                     Sexo
                                     <DropdownMenu.Root className="w-full">
-                                        <DropdownMenu.Trigger disabled className='flex justify-start text-black text-3xl'>{props.sexo}</DropdownMenu.Trigger>
+                                        <DropdownMenu.Trigger disabled className='flex justify-start text-black text-2xl'>{sexo}</DropdownMenu.Trigger>
                                         <StyledContent disabled>
                                         <StyledItem onSelect={() => setSexo("Feminino")}>Feminino</StyledItem>
                                         <StyledItem onSelect={() => setSexo("Masculino")}>Masculino</StyledItem>
@@ -102,22 +118,22 @@ export const PetConfig = (props) => {
                             <div>
                                 <label className='flex flex-col text-xl text-[#A9A9A9]'>
                                     Espécie
-                                    <input type="text" disabled onBlurCapture={newSpecie} value={props.specie} name="especieAnimal" id="specisAnimal" placeholder='Espécie' className='bg-transparent placeholder:text-black placeholder:text-3xl border-none text-2xl text-[#000]' />
+                                    <input type="text" disabled onBlurCapture={newSpecie} value={specie} name="especieAnimal" id="specisAnimal" placeholder='Espécie' className='bg-transparent placeholder:text-black placeholder:text-3xl border-none text-2xl text-[#000]' />
                                 </label>
                             </div>
                         </div>
-                        <div className='flex flex-col gap-5 justify-start w-1/2'>
+                        <div className='flex flex-col gap-5 justify-start w-1/3'>
                             <div>
                                 <label className='flex flex-col text-xl text-[#A9A9A9] w-1/4'>
                                     Data de Nascimento
-                                    <input type="date" disabled name="firstName" value={props.dateBorn} className='bg-transparent border-none text-2xl text-[#000] w-full' />
+                                    <input type="date" disabled onBlurCapture={newDateBorn} name="dateBorn" value={dateBorn} className='bg-transparent border-none text-2xl text-[#000] w-full' />
                                 </label>
                             </div>
                             <div>
                                 <label className='flex flex-col text-xl text-[#A9A9A9] w-1/4'>
                                     Tamanho
                                     <DropdownMenu.Root disabled className="w-full">
-                                        <DropdownMenu.Trigger disabled className='flex justify-start text-black text-3xl'>{props.tamanho}</DropdownMenu.Trigger>
+                                        <DropdownMenu.Trigger disabled className='flex justify-start text-black text-2xl'>{tamanho}</DropdownMenu.Trigger>
                                         <StyledContent>
                                         <StyledItem onSelect={() => setTamanho("Grande")}>Grande</StyledItem>
                                         <StyledItem onSelect={() => setTamanho("Médio")}>Médio</StyledItem>
@@ -127,6 +143,12 @@ export const PetConfig = (props) => {
                                     </DropdownMenu.Root>
                                 </label>
                             </div>
+                        </div>
+                        <div className='flex flex-col content-start w-1/3'>
+                            <button className='w-52 h-12 flex flex-row justify-center items-center gap-4 bg-[#ECECEC] rounded-full drop-shadow-lg'>
+                                <img src={lapis} alt="" />
+                                Editar
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -139,7 +161,7 @@ export const PetConfig = (props) => {
                         </Dialog.Trigger>
                         <Dialog.Portal >
                         <Dialog.Overlay className="DialogOverlay"/>
-                        <Dialog.Content className="DialogContent">
+                        <Dialog.Content className="DialogContent" class='cardPet'>
                             <PetAddWarn />
                         </Dialog.Content>
                         </Dialog.Portal>
@@ -152,8 +174,8 @@ export const PetConfig = (props) => {
                         </Dialog.Trigger>
                         <Dialog.Portal >
                         <Dialog.Overlay className="DialogOverlay"/>
-                        <Dialog.Content className="DialogContent">
-                            <PetAddSucess />
+                        <Dialog.Content className="DialogContent" class='cardPet'>
+                            <PetAddSucess what="Pet editado"/>
                         </Dialog.Content>
                         </Dialog.Portal>
                     </Dialog.Root>

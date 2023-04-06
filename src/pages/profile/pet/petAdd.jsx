@@ -11,6 +11,7 @@ import certo from '../resource/img/Certo.jpg'
 import { PetAddSucess } from './cards/sucess';
 import * as Dialog from '@radix-ui/react-dialog';
 import { petAdd } from "../../../services/integrations/pet.js";
+import './css/pet.css'
 
 
 export const PetAdd = (props) => {
@@ -162,8 +163,8 @@ export const PetAdd = (props) => {
                         </Dialog.Trigger>
                         <Dialog.Portal >
                         <Dialog.Overlay className="DialogOverlay"/>
-                        <Dialog.Content className="DialogContent">
-                            <PetAddSucess />
+                        <Dialog.Content className="DialogContent" class='cardPet'>
+                            <PetAddSucess class='cardPet' what='Novo pet adicionado'/>
                         </Dialog.Content>
                         </Dialog.Portal>
                     </Dialog.Root>
