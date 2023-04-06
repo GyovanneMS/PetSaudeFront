@@ -12,6 +12,8 @@ import Lock from '../../../assets/svg/Lock.svg';
 
 
 export const HeaderWeb = () => {
+
+
   return (
     <div className="flex font-normal items-center justify-around bg-white shadow
     xl:p-5 h-30 text-4xl ">
