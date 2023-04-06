@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import Hayley from '../../../assets/svg/Hayley.svg';
 import Home from '../../../assets/svg/Home.svg';
@@ -12,16 +12,9 @@ import Lock from '../../../assets/svg/Lock.svg';
 
 export const HeaderEditProfile = (props) => {
 
-  const [selectedFile, setSelectedFile] = useState(null);
-
-  const handleFileInputChange = (event) => {
-    setSelectedFile(event.target.files[0]);
-  }
-
   return (
     <>
-      <div className="flex font-normal items-center justify-between bg-white shadow
-      xl:p-10 h-30 text-4xl">
+      <div className="flex font-normal items-center justify-between bg-white px-10 pt-1 h-30 text-4xl">
         <div className='flex'>
           <button className=" py-3 px-4 mx-2 rounded focus:outline-none group">
             <div className="w-5 h-1 bg-[#000] mb-1 md:w-10 md:h-1.5"></div>
@@ -67,10 +60,10 @@ export const HeaderEditProfile = (props) => {
           </button>
           <h1 className=" text-1xl sm:flex justify-start font-bold">PetSaúde</h1>
         </div>
-        <div className=" md:flex flex-direction gap-5" >
-          <img className="w-20 pl-5 pt-20 pr-1 md:pt-1 md:w-14" src={Hayley} />
+        <div className="flex md:flex flex-direction items-center gap-x-3" >
+          <img className="h-2/3 w-2/3 pt-20 md:pt-1 md:w-14" src={Hayley} />
           <Link to="../login" className=" invisible xl:visible home-btn text-2xl">
-            {props.hayley}
+            {props.completName}
           </Link>
         </div>
       </div>

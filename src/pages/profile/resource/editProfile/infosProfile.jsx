@@ -38,22 +38,22 @@ export const InfosProfile = (props) => {
 
 
     return (
-        <div className='w-full h-full border-2 rounded-lg border-black flex flex-col gap-10 p-8'>
-            <h2 className='text-6xl font-sans'>Informações do perfil</h2>
+        <div className='w-full h-full border rounded-lg border-black flex flex-col gap-10 p-8'>
+            <h2 className='text-5xl font-sans'>Informações do perfil</h2>
             <div className="flex justify-between items-center">
                 <div className='flex flex-col text-xl text-[#A9A9A9]'>
                     Nome de usuario
-                    <input disabled={userInfosDisable.disable} onChange={handleNameChange} className={`text-black text-3xl ${userInfosDisable.class}`} value={form.nome} id="userInfo" />
+                    <input disabled={userInfosDisable.disable} onChange={handleNameChange} className={`text-black text-3xl p-1 ${userInfosDisable.class}`} value={form.nome} id="userInfo" />
                 </div>
                 <div className='flex flex-col text-xl text-[#A9A9A9]'>
                     E-mail
-                    <input disabled={userInfosDisable.disable} onChange={handleEmailChange} className={`text-black text-3xl ${userInfosDisable.class}`} value={form.email} />
+                    <input disabled={userInfosDisable.disable} onChange={handleEmailChange} className={`text-black text-3xl p-1 ${userInfosDisable.class}`} value={form.email} />
                 </div>
                 <button className='w-52 h-12 flex flex-row justify-center items-center gap-4 bg-[#ECECEC] rounded-full drop-shadow-lg' onClick={() => {
 
                     if (document.getElementById('userInfo').disabled == true ) {
                         userInfosDisableState({
-                            disable:false, 
+                            disable: false, 
                             class:''
                         })
                     }else{
@@ -71,7 +71,7 @@ export const InfosProfile = (props) => {
             <div className="flex justify-between">
                 <div className='flex flex-col text-xl text-[#A9A9A9]'>
                     Senha
-                    <input type={password.type} id='password' onChange={handlePasswordChange} className={`text-black text-3xl ${password.class}`} value={`${senha}`} />
+                    <input type={password.type} id='password' onChange={handlePasswordChange} className={`text-black text-3xl p-1 ${password.class}`} value={`${senha}`} />
                 </div>
                 <button 
                     className='w-52 h-12 flex flex-row justify-center items-center gap-4 bg-[#F9DEDC] rounded-full drop-shadow-lg font-bold text-[#410E0B]'
@@ -94,7 +94,7 @@ export const InfosProfile = (props) => {
                     Mudar Senha
                 </button>
             </div>
-            <UserPhoto photoUser={props.photoUser} nome={props.nome}/>
+            <UserPhoto nome={form.nome} completName={props.completName}/>
         </div>
     );
 }
