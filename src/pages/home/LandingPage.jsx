@@ -6,9 +6,22 @@ import Dog from "../../assets/svg/dogAndCat.svg";
 import Doctor from "../../assets/svg/medico 1.svg";
 import Local from "../../assets/svg/localizacao.svg";
 import "./css/LandingPage.css";
-
+import { searchCity } from "../../services/integrations/filters";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {Container} from 'react-bootstrap';
+import { ListItem } from "./resource/searchArea";
+import { useEffect, useState } from 'react';
 
 export const LandingPage = () => {
+
+	//https://www.luiztools.com.br/post/tutorial-listagem-com-busca-em-reactjs/
+
+	const [vets, setVets] = useState([]);
+ 
+	useEffect(() => {
+	  setVets(searchCity());
+	}, [])
+
 	return (
 		<section className="">
 
@@ -16,16 +29,24 @@ export const LandingPage = () => {
 
 			<div className=" flex flex-col pt-20  ml-10 justify-center gap-5 pl-10
     xl:flex-row font-normal texto-2xl  md:flex-row">
-				<div
-					className=" flex flex-row gap-5 bg-white border rounded-lg border-black transition hover:border-green-200 p-5 pl-5 w-80 md:w-1/2 xl:w-1/4">
-					<img className="w-10" src={Doctor}/>
-					<input className=" xl:pt-1 w-full h-full text-2xl" placeholder="Pesquisar especialistas"/>
+				<div  className=" flex flex-row gap-5 bg-white border rounded-lg border-black transition hover:border-green-200 p-5 pl-5 w-80 md:w-1/2 xl:w-1/4">
+					<div className="flex flex-row gap-10">
+						<img className="w-10" src={Doctor}/>
+						<input className=" xl:pt-1 w-full h-full text-2xl" placeholder="Pesquisar especialistas"/>
+					</div>
 				</div>
 
-				<div
-					className=" flex flex-row bg-white border rounded-lg border-black transition hover:border-green-200  p-5 w-80 md:w-1/2 xl:w-1/4 ">
-					<img className="w-10" src={Local}/>
-					<input className="xl:w-full h-10 text-2xl" placeholder="Pesquisar veterinários próximos"/>
+				<div className=" flex flex-col bg-white border rounded-lg border-black transition hover:border-green-200  p-5 w-80 md:w-1/2 xl:w-1/4 ">
+					<div className="flex flex-row gap-10">
+						<img className="w-10" src={Local}/>
+						<input className="xl:w-full h-10 text-2xl" placeholder="Pesquisar veterinários próximos"/>
+					</div>
+					<Container>
+							<ListItem image="https://static.wikia.nocookie.net/cuphead/images/9/92/Mugman_Front30.png/revision/latest?cb=20180327011225" Name="Yasmini" bairro="Novo Osasco" formacao="Cirurgiã?"/>
+							<ListItem image="https://static.wikia.nocookie.net/cuphead/images/9/92/Mugman_Front30.png/revision/latest?cb=20180327011225" Name="Lucas" bairro="Não Osasco" formacao="Nutrição"/>
+							<ListItem image="https://static.wikia.nocookie.net/cuphead/images/9/92/Mugman_Front30.png/revision/latest?cb=20180327011225" Name="Matheus" bairro="Osasco Novo" formacao="Cardiaco"/>
+							
+					</Container>
 				</div>
 
 			</div>
