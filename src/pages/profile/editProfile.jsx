@@ -11,11 +11,7 @@ import check from './resource/img/saveProfile.png'
 
 
 
-
-
 export const EditProfile = () => {
-
-
 
     return (
         <>

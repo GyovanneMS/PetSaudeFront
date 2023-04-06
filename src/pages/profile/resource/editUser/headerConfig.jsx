@@ -14,6 +14,7 @@ import configIcon from "../../../../assets/svg/Icon button.svg";
 
 
 export const Config = (props) => {
+
   return (
     <>
       <div className="flex font-normal items-center justify-between bg-white shadow pl-5
@@ -30,22 +31,22 @@ export const Config = (props) => {
                 <li className="flex hover:bg-[#9ED1B7]  py-2 px-6 bg-[#D9D9D9] h-30 w-5/6 text-left rounded-full">
                   <img src={Home} className="pr-3  w-14"></img>
                   <p className='pt-2'>Home</p>
-                  
+
                 </li>
                 <li className="flex hover:bg-[#9ED1B7] py-2 px-6 bg-[#D9D9D9] h-30 w-5/6 text-left rounded-full">
                   <img src={Work} className="pr-3  w-14"></img>
                   <p className='pt-2'>Profissionais</p>
-                  
+
                 </li>
                 <li className="flex hover:bg-[#9ED1B7] py-2 px-6 bg-[#D9D9D9] h-30 w-5/6 text-left rounded-full">
                   <img src={Blog} className="pr-3 w-14"></img>
                   <p className='pt-2'> Blog</p>
-                 
+
                 </li>
                 <li className="flex hover:bg-[#9ED1B7] py-2 px-6 bg-[#D9D9D9] h-30 w-5/6 text-left rounded-full">
                   <img src={Info} className="pr-3 w-14"></img>
                   <p className='pt-2'> Sobre nós</p>
-                 
+
                 </li>
                 <li className="flex hover:bg-[#9ED1B7] py-2 px-6 bg-[#D9D9D9] h-30 w-5/6 text-left rounded-full">
                   <img src={Calendary} className="pr-3  w-14"></img>
@@ -55,16 +56,14 @@ export const Config = (props) => {
               <h3 className="pt-5 pl-5 text-left  text-2xl font-semibold">Configurações</h3>
               <ul className="flex flex-col items-center w-full text-base cursor-pointer pt-5 space-y-3">
                 <li className="flex hover:bg-[#9ED1B7] py-2 px-6 bg-[#D9D9D9] h-30 w-5/6 text-left rounded-full">
-             
-                    <img src={Person} className="pr-3 w-14 "></img>
-                    <p className='pt-2'>Perfil</p>
-               
+
+                  <img src={Person} className="pr-3 w-14 "></img>
+                  <p className='pt-2'>Perfil</p>
+
                 </li>
                 <li className="flex hover:bg-[#9ED1B7] py-2 px-6 bg-[#D9D9D9]  h-30 w-5/6 text-left rounded-full ">
                   <img src={Lock} className="pr-3 w-14"></img>
                   <p className='pt-2'>Segurança</p>
-                  
-
                 </li>
               </ul>
             </div>
@@ -83,7 +82,7 @@ export const Config = (props) => {
         <div className=" md:flex flex-direction gap-5" >
           <img className="w-20 pl-5 pt-20 pr-1 md:pt-1 md:w-14 hidden md:flex " src={Hayley} />
           <Link to="../login" className="flex home-btn text-2xl">
-            {props.hayley}
+            {props.nome}
           </Link>
         </div>
       </div>
@@ -110,3 +109,5 @@ export const Config = (props) => {
 
   )
 };
+
+
