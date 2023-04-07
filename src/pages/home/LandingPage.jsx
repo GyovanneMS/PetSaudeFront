@@ -1,46 +1,77 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { HeaderWeb } from "./resource/HeaderWeb";
+import {Link} from "react-router-dom";
+import {HeaderWeb} from "./resource/HeaderWeb";
 import Footprint from "../../assets/svg/petPaws.svg";
 import Dog from "../../assets/svg/dogAndCat.svg";
 import Doctor from "../../assets/svg/medico 1.svg";
 import Local from "../../assets/svg/localizacao.svg";
-
+import "./css/LandingPage.css";
+import { searchCity } from "../../services/integrations/filters";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {Container} from 'react-bootstrap';
+import { ListItem } from "./resource/searchArea";
+import { useEffect, useState } from 'react';
 
 export const LandingPage = () => {
-  return (
-    <div>
-      <HeaderWeb/>
-    <div className=" home flex flex-row justify-center space-x-20 p-5 font-normal texto-2xl " >
-      <div className=" search flex flex-row gap-5 block bg-white w-1/4 border rounded-lg border-black border-2 hover:border-green-200  p-7 w-full">
-        <img src={Doctor} />
-        <input placeholder="Pesquisar especialistas"/>
-      </div>
 
-      <div className=" search flex flex-row gap-5 block bg-white w-1/4 border rounded-lg border-black border-2 hover:border-green-200  p-5">
-        <img src={Local}/>
-        <input placeholder="Pesquisar especialistas"/>
-      </div>
-    
-    </div>
+	//https://www.luiztools.com.br/post/tutorial-listagem-com-busca-em-reactjs/
 
-      <div className="flex flex-row justify-between content center w-auto h-4/5 mt-10 ">
+	const [vets, setVets] = useState([]);
+ 
+	useEffect(() => {
+	  setVets(searchCity());
+	}, [])
 
-        <div className="basis-1/2 flex flex-col justify-center items-center ">
-          <h1 className="basis-1/2 flex justify-center items-center text-7xl w-3/5 h-30 font-bold ">Agende suas consultas e forneça o melhor para o seu Pet!</h1>
-          <Link className="basis-1/4 w-96 text-3xl flex text-center justify-center items-center border border-2 rounded-3xl border-[#9ED1B7]" to="/">Procure um veterinário próximo!</Link>
-        </div>
+	return (
+		<section className="">
+
+			<HeaderWeb/>
+
+			<div className=" flex flex-col pt-20  ml-10 justify-center gap-5 pl-10
+    xl:flex-row font-normal texto-2xl  md:flex-row">
+				<div  className=" flex flex-row gap-5 bg-white border rounded-lg border-black transition hover:border-green-200 p-5 pl-5 w-80 md:w-1/2 xl:w-1/4">
+					<div className="flex flex-row gap-10">
+						<img className="w-10" src={Doctor}/>
+						<input className=" xl:pt-1 w-full h-full text-2xl" placeholder="Pesquisar especialistas"/>
+					</div>
+				</div>
+
+				<div className=" flex flex-col bg-white border rounded-lg border-black transition hover:border-green-200  p-5 w-80 md:w-1/2 xl:w-1/4 ">
+					<div className="flex flex-row gap-10">
+						<img className="w-10" src={Local}/>
+						<input className="xl:w-full h-10 text-2xl" placeholder="Pesquisar veterinários próximos"/>
+					</div>
+					<Container>
+							<ListItem image="https://static.wikia.nocookie.net/cuphead/images/9/92/Mugman_Front30.png/revision/latest?cb=20180327011225" Name="Yasmini" bairro="Novo Osasco" formacao="Cirurgiã?"/>
+							<ListItem image="https://static.wikia.nocookie.net/cuphead/images/9/92/Mugman_Front30.png/revision/latest?cb=20180327011225" Name="Lucas" bairro="Não Osasco" formacao="Nutrição"/>
+							<ListItem image="https://static.wikia.nocookie.net/cuphead/images/9/92/Mugman_Front30.png/revision/latest?cb=20180327011225" Name="Matheus" bairro="Osasco Novo" formacao="Cardiaco"/>
+							
+					</Container>
+				</div>
+
+			</div>
+
+			<div className="flex flex-row justify-between content center w-auto h-4/5 mt-10 ml-10 ">
+
+				<div className=" flex flex-col justify-center items-center w-50 ">
+					<h1
+						className="basis-2/4 flex justify-center items-center font-bold text-3xl h-20 w-full lg:pl-60 pl-4 xl:text-7xl ">Agende
+						suas consultas e forneça o melhor para o seu Pet!</h1>
+					<Link
+						className="flex text-center justify-center items-center border-2 rounded-xl border-[#9ED1B7] p-1 xl: basis-1-6 mt-10 xl:h-20 w-96 basis-1/6 text-3xl transition hover:bg-[#9ED1B7] hover:text-white hover:shadow-xl hover:scale-110"
+						to="/">Procure um veterinário próximo!</Link>
+				</div>
 
 
-        <div className="flex justify-end content-center basis-1/2">
-          <img className="w-4/5 pt-20 " src={Dog}/>
-        </div>
-    </div>
+				<div className="invisible md:flex justify-end content-center basis-1/2 lg:bg-none ">
+					<img className="mt-10 invisible md:visible xl:visible w-5/6" src={Dog}/>
+				</div>
+			</div>
 
-    <div className="pl-">
-      <img className=" w-2/4 " src={Footprint}/>
-    </div>
-    </div>
-  );
+			<div>
+				<img className=" w-3/2 mt-5 xl:w-2/4" src={Footprint}/>
+			</div>
+		</section>
+	);
 };
 
