@@ -38,7 +38,7 @@ export const TopContainer = (props) => {
             <div className='flex flex-col items-center md:px-44'>
                 <img src={props.profilePhoto} className='w-full md:max-h-[400px] rounded-b-lg ' />
                 <div className='self-start w-full z-10 mt-[-80px] px-9'>
-                    <img src={props.userPhoto} className=" flex relative border-4 h-48 border-white border-solid rounded-full" />
+                    <img src={props.userPhoto} className="flex relative pl-24 md:border-4 md:h-48 md:border-white border-solid rounded-full" />
                     <div className='flex flex-col md:flex-row justify-between w-full md:mt-16'>
                         <div className='flex flex-col md:flex-row items-center gap-1 pt-5'>
                                 <div className='flex'>
@@ -48,17 +48,17 @@ export const TopContainer = (props) => {
                               
                                 <div className='flex md:hidden'>
                                     <p className='flex justify-center text-xl'> 777
-                                    <span className='pl-2 '>Clientes</span>
+                                    <span className='pl-2 text-[#A9A9A9]'>Clientes</span>
                                     </p>
                                 </div>
                            
                         </div>
                         <div className='flex md:hidden justify-center gap-2 pt-4'>
-                            <div className='border shadow-lg shadow-cyan-500/50 rounded text-center w-full p-2 font-normal'>
+                            <div className='border shadow-lg  rounded text-center w-full p-2 font-normal'>
                                 <h3>Total de consultas</h3>
                                 <p>465</p>
                             </div>
-                            <div className='border shadow-lg shadow-cyan-500/50 rounded text-center w-72 p-2 bg-[#E3EFF0] font-semibold text-[#09738A]'>
+                            <div className='border shadow-lg rounded text-center w-72 p-2 bg-[#E3EFF0] font-semibold text-[#09738A]'>
                                     <h3>Avaliação</h3>
                                     <p>9,8/10</p>
                             </div>
