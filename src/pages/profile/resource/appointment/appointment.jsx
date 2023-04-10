@@ -16,11 +16,11 @@ export const Appointment = () => {
                             <div className='flex flex-col md:w-2/4 pt-2 md:p-5'>
                                     <div className='flex border rounded-lg md:h-24'>
                                         <img className='w-20 md:w-32' src={Dog}/>
-                                        <input className='w-full md:w-96 text-2xl' placeholder='List item'/>
+                                        <input className='w-full md:w-96 text-2xl shadow-none' placeholder='List item'/>
                                     </div>
                                     <div className=' border rounded-md h-24 hidden md:flex'>
                                         <img className='w-32' src={Dog}/>
-                                        <input className='w-96 text-2xl' placeholder='List item'/>
+                                        <input className='w-96 text-2xl shadow-none' placeholder='List item'/>
                                     </div>
                                 </div>
                                 <div className='hidden md:flex justify-end pl-20'>

@@ -4,23 +4,65 @@ import { HeaderWeb } from "./resource/HeaderWeb";
 import Footprint from "../../assets/svg/petPaws.svg";
 import Dog from "../../assets/svg/dogAndCat.svg";
 import Doctor from "../../assets/svg/medico 1.svg";
-import Local from "../../assets/svg/localizacao.svg";
 import "./css/LandingPage.css";
-import { searchCity } from "../../services/integrations/filters";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from 'react-bootstrap';
 import { ListItem } from "./resource/searchArea";
 import { useEffect, useState } from 'react';
+import { getVet } from "./testeFunction";
+import { FilterByName } from "./filterName";
 
 export const LandingPage = () => {
-
+	useEffect(() => {
+		setVeterinario(getVet());
+	}, [])
 	//https://www.luiztools.com.br/post/tutorial-listagem-com-busca-em-reactjs/
 
+<<<<<<< HEAD
 	const [vets, setVets] = useState([]);
 
 	useEffect(() => {
 		setVets(searchCity());
 	}, [])
+=======
+
+const [veterinario, setVeterinario] = useState([]);
+
+const [searchTerm, setSearchTerm] = useState('');
+
+const jsons = [
+  { name: 'João', age: 25 },
+  { name: 'Maria', age: 30 },
+  { name: 'Pedro', age: 20 },
+  { name: 'Ana', age: 27 }
+];
+
+const filteredJSONs = jsons.filter((json) => 
+	json.name.toLowerCase().includes(searchTerm.toLowerCase())
+);
+
+let event = ''; 
+
+const handleChange = (event) => {
+	console.log(event.target.value)
+  	setSearchTerm(event.target.value);
+};
+
+
+{/* <Container>
+{veterinario.map((veterinario, key) => {
+	return (
+	<ListItem
+		key={veterinario.Name}
+		Name={veterinario.Name}
+		image={veterinario.image}
+		bairro={veterinario.bairro}
+		formacao={veterinario.formacao}
+	/>
+	)
+})}
+</Container> */}
+>>>>>>> 81dc188a7611fbd9173e45e337134aa7945f9517
 
 	return (
 		<section className="">
@@ -34,8 +76,9 @@ export const LandingPage = () => {
 					</div>
 				</div>
 
-				<div className=" flex flex-col bg-white border rounded-lg border-black transition hover:border-green-200  p-5 w-80 md:w-1/2 xl:w-1/4 ">
+				<div className="flex flex-col bg-white border rounded-lg border-black transition hover:border-green-200  p-5 w-80 md:w-1/2 xl:w-1/4 ">
 					<div className="flex flex-row gap-10">
+<<<<<<< HEAD
 						<img className="w-10" src={Local} />
 						<input className="xl:w-full h-10 text-2xl" placeholder="Pesquisar veterinários próximos" />
 					</div>
@@ -44,10 +87,18 @@ export const LandingPage = () => {
 						<ListItem image="https://static.wikia.nocookie.net/cuphead/images/9/92/Mugman_Front30.png/revision/latest?cb=20180327011225" Name="Lucas" bairro="Não Osasco" formacao="Nutrição" />
 						<ListItem image="https://static.wikia.nocookie.net/cuphead/images/9/92/Mugman_Front30.png/revision/latest?cb=20180327011225" Name="Matheus" bairro="Osasco Novo" formacao="Cardiaco" />
 					</Container>
+=======
+						<img className="w-10" src={Doctor}/>
+						<input className=" xl:pt-1 w-full h-full text-2xl" placeholder="Pesquisar Veterinários próximos" onChange={handleChange}/>
+						<ul>
+							{filteredJSONs.map((json, index) => (
+								<li key={index}>{json.name}</li>
+							))}
+      					</ul>	
+					</div>
+>>>>>>> 81dc188a7611fbd9173e45e337134aa7945f9517
 				</div>
-
 			</div>
-
 			<div className="flex flex-row justify-between content center w-auto h-4/5 mt-10 ml-10 ">
 
 				<div className=" flex flex-col justify-center items-center w-50 ">
