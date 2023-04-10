@@ -14,6 +14,7 @@ export async function petAdd(petInfos) {
         },
         body: JSON.stringify(petInfos)
     })
+    console.log(response);
     return await response.json()
 }
 
