@@ -6,11 +6,11 @@ import carreira from './img/carreira.png'
 
 export const AcademicInfos = (props) => {
     return (
-        <div className='flex flex-col items-center w-1/3 mt-4'>
+        <div className='flex flex-col items-center md:w-1/3 mt-4'>
             <h2 className="text-3xl mb-3 w-max">
                 Informações acadêmicas
             </h2>
-            <div className='flex flex-col p-4 w-full h-min gap-4 border rounded-lg border-zinc-700'>
+            <div className='hidden md:flex flex-col p-4 w-full h-min gap-4 border rounded-lg border-zinc-700'>
                 <div className='flex items-center justify-between gap-x-4 pl-4 border rounded-lg border-zinc-700'>
                     <span className='flex flex-col'>
                         <h3>Formação:</h3>
@@ -38,6 +38,30 @@ export const AcademicInfos = (props) => {
                         <p>{props.carreiraInicio}</p>
                     </span>
                     <img className='p-4 border rounded-lg' src={carreira}  />
+                </div>
+            </div>
+            <div className='flex flex-col md:hidden'>
+                <div className='flex justify-center gap-2'>
+                    <div className='border shadow-lg shadow-cyan-500/50 rounded text-center w-44 p-2'>
+                        <h3>Formação:</h3>
+                        <p>{props.formacao}</p>
+                    </div>
+                    <div className='border shadow-lg shadow-cyan-500/50 rounded text-center w-44 p-2'>
+                            <h3>Data de Formação:</h3>
+                            <p>{props.dataFormacao}</p>
+                    </div>
+                </div>
+                <div className='flex pt-5 justify-center gap-2'>
+                    <div className='border shadow-lg shadow-cyan-500/50 rounded text-center w-44 p-2 '>
+                        
+                        <h3>Instituição:</h3>
+                        <p>{props.instituicao}</p>
+                    </div>
+                    <div className='border shadow-lg shadow-cyan-500/50 rounded text-center w-44 p-2' >
+                        
+                        <h3>Inicio de Carreira:</h3>
+                        <p>{props.carreiraInicio}</p>
+                    </div>
                 </div>
             </div>
         </div>

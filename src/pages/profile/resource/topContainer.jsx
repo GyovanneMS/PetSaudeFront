@@ -40,23 +40,34 @@ export const TopContainer = (props) => {
                 <div className='self-start w-full z-10 mt-[-80px] px-9'>
                     <img src={props.userPhoto} className=" flex relative border-4 h-48 border-white border-solid rounded-full" />
                     <div className='flex flex-col md:flex-row justify-between w-full md:mt-16'>
-                        <div className='flex md:flex-row items-center gap-1 pt-5'>
-                            <p className='text-4xl'>{props.name}</p>
-                            <img src={iconVet} />
+                        <div className='flex flex-col md:flex-row items-center gap-1 pt-5'>
+                                <div className='flex'>
+                                    <p className='text-3xl md:text-4xl'>{props.name}</p>
+                                    <img className='pl-2' src={iconVet} />
+                                </div>
+                              
+                                <div className='flex md:hidden'>
+                                    <p className='flex justify-center text-xl'> 777
+                                    <span className='pl-2 '>Clientes</span>
+                                    </p>
+                                </div>
+                           
                         </div>
-
-                        <div className='flex justify-center p-5'>
-                            <div className='flex border h-36'>
-                                <input className=' bg-white' placeholder=' Total de consultas'/>
+                        <div className='flex md:hidden justify-center gap-2 pt-4'>
+                            <div className='border shadow-lg shadow-cyan-500/50 rounded text-center w-full p-2 font-normal'>
+                                <h3>Total de consultas</h3>
+                                <p>465</p>
                             </div>
-                            <div className='flex  h-36 pl-2'>
-                                <input className='bg-[#91B0B2] text-[#09738A]' placeholder=' Total de consultas'/>
+                            <div className='border shadow-lg shadow-cyan-500/50 rounded text-center w-72 p-2 bg-[#E3EFF0] font-semibold text-[#09738A]'>
+                                    <h3>Avaliação</h3>
+                                    <p>9,8/10</p>
                             </div>
                         </div>
                       
+                      
                         <Dialog.Root>
                         <Dialog.Trigger asChild>
-                        <div className='pt-2 md:pt-0'>
+                        <div className='pt-4 md:pt-0'>
                             <button className='bg-lime-500 rounded-md px-3 py-2 text-2xl w-full md:text-4xl md:w-96 shadow-lg justify-center self-center'>
                                 Agendar uma consulta
                             </button>
@@ -75,7 +86,7 @@ export const TopContainer = (props) => {
                 </div>
                 <div className='w-full h-[1px] bg-gray-400 mt-2 '></div>
                 <h2 className='self-start text-3xl pt-5 pb-2 pl-5'>Sobre Mim</h2>
-                <div className='flex w-full p-5'>
+                <div className='flex w-full p-5 text-justify'>
                     <span className={`  md:w-11/12 ${biografia}`} id="biografia">
                         {props.biografia}
                         <a href="#" className={`text-sky-600 ${lerMenos}`} onClick={textTruncate} >
@@ -103,7 +114,7 @@ export const TopContainer = (props) => {
                 </div>
                 <div className='w-full h-[1px] bg-gray-400 mt-2'></div>
                 <h2 className='self-start text-3xl pt-5 pb-2'>Sobre Mim</h2>
-                <div className='flex w-full'>
+                <div className='flex w-full '>
                     <span className={`w-11/12 ${biografia}`} id="biografia">
                         {props.biografia}
                         <a href="#" className={`text-sky-600 ${lerMenos}`} onClick={textTruncate} >

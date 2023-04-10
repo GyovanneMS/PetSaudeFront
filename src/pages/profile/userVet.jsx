@@ -18,7 +18,7 @@ export const UserVet = () => {
                 <div>
                     <TopContainer name="Hayley Williams" profilePhoto={profilePhoto} userPhoto={userPhoto} biografia={biografia} />
                     <Cards />
-                    <div className='flex justify-between gap-[10%] px-44 mb-16'>
+                    <div className='flex flex-col justify-between gap-[10%] px-10 md:px-44 mb-16'>
                         <AcademicInfos formacao="técnico veterinário" dataFormacao="31/02/1914" instituicao="USP" carreiraInicio="31/05/45" />
                         <Maps/>
                     </div>
