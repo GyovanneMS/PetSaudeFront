@@ -21,14 +21,14 @@ export const PetAdd = (props) => {
         setName(event.target.value);
     }
 
-    const [sexo, setSexo] = useState("Sexo")
+    const [sexo, setSexo] = useState(["Sexo", 3])
 
     const [bornDate, setBornDate] = useState("DataDeNascimento")
     function newBornDate(event) {
         setBornDate(event.target.value);
     }
 
-    const [tamanho, setTamanho] = useState("Tamanho")
+    const [tamanho, setTamanho] = useState(["Tamanho", 1])
 
     const [specie, setSpecie] = useState("Especie")
     function newSpecie(event) {
@@ -64,10 +64,10 @@ export const PetAdd = (props) => {
         const petInfos = {
             name: name,
             birthDate: bornDate,
-            photo: '',
+            photo: selectedFile,
             microship: false,
-            size: tamanho,
-            gender: sexo,
+            size: tamanho[1],
+            gender: sexo[1],
             specie: specie,
             ownerID: 1
         }
@@ -94,7 +94,7 @@ export const PetAdd = (props) => {
             <div>
                 <div className='flex justify-start p-3 sm:p-10 flex-row items-center content-center align-middle h-30 sm:h-80'>
                     <div className="h-20 w-1/3 sm:h-48 sm:40 md:w-80 rounded-full ">
-                        <input type="file" accept="image/*" name="photo" id="photoProfile" className="hidden" onChange={handleFileInputChange} />
+                        <input type="file" accept="image/*" name="photo" id="photoProfile" className="hidden" onChange={handleFileInputChange}/>
                         <label htmlFor='photoProfile' style={{backgroundImage: `url(${selectedFile})`}}
                             className='
                             flex justify-center items-center rounded-full bg-slate-200 w-full h-full bg-center bg-origin-content bg-no-repeat bg-cover cursor-pointer hover:bg-blend-darken '>
@@ -126,11 +126,11 @@ export const PetAdd = (props) => {
                                 <label className='flex flex-col text-xl text-[#A9A9A9]'>
                                     Sexo
                                     <DropdownMenu.Root className="w-full">
-                                        <DropdownMenu.Trigger className='flex justify-start text-black text-3xl'>{sexo}</DropdownMenu.Trigger>
+                                        <DropdownMenu.Trigger className='flex justify-start text-black text-3xl'>{sexo[0]}</DropdownMenu.Trigger>
                                         <StyledContent>
-                                        <StyledItem onSelect={() => setSexo("Feminino")}>Feminino</StyledItem>
-                                        <StyledItem onSelect={() => setSexo("Masculino")}>Masculino</StyledItem>
-                                        <StyledItem onSelect={() => setSexo("Ginandromorfo")}>Ginandromorfo</StyledItem>
+                                            <StyledItem onSelect={() => setSexo(["Feminino",  1])}>Feminino</StyledItem>
+                                            <StyledItem onSelect={() => setSexo(["Masculino", 2])}>Masculino</StyledItem>
+                                            <StyledItem onSelect={() => setSexo([ "Ginandromorfo", 3])}>Ginandromorfo</StyledItem>
                                         <StyledArrow />
                                         </StyledContent>
                                     </DropdownMenu.Root>
@@ -154,11 +154,11 @@ export const PetAdd = (props) => {
                                 <label className='flex flex-col text-xl text-[#A9A9A9] sm:w-1/4'>
                                     Tamanho
                                     <DropdownMenu.Root className="w-full">
-                                        <DropdownMenu.Trigger className='flex justify-start text-black text-3xl'>{tamanho}</DropdownMenu.Trigger>
+                                        <DropdownMenu.Trigger className='flex justify-start text-black text-3xl'>{tamanho[0]}</DropdownMenu.Trigger>
                                         <StyledContent>
-                                        <StyledItem onSelect={() => setTamanho("Grande")}>Grande</StyledItem>
-                                        <StyledItem onSelect={() => setTamanho("Médio")}>Médio</StyledItem>
-                                        <StyledItem onSelect={() => setTamanho("Pequeno")}>Pequeno</StyledItem>
+                                            <StyledItem onSelect={() => setTamanho(["Grande",  2])}>Grande</StyledItem>
+                                            <StyledItem onSelect={() => setTamanho(["Médio",  1])}>Médio</StyledItem>
+                                            <StyledItem onSelect={() => setTamanho([ "Pequeno", 3])}>Pequeno</StyledItem>
                                         <StyledArrow />
                                         </StyledContent>
                                     </DropdownMenu.Root>
