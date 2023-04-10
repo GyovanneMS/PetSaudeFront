@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { PetHeader } from './petHeader';
-import "../css/UpgradeUser.css"
 import addMais from "../resource/img/AddMais.png"
 import linha from "../../../assets/svg/linha.svg"
-import * as Popover from '@radix-ui/react-popover';
+import '../../reset.css';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import { styled } from '@stitches/react';
 import certo from '../resource/img/Certo.jpg'
@@ -15,15 +14,26 @@ import { PetAddWarn } from './cards/warn';
 import './css/pet.css';
 import lapis from '../../../assets/svg/pencil.svg';
 
-export const PetConfig = () => {
+export const PetConfig = (props) => {
+
+/*yarn add moment
+yarn add ms
+https://medium.com/geekculture/dynamically-set-the-max-min-date-at-input-field-with-react-e26cf98946d1 */
 
     const animalJson = {
         name: 'Anastacia',
         gender: 'Ginandromorfo',
-        size: '10cm',
+        size: 'Pequeno',
         birthDate: "2023-03-10",
-        specie: 'vespa'
+        specie: 'vespa',
+        image: ''
     }
+
+
+    const [petInfosDisable, petInfosDisableState] = useState({
+        disable: true,
+        class: ' text-slate-400'
+    })
     
     const [name, setName] = useState(animalJson.name)
     function newName(event) {
@@ -70,43 +80,56 @@ export const PetConfig = () => {
         fill: 'white',
       });
 
+    
+      const [selectedFile, setSelectedFile] = useState(animalJson.image);
+
+      const handleFileInputChange = (event) => {
+          console.log(event.target.files[0])
+          const file = event.target.files[0]
+          setSelectedFile(URL.createObjectURL(file));
+      }
+
     return (
         <>
             <PetHeader namePerson="Teste" personImage="https://revistapesquisa.fapesp.br/wp-content/uploads/2009/03/SITE_Darwin-4-1140.jpg"/>
-            <main className='static'>
+            <main className='static w-full'>
                 <div>
-                    <div className='flex justify-start p-10'>
-                    <div className='border-black border-2 w-52 h-52 content-center' style={{ backgroundImage:  'url(https://lh3.googleusercontent.com/p/AF1QipOFbA1h2Y14661Wc3Kvj4C8aS-8syoJAEjqZDxy=w768-h768-n-o-v1)' }}>
-                        <img src={addMais} className="rounded-full w-full h-full " />
-                    </div>
-                        <div className='flex flex-col p-10'>
+                    <div className='flex justify-start p-3 sm:p-10 flex-row items-center content-center align-middle h-30 sm:h-80'>
+                        <div className="h-20 w-1/3 sm:h-48 sm:40 md:w-80 rounded-full ">
+                            <input type="file" accept="image/*" name="photo" id="photoProfile" className="hidden" onChange={handleFileInputChange} />
+                            <label htmlFor='photoProfile' style={{backgroundImage: `url(${selectedFile})`}}
+                                className='
+                                flex justify-center items-center rounded-full bg-slate-200 w-full h-full bg-center bg-origin-content bg-no-repeat bg-cover cursor-pointer hover:bg-blend-darken '>
+                                <img className src={addMais} />
+                            </label>
+                        </div>
+                        <div className='flex flex-col w-2/3 sm:w-full p-3 sm:p-10'>
                             <label>
-
                                 <input type="text" value={name} name="petName" className='bg-transparent border-none md:text-5xl font-medium '/>
                             </label>
-                            <img src={linha} alt="" />
+                                <img src={linha} alt="" className='invisible sm:visible'/>
                             <label>
                                 <input type="text" value={specie}  name="petSpecie" className='bg-transparent border-none text-3xl text-[#A9A9A9]'/>
                             </label>
                         </div>
                     </div>
                 </div>
-                <div className='w-full h-full border-2 rounded-lg border-black flex flex-col gap-10 pl-20 py-8'>
-                    <h2 className='font-bold text-6xl font-sans'>Endereço</h2>
-                    <div className='flex flex-row justify-between pr-20'>
-                        <div className='flex flex-col gap-5 justify-startw-1/2 w-1/3'>
+                <div className='w-full h-full border-none sm:border-solid border-2 rounded-lg border-black flex flex-col gap-10 pl-3 sm:pl-20 py-8'>
+                    <h2 className='font-bold text-5xl flex justify-center sm:justify-start sm:text-6xl font-sans'>Informações </h2>
+                    <div className='flex flex-col sm:flex-row justify-between pr-20'>
+                        <div className='flex flex-col gap-3 sm:gap-5 justify-start w-full sm:w-1/3 mb-2'>
                             <div>
                                 <label className='flex flex-col text-xl text-[#A9A9A9]'>
                                     Nome
-                                    <input type="text" onBlurCapture={newName} disabled value={name} name="nameAnimal" id="nameAnimal" placeholder='Nome' className='bg-transparent placeholder:text-black placeholder:text-3xl border-none text-2xl text-[#000]' />
+                                <input type="text" onChange={newName} disabled={petInfosDisable.disable} name="nameAnimal" placeholder='Nome' className={`bg-transparent placeholder:text-black placeholder:text-3xl border-none text-2xl ${petInfosDisable.class}`} defaultValue={name} id='petInfos'/>
                                 </label>
                             </div>
                             <div>
                                 <label className='flex flex-col text-xl text-[#A9A9A9]'>
                                     Sexo
                                     <DropdownMenu.Root className="w-full">
-                                        <DropdownMenu.Trigger disabled className='flex justify-start text-black text-2xl'>{sexo}</DropdownMenu.Trigger>
-                                        <StyledContent disabled>
+                                        <DropdownMenu.Trigger disabled={petInfosDisable.disable} className={`flex justify-start  text-2xl ${petInfosDisable.class}`} >{sexo}</DropdownMenu.Trigger>
+                                        <StyledContent >
                                         <StyledItem onSelect={() => setSexo("Feminino")}>Feminino</StyledItem>
                                         <StyledItem onSelect={() => setSexo("Masculino")}>Masculino</StyledItem>
                                         <StyledItem onSelect={() => setSexo("Ginandromorfo")}>Ginandromorfo</StyledItem>
@@ -118,22 +141,22 @@ export const PetConfig = () => {
                             <div>
                                 <label className='flex flex-col text-xl text-[#A9A9A9]'>
                                     Espécie
-                                    <input type="text" disabled onBlurCapture={newSpecie} value={specie} name="especieAnimal" id="specisAnimal" placeholder='Espécie' className='bg-transparent placeholder:text-black placeholder:text-3xl border-none text-2xl text-[#000]' />
+                                    <input type="text" disabled={petInfosDisable.disable} onChange={newSpecie} defaultValue={specie} name="especieAnimal" id="specisAnimal" placeholder='Espécie' className={`bg-transparent placeholder:text-black placeholder:text-3xl border-none text-2xl  ${petInfosDisable.class}`} />
                                 </label>
                             </div>
                         </div>
-                        <div className='flex flex-col gap-5 justify-start w-1/3'>
-                            <div>
-                                <label className='flex flex-col text-xl text-[#A9A9A9] w-1/4'>
+                        <div className='flex flex-col sm:flex-col gap-3 mb-5 sm:gap-5 justify-start content-center w-full sm:w-1/3'>
+                            <div className='w-full'>
+                                <label className='flex flex-col text-xl text-[#A9A9A9]'>
                                     Data de Nascimento
-                                    <input type="date" disabled onBlurCapture={newDateBorn} name="dateBorn" value={dateBorn} className='bg-transparent border-none text-2xl text-[#000] w-full' />
+                                    <input type="date" disabled={petInfosDisable.disable} onChange={newDateBorn} name="dateBorn" defaultValue={dateBorn} className={`bg-transparent border-none text-2xl text-[#000] w-full ${petInfosDisable.class}`} />
                                 </label>
                             </div>
                             <div>
-                                <label className='flex flex-col text-xl text-[#A9A9A9] w-1/4'>
+                                <label className='flex flex-col text-xl text-[#A9A9A9] '>
                                     Tamanho
-                                    <DropdownMenu.Root disabled className="w-full">
-                                        <DropdownMenu.Trigger disabled className='flex justify-start text-black text-2xl'>{tamanho}</DropdownMenu.Trigger>
+                                    <DropdownMenu.Root className="w-full">
+                                        <DropdownMenu.Trigger disabled={petInfosDisable.disable} className={`flex justify-start  text-2xl  ${petInfosDisable.class}`}>{tamanho}</DropdownMenu.Trigger>
                                         <StyledContent>
                                         <StyledItem onSelect={() => setTamanho("Grande")}>Grande</StyledItem>
                                         <StyledItem onSelect={() => setTamanho("Médio")}>Médio</StyledItem>
@@ -144,9 +167,21 @@ export const PetConfig = () => {
                                 </label>
                             </div>
                         </div>
-                        <div className='flex flex-col content-start w-1/3'>
-                            <button className='w-52 h-12 flex flex-row justify-center items-center gap-4 bg-[#ECECEC] rounded-full drop-shadow-lg'>
-                                <img src={lapis} alt="" />
+                        <div className='w-full sm:w-1/3 flex justify-end content-center'>
+                            <button className='w-full sm:w-52 h-12 flex flex-row justify-center items-center gap-4 bg-[#ECECEC] rounded-full drop-shadow-lg' onClick={() => {
+
+                                if (document.getElementById('petInfos').disabled == true) {
+                                    petInfosDisableState({
+                                        disable: false,
+                                        class: 'text-black'
+                                    })
+                                } else {
+                                    petInfosDisableState({
+                                        disable: true,
+                                        class: 'opacity-50 bg-white'
+                                    })
+                                }}}>
+                                <img src={lapis} />
                                 Editar
                             </button>
                         </div>
@@ -181,7 +216,6 @@ export const PetConfig = () => {
                     </Dialog.Root>
                 </div>
             </main> 
-            
         </>
     );
 }

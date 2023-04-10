@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { PetHeader } from './petHeader';
 import "../css/UpgradeUser.css"
-import addFile from "../resource/img/NeedAdd.png"
+import addMais from "../resource/img/AddMais.png"
 import linha from "../../../assets/svg/linha.svg"
 import * as Popover from '@radix-ui/react-popover';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
@@ -78,31 +78,44 @@ export const PetAdd = (props) => {
         console.log(addPet)
     }
 
+    const handleFileInputChange = (event) => {
+        console.log(event.target.files[0])
+        const file = event.target.files[0]
+        setSelectedFile(URL.createObjectURL(file));
+    }
+
+    const [selectedFile, setSelectedFile] = useState(String);
+
+ 
     return (
         <>
             <PetHeader namePerson="Teste" personImage="https://revistapesquisa.fapesp.br/wp-content/uploads/2009/03/SITE_Darwin-4-1140.jpg"/>
             <main className='static'>
-                <div>
-                    <div className='flex justify-start p-10'>
-                    <div className='border-black border-2 w-52 h-52 '>
-                    <img src={addFile} className="rounded-full" />
+            <div>
+                <div className='flex justify-start p-3 sm:p-10 flex-row items-center content-center align-middle h-30 sm:h-80'>
+                    <div className="h-20 w-1/3 sm:h-48 sm:40 md:w-80 rounded-full ">
+                        <input type="file" accept="image/*" name="photo" id="photoProfile" className="hidden" onChange={handleFileInputChange} />
+                        <label htmlFor='photoProfile' style={{backgroundImage: `url(${selectedFile})`}}
+                            className='
+                            flex justify-center items-center rounded-full bg-slate-200 w-full h-full bg-center bg-origin-content bg-no-repeat bg-cover cursor-pointer hover:bg-blend-darken '>
+                            <img className="rounded-full" src={addMais}  />
+                        </label>
                     </div>
-                        <div className='flex flex-col p-10'>
-                            <label>
-
-                                <input type="text" value={name} disabled name="petName" className='bg-transparent border-none md:text-5xl font-medium '/>
-                            </label>
-                            <img src={linha} alt="" />
-                            <label>
-                                <input type="text" value={specie}  name="petSpecie" className='bg-transparent border-none text-3xl text-[#A9A9A9]'/>
-                            </label>
-                        </div>
+                    <div className='flex flex-col w-2/3 sm:w-full p-3 sm:p-10'>
+                        <label>
+                            <input type="text" value={name} name="petName" className='bg-transparent border-none md:text-5xl font-medium '/>
+                        </label>
+                            <img src={linha} alt="" className='invisible sm:visible'/>
+                        <label>
+                            <input type="text" value={specie}  name="petSpecie" className='bg-transparent border-none text-3xl text-[#A9A9A9]'/>
+                        </label>
                     </div>
                 </div>
-                <div className='w-full h-full border-2 rounded-lg border-black flex flex-col gap-10 pl-20 py-8'>
-                    <h2 className='font-bold text-6xl font-sans'>Endereço</h2>
-                    <div className='flex flex-row justify-between pr-20'>
-                        <div className='flex flex-col gap-5 justify-startw-1/2'>
+            </div>
+                <div className='w-full h-full border-none sm:border-solid border-2 rounded-lg border-black flex flex-col gap-10 pl-3 sm:pl-20 py-8'>
+                    <h2 className='font-bold text-5xl flex justify-center sm:justify-start sm:text-6xl font-sans'>Endereço</h2>
+                    <div className='flex flex-col sm:flex-row justify-between pr-20'>
+                        <div className='flex flex-col gap-3 sm:gap-5 justify-start w-full sm:w-1/3 mb-2'>
                             <div>
                                 <label className='flex flex-col text-xl text-[#A9A9A9]'>
                                     Nome
@@ -130,15 +143,15 @@ export const PetAdd = (props) => {
                                 </label>
                             </div>
                         </div>
-                        <div className='flex flex-col gap-5 justify-start w-1/2'>
-                            <div>
-                                <label className='flex flex-col text-xl text-[#A9A9A9] w-1/4'>
+                        <div className='flex flex-col sm:flex-col gap-3 mb-5 sm:gap-5 justify-start content-center w-full sm:w-1/3'>
+                            <div className='w-full'>
+                                <label className='flex flex-col text-xl text-[#A9A9A9] sm:1/4'>
                                     Data de Nascimento
-                                    <input type="date" onBlurCapture={newBornDate}  name="firstName" className='bg-transparent border-none text-2xl text-[#000] w-full' />
+                                    <input type="date" onBlurCapture={newBornDate}  name="firstName" className='w-full border-none text-3xl text-[#000] ' />
                                 </label>
                             </div>
                             <div>
-                                <label className='flex flex-col text-xl text-[#A9A9A9] w-1/4'>
+                                <label className='flex flex-col text-xl text-[#A9A9A9] sm:w-1/4'>
                                     Tamanho
                                     <DropdownMenu.Root className="w-full">
                                         <DropdownMenu.Trigger className='flex justify-start text-black text-3xl'>{tamanho}</DropdownMenu.Trigger>

@@ -13,7 +13,8 @@ import Local from '../../assets/svg/Gps.svg';
 import Logout from '../../assets/svg/Logout.svg';
 import { Config } from "./resource/editUser/headerConfig.jsx";
 import Arrow from '../../assets/svg/Arrow.svg';
-
+import lixeira from '../profile/resource/img/Delete.svg'
+import lapis from '../profile/resource/img/LapisColorido.svg'
 
 
 
@@ -26,7 +27,7 @@ export const UpgradeUser = () => {
     })
 
 
-    if(largura <= 768){
+    if(largura <= 8){
         
         return (
             <>
@@ -109,7 +110,7 @@ export const UpgradeUser = () => {
         if (localStorage.getItem("user") == "veterinario") {
             return (
                 <>
-                    <Config hayley="Hayley Williams " user="@HayleyVet" />
+                    <Config hayley="Hayley Williams " user="@HayleyVet" className='hidden'/>
                     <main className='flex flex-col gap-10'>
                         <Pessoais name="Hayley" lastName="Williams" cpf="000.000.000-00" rg="000.000.000-00" celular="(88) 88888-8888 " telefone="(88) 88888-8888" text=" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
                                 blandit tincidunt urna sit amet ultricies. Nulla nec turpis ultrices,
@@ -118,10 +119,22 @@ export const UpgradeUser = () => {
                                 nec elit. Nam blandit placerat semper. Nam vel ultricies mauris. Pellentesque
                                 eu imperdiet turpis. Nam congue erat orci, vitae varius eros dictum nec. Suspendisse
                                 pharetra nisl sit amet augue suscipit tincidunt. In egestas ex vitae ipsum aliquet
-                                porttitor. Cras efficitur dolor est, quis auctor sapien accumsan sed. Morbi tristique vitae quam eu pretium."/>
-                        <Address cep="06045-420" bairro="Novo Osasco" rua="Via Transversal Sul" estado="São Paulo" cidade="Osasco" complemento="42B" />
+                                porttitor. Cras efficitur dolor est, quis auctor sapien accumsan sed. Morbi tristique vitae quam eu pretium." className=''/>
+                        <Address cep="06045-420" bairro="Novo Osasco" rua="Via Transversal Sul" estado="São Paulo" cidade="Osasco" complemento="42B" className=''/>
 
-                        <Prossionais area="Psiquiatria de Pets" instituicao="USP" dataFormacao="19/03/2005" formacao="Zootecnia" crmv="1234" dataInicioAtuacao="13/02/2006" />
+                        <Prossionais area="Psiquiatria de Pets" instituicao="USP" dataFormacao="19/03/2005" formacao="Zootecnia" crmv="1234" dataInicioAtuacao="13/02/2006" className='' />
+                        <div className='fixed right-0 bottom-10 w-64 h-16 bg-[#1C1B1F] flex sm:hidden rounded-xl'>
+                            <button className='flex flex-row content-center justify-center items-center gap-3 text-[#A9A9A9] text-3xl h-16 rounded-xl w-64'>
+                                <img src={lapis} alt="" />
+                                Habilitar Edição
+                            </button>
+                        </div>
+                        <div className='w-full sm:flex justify-end mr-5 pr-10 pb-10'>
+                            <button className='flex flex-row content-center items-center gap-3 text-[#410E0B] bg-[#F9DEDC] text-3xl h-16 rounded-xl w-64' >
+                                <img src={lixeira} alt="" className='h-full'/>
+                                Excluir perfil
+                            </button>
+                        </div>
                     </main>
                 </>
             );
@@ -144,7 +157,14 @@ export const UpgradeUser = () => {
                         <Address cep="06045-420" bairro="Novo Osasco" rua="Via Transversal Sul" estado="São Paulo" cidade="Osasco" complemento="42B" />
 
                         <Pets personImage="http://s2.glbimg.com/wbweywCFLC0nCUeg67UbQZWhL7Eu36oRp_QAFsTkIqCqLLlE9GfCYsNrnTRPpEUO/i.glbimg.com/og/ig/f/original/2012/12/14/fabiana1.jpg" />
+                        <div className='w-full flex justify-end pr-10 pb-10'>
+                            <button className='flex flex-row content-center items-center gap-3 text-[#410E0B] bg-[#F9DEDC] text-3xl h-16 rounded-xl w-64'>
+                                <img src={lixeira} alt="" className='h-full'/>
+                                Excluir perfil
+                            </button>
+                        </div>
                     </main>
+                    
                 </>
             )
         }

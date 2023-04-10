@@ -61,10 +61,10 @@ export const PetHeader = (props) => {
                         </button>
                     <h1 className=" text-1xl sm:flex justify-start font-bold">PetSaúde</h1>
                     </div>
-                    <div className=" md:flex flex-direction gap-5" >
+                    <div className=" md:flex flex-row gap-2" >
                     <img className="w-20 h-20 rounded-full md:h-10 md:w-10" src={props.personImage} />
-                        <Link to="../login" className=" invisible xl:visible home-btn text-2xl mr-3 ">
-                        {props.namePerson}
+                        <Link to="../login" className=" invisible sm:visible home-btn text-2xl mr-3 text-black">
+                            {props.namePerson}
                         </Link>
                     </div>
                 </div>
