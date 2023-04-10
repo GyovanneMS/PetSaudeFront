@@ -38,4 +38,19 @@ export async function getUser(id, token) {
     
 }
 
+export async function deleteUser(id,token) {
+
+    const url = `${BASE_URL}user/${id}`
+    const response = await fetch(url, {
+        method: 'DELETE',
+        headers:{
+            'Authorization': `Bearer ${token}`
+        }
+    })
+
+    return await response.json()
+    
+}
+
+
 
