@@ -1,7 +1,26 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from 'react-router-dom';
 import { Header } from '../../components/headers/headerEdits'
+import { signup } from "../../services/integrations/authentication";
 import { useForm } from "react-hook-form";
+
+
+
+const userId = async () => {
+
+  const apiResponse = await signup(localStorage.getItem('__user_JWT'))
+
+  console.log(apiResponse);
+
+  localStorage.setItem('__user_id', apiResponse.user.id)
+
+}
+
+
+
+
+
+
 
 export const HomePage = () => {
 

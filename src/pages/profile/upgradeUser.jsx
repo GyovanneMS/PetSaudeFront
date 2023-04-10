@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import { Address } from './resource/editUser/address';
 import { Pessoais } from './resource/editUser/infosPerson';
@@ -15,11 +15,51 @@ import { Config } from "./resource/editUser/headerConfig.jsx";
 import Arrow from '../../assets/svg/Arrow.svg';
 import lixeira from '../profile/resource/img/Delete.svg'
 import lapis from '../profile/resource/img/LapisColorido.svg'
+import { deleteUser, getUser } from '../../services/integrations/user';
+import { useState } from 'react';
+
+const InfosUser = async () => {
+
+    const response = await getUser(localStorage.getItem('__user_id'), localStorage.getItem('__user_JWT'))
+
+    let userJson
+    
+    return userJson = {
+        id: response.id,
+        personName: response.personName,
+        userName: response.userName,
+        cpf: response.cpf,
+        rg: response.rg,
+        profilePhoto: response.profilePhoto,
+        profileBannerPhoto: response.profileBannerPhoto,
+        email: response.email,
+        password: response.password,
+        phoneNumber: response.phoneNumber,
+        cellphoneNumber: response.cellphoneNumber,
+        addressId: response.addressId,
+    }
+    
+}
 
 
+export const UpgradeUser = (data) => {
 
+    const [nome, setNome] = useState(null)
+    const [email, setEmail] = useState(null)
+  
 
-export const UpgradeUser = () => {
+    useEffect(() => {
+        async function fetchData() {
+            const userName = (await InfosUser()).personName
+            setNome(userName)
+
+            const userEmail = (await InfosUser()).email
+            setEmail(userEmail)
+        }
+        fetchData()
+    }, [])
+
+    
 
     var largura = window.innerWidth
     window.addEventListener('resize', (e) => {
@@ -27,12 +67,10 @@ export const UpgradeUser = () => {
     })
 
 
-    if(largura <= 8){
-        
+    if (largura <= 8) {
         return (
             <>
                 <Config />
-
                 <main>
                     <div>
                         <p className=' font-bold font-sans  h-10 text-2xl'>Configurações</p>
@@ -61,9 +99,9 @@ export const UpgradeUser = () => {
                         <div className='border-2 border-[#CAC4D0] rounded-full py-5 px-5 flex flex-row  mt-2'>
                             <div className='flex flex-row  gap-5'>
                                 <img src={Local} alt="" />
-                            Localização
+                                Localização
 
-                            <Link to="/profile/editAdress">
+                                <Link to="/profile/editAdress">
                                     <img className='pl-36' src={Arrow} alt="" />
                                 </Link>
 
@@ -75,7 +113,7 @@ export const UpgradeUser = () => {
                         <div className='border-2 border-[#CAC4D0] rounded-full py-5 px-5 flex flex-row mt-10'>
                             <div className='flex flex-row  gap-5'>
                                 <img src={Calendary} alt="" />
-                            Consultas
+                                Consultas
 
                                 <Link to="/profile/Consultas">
                                     <img className='pl-36' src={Arrow} alt="" />
@@ -110,7 +148,8 @@ export const UpgradeUser = () => {
         if (localStorage.getItem("user") == "veterinario") {
             return (
                 <>
-                    <Config hayley="Hayley Williams " user="@HayleyVet" className='hidden'/>
+                    <Config hayley="Hayley Williams " user="@HayleyVet" className='hidden' />
+           
                     <main className='flex flex-col gap-10'>
                         <Pessoais name="Hayley" lastName="Williams" cpf="000.000.000-00" rg="000.000.000-00" celular="(88) 88888-8888 " telefone="(88) 88888-8888" text=" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
                                 blandit tincidunt urna sit amet ultricies. Nulla nec turpis ultrices,
@@ -119,8 +158,8 @@ export const UpgradeUser = () => {
                                 nec elit. Nam blandit placerat semper. Nam vel ultricies mauris. Pellentesque
                                 eu imperdiet turpis. Nam congue erat orci, vitae varius eros dictum nec. Suspendisse
                                 pharetra nisl sit amet augue suscipit tincidunt. In egestas ex vitae ipsum aliquet
-                                porttitor. Cras efficitur dolor est, quis auctor sapien accumsan sed. Morbi tristique vitae quam eu pretium." className=''/>
-                        <Address cep="06045-420" bairro="Novo Osasco" rua="Via Transversal Sul" estado="São Paulo" cidade="Osasco" complemento="42B" className=''/>
+                                porttitor. Cras efficitur dolor est, quis auctor sapien accumsan sed. Morbi tristique vitae quam eu pretium." className='' />
+                        <Address cep="06045-420" bairro="Novo Osasco" rua="Via Transversal Sul" estado="São Paulo" cidade="Osasco" complemento="42B" className='' />
 
                         <Prossionais area="Psiquiatria de Pets" instituicao="USP" dataFormacao="19/03/2005" formacao="Zootecnia" crmv="1234" dataInicioAtuacao="13/02/2006" className='' />
                         <div className='fixed right-0 bottom-10 w-64 h-16 bg-[#1C1B1F] flex sm:hidden rounded-xl'>
@@ -130,8 +169,11 @@ export const UpgradeUser = () => {
                             </button>
                         </div>
                         <div className='w-full sm:flex justify-end mr-5 pr-10 pb-10'>
-                            <button className='flex flex-row content-center items-center gap-3 text-[#410E0B] bg-[#F9DEDC] text-3xl h-16 rounded-xl w-64' >
-                                <img src={lixeira} alt="" className='h-full'/>
+                            <button className='flex flex-row content-center items-center gap-3 text-[#410E0B] bg-[#F9DEDC] text-3xl h-16 rounded-xl w-64' onClick={() => {
+                                deleteUser(localStorage.getItem('__user_id'), localStorage.getItem('__user_JWT'))
+                                window.location.href('/home')
+                            }}>
+                                <img src={lixeira} className='h-full' />
                                 Excluir perfil
                             </button>
                         </div>
@@ -142,9 +184,8 @@ export const UpgradeUser = () => {
             return (
                 <>
                     <div>
-
                     </div>
-                    <Config hayley="Hayley Williams " user="@HayleyVet" />
+                    <Config nome={nome} email={email} />
                     <main className='flex flex-col gap-10'>
                         <Pessoais name="Hayley" lastName="Williams" cpf="000.000.000-00" rg="000.000.000-00" celular="(88) 88888-8888 " telefone="(88) 88888-8888" text=" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
                                 blandit tincidunt urna sit amet ultricies. Nulla nec turpis ultrices,
@@ -155,16 +196,20 @@ export const UpgradeUser = () => {
                                 pharetra nisl sit amet augue suscipit tincidunt. In egestas ex vitae ipsum aliquet
                                 porttitor. Cras efficitur dolor est, quis auctor sapien accumsan sed. Morbi tristique vitae quam eu pretium."/>
                         <Address cep="06045-420" bairro="Novo Osasco" rua="Via Transversal Sul" estado="São Paulo" cidade="Osasco" complemento="42B" />
-
                         <Pets personImage="http://s2.glbimg.com/wbweywCFLC0nCUeg67UbQZWhL7Eu36oRp_QAFsTkIqCqLLlE9GfCYsNrnTRPpEUO/i.glbimg.com/og/ig/f/original/2012/12/14/fabiana1.jpg" />
                         <div className='w-full flex justify-end pr-10 pb-10'>
-                            <button className='flex flex-row content-center items-center gap-3 text-[#410E0B] bg-[#F9DEDC] text-3xl h-16 rounded-xl w-64'>
-                                <img src={lixeira} alt="" className='h-full'/>
+                            <button className='flex flex-row content-center items-center gap-3 text-[#410E0B] bg-[#F9DEDC] text-3xl h-16 rounded-xl w-64' onClick={() => {
+
+                                deleteUser(localStorage.getItem('__user_id'), localStorage.getItem('__user_JWT'))
+                                document.location.href('/home')
+                                // BrowserRouter.push('/home')
+                            }}>
+                                <img src={lixeira} alt="" className='h-full' />
                                 Excluir perfil
                             </button>
                         </div>
                     </main>
-                    
+
                 </>
             )
         }

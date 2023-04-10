@@ -91,10 +91,10 @@ export const Config = (props) => {
           <img className='w-32 md:w-64' src={Hayley}></img>
           <div className='flex flex-col p-10'>
             <label>
-              <input type="text" name="firstName" value='Hayley Williams' className='bg-transparent border-none md:text-5xl font-semibold ' />
+              <input type="text" name="firstName" value={props.nome} className='bg-transparent border-none md:text-5xl font-semibold ' />
             </label>
             <label>
-              <input type="text" name="firstName" value='hayley.williams@useremail.com' className='bg-transparent border-none text-1xl md:text-3xl text-[#A9A9A9]' />
+              <input type="text" name="firstName" value={props.email} className='bg-transparent border-none text-1xl md:text-3xl text-[#A9A9A9]' />
             </label>
           </div>
         </div>

@@ -7,6 +7,7 @@ import {IoEye, IoEyeOff} from "react-icons/io5";
 import {login, signup} from "../../services/integrations/authentication";
 
 export function Login() {
+
     const {register, handleSubmit, formState: {errors}} = useForm()
     const submitForm = async data => {
         // TODO: AUTENTICAÇÃO
@@ -24,7 +25,11 @@ export function Login() {
             email,
             password
         } = data
-        // const apiRepsonse = await signup('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5kb2VAZ21haWwuY29tIiwicHJvZmlsZVBob3RvIjoiIiwicHJvZmlsZUJhbm5lclBob3RvIjoiIiwiaXNWZXQiOmZhbHNlLCJjcmVhdGVkQXQiOiIyMDIzLTAzLTE5VDAzOjU5OjU4LjkwMloiLCJpYXQiOjE2NzkxOTgzOTgsImV4cCI6MTY3OTgwMzE5OH0.0KavXDeDmehVJL_o5EXy-ctH_bGPZO1BKv98XvMRef8')
+
+        const apiResponse = await signup(localStorage.getItem('__user_JWT'))
+
+        console.log(apiResponse);
+
         // console.log(apiRepsonse.body)
         // if (apiRepsonse)
         //     console.log(apiRepsonse)
