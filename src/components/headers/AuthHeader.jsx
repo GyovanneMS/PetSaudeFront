@@ -1,5 +1,5 @@
 import googleLogo from "../../assets/svg/Google.svg";
-
+import React from "react";
 function handleGoogleButtonClick(e) {
     e.preventDefault()
     console.log('teste')

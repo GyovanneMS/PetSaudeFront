@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { AuthHeader } from "../../components/headers/AuthHeader";
+import React from "react";
 
 export function Register() {
     const { register, handleSubmit, formState: {errors} } = useForm()

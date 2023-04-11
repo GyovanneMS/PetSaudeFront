@@ -1,3 +1,4 @@
+import React from "react";
 import {AuthHeader} from "../../components/headers/AuthHeader";
 import {useForm} from "react-hook-form";
 import {registerUser} from "../../services/integrations/user";
