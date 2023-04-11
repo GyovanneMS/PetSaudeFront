@@ -1,15 +1,8 @@
-<<<<<<< HEAD
 import React from "react";
 import {AuthHeader} from "../../components/headers/AuthHeader";
 import {useForm} from "react-hook-form";
 import {registerUser} from "../../services/integrations/user";
 import Endereco from "../../assets/address-image.png"
-=======
-import { AuthHeader } from "../../components/headers/AuthHeader";
-import { useForm } from "react-hook-form";
-import { registerUser } from "../../services/integrations/user";
-import backgroundImage from "../../assets/address-image.png"
->>>>>>> dc1cbfbcb7f53e1d5fb9470694e971f7e4a4a1c1
 import { Link } from "react-router-dom";
 
 export function RegisterAddress() {
