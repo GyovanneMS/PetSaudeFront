@@ -1,6 +1,21 @@
+import axios from 'axios'
 const _BASE_URL = 'http://localhost:8080/'
 
 export const login = async (loginInfos) => {
+
+    // const api = axios.create({
+    //     baseURL: _BASE_URL
+    // })
+
+    // api.post(
+    //  "signup", {
+    //     email: loginInfos.email, 
+    //     password: loginInfos.password
+    //  }
+    // ).then((response)=>{
+    //     console.log(response)
+    // })
+
     const url = `${_BASE_URL}signup`
     const response = await fetch('http://localhost:8080/signup', {
         method: 'POST',
@@ -21,3 +36,5 @@ export const signup = async (token) => {
     })
     return await response.json()
 }
+
+

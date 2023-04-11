@@ -7,6 +7,7 @@ import {IoEye, IoEyeOff} from "react-icons/io5";
 import {login, signup} from "../../services/integrations/authentication";
 
 export function Login() {
+
     const {register, handleSubmit, formState: {errors}} = useForm()
     const submitForm = async data => {
         // TODO: AUTENTICAÇÃO
@@ -24,13 +25,18 @@ export function Login() {
             email,
             password
         } = data
-        // const apiRepsonse = await signup('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5kb2VAZ21haWwuY29tIiwicHJvZmlsZVBob3RvIjoiIiwicHJvZmlsZUJhbm5lclBob3RvIjoiIiwiaXNWZXQiOmZhbHNlLCJjcmVhdGVkQXQiOiIyMDIzLTAzLTE5VDAzOjU5OjU4LjkwMloiLCJpYXQiOjE2NzkxOTgzOTgsImV4cCI6MTY3OTgwMzE5OH0.0KavXDeDmehVJL_o5EXy-ctH_bGPZO1BKv98XvMRef8')
+
+        const apiResponse = await signup(localStorage.getItem('__user_JWT'))
+
+        console.log(apiResponse);
+
         // console.log(apiRepsonse.body)
         // if (apiRepsonse)
         //     console.log(apiRepsonse)
         // TODO: VALIDAR FORMULÁRIO
         return true
     }
+
 
     let [isPasswordVisible, setPasswordVisibility] = useState(false)
     const togglePasswordVisibility = () => {
@@ -43,7 +49,7 @@ export function Login() {
     return (
         <section className='flex flex-row w-screen h-screen bg-gradient-to-br from-[#092b5a] to-[#9ed1b7] opacity-90 overflow-x-hidden'>
             <div className='lg:w-1/2 md:w-2/3 w-full min-h-fit h-full bg-white flex flex-col md:justify-center justify-around items-center lg:gap-6 md:gap-4 gap-2 z-10 p-4'>
-                <AuthHeader title='Bem vindo de volta!' subtitle='Por favor, insira suas informações abaixo'/>
+                <AuthHeader title='Bem vindo de volta!' subtitle='Por favor, insira suas informações abaixo' firebaseFeature={true} />
                 <form className='h-fit lg:w-3/4 xl:w-2/3 w-full gap-2 p-0 lg:mt-12 mt-6'
                       onSubmit={handleSubmit(submitForm)}>
                     <label className='w-full flex flex-col'>
@@ -68,7 +74,7 @@ export function Login() {
                         </div>
                     </label>
                     <button type="submit"
-                            className='w-full h-fit bg-[#09738A] text-center text-white font-bold text-2xl rounded lg:mt-12 mt-6 transition py-3 hover:bg-[#78A890]'>Continuar
+                            className='w-full h-fit bg-[#09738A] text-center text-white font-bold text-2xl rounded lg:mt-12 mt-6 transition py-3 hover:bg-[#78A890]'>Entrar
                     </button>
                 </form>
                 <p>Ainda não tem uma conta?<Link to='/register'
