@@ -1,13 +1,11 @@
 // Função que faz a requisição GET e recebe um JSON
-export async function getRequest(url) {
+import {BASE_URL} from "../../lib/_base_url";
+
+export async function getRequest(search) {
+    const url = `${BASE_URL}veterinary?userName=${search}`
     return fetch(url)
-      .then(response => response.json())
-      .then(json => {
-        console.log(json);
-        return json;
-      })
-      .catch(error => console.error(error));
+    .then(response => response.json())
+    .catch(error => console.error(error));
   }
   
   // Exemplo de uso da função
-  getRequest('http://localhost:8080/veterinary?userName=D');
