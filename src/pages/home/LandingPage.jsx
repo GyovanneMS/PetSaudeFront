@@ -43,7 +43,7 @@ export const LandingPage = () => {
 						<input className="xl:w-full h-10 text-2xl" placeholder="Pesquisar veterinários próximos" />
 					</div>
 					<Container>
-					{books.map(book => {
+					{/* {books.map(book => {
 						return (
 						<ListItem
 							title={book.title}
@@ -52,7 +52,7 @@ export const LandingPage = () => {
 							url={book.url}
 						/>
 						)
-					})}
+					})} */}
 					<ListItem image="https://static.wikia.nocookie.net/cuphead/images/9/92/Mugman_Front30.png/revision/latest?cb=20180327011225" Name="Yasmini" bairro="Novo Osasco" formacao="Cirurgiã?" />
 					</Container>
 				</div>
