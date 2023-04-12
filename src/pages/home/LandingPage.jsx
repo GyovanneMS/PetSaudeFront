@@ -12,18 +12,32 @@ import { useEffect, useState } from 'react';
 import { FilterByName } from "./filterName";
 import Local from "../../assets/svg/Gps.svg"
 import { getRequest } from "../../services/integrations/filters";
+import { useForm } from 'react-hook-form';
 
 export const LandingPage = () => {
 	//https://www.luiztools.com.br/post/tutorial-listagem-com-busca-em-reactjs/
+	//<ListItem Name="Yasmini" bairro="Novo Osasco" />
 
-	const [vets, setVets] = useState([]);
+	const { register, handleSubmit, formState: { errors } } = useForm();	
 
-	const seaacrhForCity = async data => {
+	let [vets, setVets] = useState([]);
+	let json
+	const onSearch = async (data) => {
+	  console.log(data);
+	  try {
+		  if(data.search == ''){
+			setVets([])
+		  }else {
+			let response = await getRequest(data.search);
+			json = response.response;
+			setVets(json)
+			console.log(json);
+		  }
 		
-
-	}
-
- getRequest('http://localhost:8080/veterinary?userName=D');
+	  } catch (error) {
+		console.error(error);
+	  }
+	};
 
 	return (
 		<section className="">
@@ -40,20 +54,23 @@ export const LandingPage = () => {
 				<div className="flex flex-col bg-white border rounded-lg border-black transition hover:border-green-200  p-5 w-80 md:w-1/2 xl:w-1/4 ">
 					<div className="flex flex-row gap-10">
 						<img className="w-10" src={Local} />
-						<input className="xl:w-full h-10 text-2xl" placeholder="Pesquisar veterinários próximos" />
+						<form onChange={handleSubmit(onSearch)} className="w-full">
+							<input className="xl:w-full h-10 text-2xl" placeholder="Pesquisar veterinários próximos" {...register("search")}/>
+						</form>
 					</div>
 					<Container>
-					{/* {books.map(book => {
+					{vets.map(vet => {
+						console.log(vet);
 						return (
 						<ListItem
-							title={book.title}
-							image={book.image}
-							price={book.price}
-							url={book.url}
+							Name={vet.userName}
+							image={vet.profilePhoto}
+							bairro={vet.Address.cep}
+							formacao={vet.formation}
 						/>
 						)
-					})} */}
-					<ListItem image="https://static.wikia.nocookie.net/cuphead/images/9/92/Mugman_Front30.png/revision/latest?cb=20180327011225" Name="Yasmini" bairro="Novo Osasco" formacao="Cirurgiã?" />
+					})}
+					
 					</Container>
 				</div>
 			</div>
