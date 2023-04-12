@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import Local from "../../assets/svg/localizacao.svg";
 import { unstable_HistoryRouter } from "react-router-dom";
 
+
 export const FilterByName = (props) => {
 
     

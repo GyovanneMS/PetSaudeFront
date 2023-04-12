@@ -10,17 +10,20 @@ import { Container } from 'react-bootstrap';
 import { ListItem } from "./resource/searchArea";
 import { useEffect, useState } from 'react';
 import { FilterByName } from "./filterName";
-import { searchCity } from "../../services/integrations/filters";
 import Local from "../../assets/svg/Gps.svg"
+import { getRequest } from "../../services/integrations/filters";
 
 export const LandingPage = () => {
 	//https://www.luiztools.com.br/post/tutorial-listagem-com-busca-em-reactjs/
 
 	const [vets, setVets] = useState([]);
 
-	useEffect(() => {
-		setVets(searchCity());
-	}, [])
+	const seaacrhForCity = async data => {
+		
+
+	}
+
+ getRequest('http://localhost:8080/veterinary?userName=D');
 
 	return (
 		<section className="">
@@ -40,9 +43,17 @@ export const LandingPage = () => {
 						<input className="xl:w-full h-10 text-2xl" placeholder="Pesquisar veterinários próximos" />
 					</div>
 					<Container>
-						<ListItem image="https://static.wikia.nocookie.net/cuphead/images/9/92/Mugman_Front30.png/revision/latest?cb=20180327011225" Name="Yasmini" bairro="Novo Osasco" formacao="Cirurgiã?" />
-						<ListItem image="https://static.wikia.nocookie.net/cuphead/images/9/92/Mugman_Front30.png/revision/latest?cb=20180327011225" Name="Lucas" bairro="Não Osasco" formacao="Nutrição" />
-						<ListItem image="https://static.wikia.nocookie.net/cuphead/images/9/92/Mugman_Front30.png/revision/latest?cb=20180327011225" Name="Matheus" bairro="Osasco Novo" formacao="Cardiaco" />
+					{books.map(book => {
+						return (
+						<ListItem
+							title={book.title}
+							image={book.image}
+							price={book.price}
+							url={book.url}
+						/>
+						)
+					})}
+					<ListItem image="https://static.wikia.nocookie.net/cuphead/images/9/92/Mugman_Front30.png/revision/latest?cb=20180327011225" Name="Yasmini" bairro="Novo Osasco" formacao="Cirurgiã?" />
 					</Container>
 				</div>
 			</div>
