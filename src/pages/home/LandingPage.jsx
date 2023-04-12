@@ -9,13 +9,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from 'react-bootstrap';
 import { ListItem } from "./resource/searchArea";
 import { useEffect, useState } from 'react';
-import { getVet } from "./testeFunction";
 import { FilterByName } from "./filterName";
+import { searchCity } from "../../services/integrations/filters";
+import Local from "../../assets/svg/Gps.svg"
 
 export const LandingPage = () => {
-	useEffect(() => {
-		setVeterinario(getVet());
-	}, [])
 	//https://www.luiztools.com.br/post/tutorial-listagem-com-busca-em-reactjs/
 
 	const [vets, setVets] = useState([]);

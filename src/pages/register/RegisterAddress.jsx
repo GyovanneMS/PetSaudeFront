@@ -4,6 +4,7 @@ import {useForm} from "react-hook-form";
 import {registerUser} from "../../services/integrations/user";
 import Endereco from "../../assets/address-image.png"
 import { Link } from "react-router-dom";
+import backgroundImage from "../../assets/address-image.png"
 
 export function RegisterAddress() {
     const { register, handleSubmit, formState: errors, setValue } = useForm()

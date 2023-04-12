@@ -1,4 +1,4 @@
-import axios from 'axios'
+//import axios from 'axios'
 const _BASE_URL = 'http://localhost:8080/'
 
 export const login = async (loginInfos) => {

@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useEffect, useState } from 'react';
 import Local from "../../assets/svg/localizacao.svg";
 import { unstable_HistoryRouter } from "react-router-dom";
-import { getVet } from "./testeFunction";
 
 export const FilterByName = (props) => {
 
@@ -21,12 +20,6 @@ export const FilterByName = (props) => {
         history.push('/vets/new');
     }
     
-    function handleOnSubmit(event) {
-        event.preventDefault();
-        const medicos = getVet();
-        const results = medicos.filter(medicos => medicos.Name.toLowerCase().indexOf(search) !== -1);
-        props.setVeterinario(results);
-    }
      
     function handleSearchChange(event) {
         setSearch(event.target.value.toLowerCase());
