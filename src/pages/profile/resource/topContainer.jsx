@@ -37,10 +37,10 @@ export const TopContainer = (props) => {
         return (
             <div className='flex flex-col items-center md:px-44'>
                 <img src={props.profilePhoto} className='w-full md:max-h-[400px] rounded-b-lg ' />
-                <div className='self-start w-full z-10 mt-[-80px] px-9'>
-                    <img src={props.userPhoto} className="flex relative pl-24 md:border-4 md:h-48 md:border-white border-solid rounded-full" />
+                <div className='self-start w-full z-10  mt-[-140px] md:mt-[-80px] px-9'>
+                <img src={props.userPhoto} className="flex relative pl-24 sm:pl-56 md:pl-0 md:border-4 h-40  md:h-48 md:border-white border-solid rounded-full" />
                     <div className='flex flex-col md:flex-row justify-between w-full md:mt-16'>
-                        <div className='flex flex-col md:flex-row items-center gap-1 pt-5'>
+                        <div className='flex flex-col md:flex-row items-center gap-1 pt-2'>
                                 <div className='flex'>
                                     <p className='text-3xl md:text-4xl'>{props.name}</p>
                                     <img className='pl-2' src={iconVet} />

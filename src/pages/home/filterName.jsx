@@ -1,8 +1,8 @@
 import React from "react";
 import styled from 'styled-components';
 import { InputGroup, FormControl, Button, Form, Col } from 'react-bootstrap';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faSearch } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useEffect, useState } from 'react';
 import Local from "../../assets/svg/localizacao.svg";
 import { unstable_HistoryRouter } from "react-router-dom";
