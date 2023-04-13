@@ -81,6 +81,14 @@ export const RegisterVeterinary = () => {
                               <input className='w-5 h-5 rounded' type="checkbox" {...register('anesthetist')} />
                               Anestesista
                           </label>
+                          <label className='flex gap-1 items-center'>
+                              <input className='w-5 h-5 rounded' type="checkbox" {...register('anesthetist')} />
+                              Farmácia Veterinária
+                          </label>
+                          <label className='flex gap-1 items-center'>
+                              <input className='w-5 h-5 rounded' type="checkbox" {...register('anesthetist')} />
+                              Técnico em Zoo
+                          </label>
                       </div>
                   </div>
                   <div className='w-full flex flex-col items-start'>

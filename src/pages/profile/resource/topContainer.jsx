@@ -37,7 +37,7 @@ export const TopContainer = (props) => {
         return (
             <div className='flex flex-col items-center md:px-44'>
                 <img src={props.profilePhoto} className='w-full md:max-h-[400px] rounded-b-lg ' />
-                <div className='self-start w-full z-10  mt-[-120px] md:mt-[-80px] px-9'>
+                <div className='self-start w-full z-10  mt-[-120px] md:mt-[-80px] px-9 md:flex'>
                 <img src={props.userPhoto} className="flex relative pl-24 sm:pl-56 md:pl-0 md:border-4 h-28  md:h-48 md:border-white border-solid rounded-full" />
                     <div className='flex flex-col md:flex-row justify-between w-full md:mt-16'>
                         <div className='flex flex-col md:flex-row items-center gap-1 pt-4'>
@@ -68,7 +68,7 @@ export const TopContainer = (props) => {
                         <Dialog.Root>
                         <Dialog.Trigger asChild>
                         <div className='pt-4 md:pt-0'>
-                            <button className='bg-lime-500 rounded-md px-3 py-2 text-2xl w-full md:text-4xl md:w-96 shadow-lg justify-center self-center'>
+                            <button className='bg-lime-500 rounded-md px-3 py-2 text-2xl w-full md:text-4xl md:w-96 shadow-lg justify-center self-center md:mt-10'>
                                 Agendar uma consulta
                             </button>
                         </div>

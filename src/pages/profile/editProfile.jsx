@@ -20,7 +20,7 @@ export const EditProfile = () => {
                 <TopContainer/>
                 <InfosProfile nome="hayleyVet" completName="Hayley Willians" email="hayley@gmail.com" password='12345678' photoUser={userPhoto} />
             </div>
-            <button className='flex self-end rounded-lg bg-[#9ED1B7] -mt-5 shadow-md mb-7' onClick={() => {
+            <button className='hidden md:flex self-end rounded-lg bg-[#9ED1B7] -mt-5 shadow-md mb-7' onClick={() => {
             }
             }>
                 <img src={check} className='w-7 h-7 my-5 mx-5' />

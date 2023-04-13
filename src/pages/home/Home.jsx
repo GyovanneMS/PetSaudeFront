@@ -16,6 +16,8 @@ const userId = async () => {
 
 }
 
+userId()
+
 
 
 

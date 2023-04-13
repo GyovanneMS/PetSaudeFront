@@ -19,7 +19,7 @@ export const Config = (props) => {
     <>
       <div className="flex font-normal items-center justify-between bg-white shadow pl-5
     xl:p-10 h-30 text-4xl">
-        <div className='flex flex-row justify-center align-center text-center'>
+        <div className='flex flex-row justify-center align-center text-center '>
           <button className=" py-3 md:px-4 mx-2 rounded focus:outline-none group">
             <div className="w-8 h-1.5 bg-[#000] mb-1 md:w-10 md:h-1.5"></div>
             <div className="w-8 h-1.5 bg-[#000] mb-1 md:w-10 md:h-1.5"></div>
@@ -69,8 +69,8 @@ export const Config = (props) => {
             </div>
           </button>
 
-          <h1 className=" text-1xl justify-start font-bold hidden md:flex ">PetSaúde</h1>
-          <h1 className=" text-1xl pt-5 font-normal flex md:hidden pl-24">Perfil</h1>
+          <h1 className=" text-1xl justify-start font-bold hidden md:flex md:pt-1">PetSaúde</h1>
+          <h1 className=" text-1xl pt-3 md:pt-5 font-normal flex md:hidden pl-24">Perfil</h1>
 
           <div className="flex content-items-center flex-direction md:pt-2 md:hidden pl-20" >
             <img className="flex content-center content-items-center h-20 xl:w-2/4  pt-2" src={configIcon} />
@@ -80,7 +80,7 @@ export const Config = (props) => {
 
 
         <div className=" md:flex flex-direction gap-5" >
-          <img className="w-20 pl-5 pt-20 pr-1 md:pt-1 md:w-14 hidden md:flex " src={Hayley} />
+          <img className="w-20 pl-5 pt-20 pr-1 md:pt-1 md:w-20 hidden md:flex " src={Hayley} />
           <Link to="../login" className="flex home-btn text-2xl">
             {props.nome}
           </Link>
@@ -88,13 +88,13 @@ export const Config = (props) => {
       </div>
       <div className='flex justify-between ml-5 md:ml-20'>
         <div className='flex justify-center md:pt-10'>
-          <img className='w-32 md:w-64' src={Hayley}></img>
-          <div className='flex flex-col p-10'>
+          <img className='w-32 md:w-64 md:pt-10' src={Hayley}></img>
+          <div className='flex flex-col pl-10 pt-5 '>
             <label>
-              <input type="text" name="firstName" value={props.nome} className='bg-transparent border-none md:text-5xl font-semibold ' />
+              <input type="text" name="firstName" value="@HayleyVet" className='bg-transparent border-none text-2xl md:text-5xl font-semibold ' />
             </label>
             <label>
-              <input type="text" name="firstName" value={props.email} className='bg-transparent border-none text-1xl md:text-3xl text-[#A9A9A9]' />
+              <input type="text" name="firstName" value="Hayley Williams" className='bg-transparent border-none text-2xl md:text-1xl  text-[#A9A9A9]' />
             </label>
           </div>
         </div>
