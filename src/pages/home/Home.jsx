@@ -57,6 +57,7 @@ export const HomePage = () => {
       <Link to="/profile/pet/Config"> Pet Config</Link>/
       <Link to="/profile/editProfile">editProfile</Link>/
       <Link to="/profile/appointment">Appointment</Link>/
+      <Link to="/home/searchProfessionals">Procurar profissionais</Link>/
     </>
   );
 

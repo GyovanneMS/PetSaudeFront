@@ -26,15 +26,17 @@ export async function createVeterinaryInfosIntoExistingUser(userID, vetInfos) {
 }
 
 export async function getUser(id, token) {
-
+    console.log(id);
+    console.log(token);
     const url = `${BASE_URL}user/?userID=${id}`
     const response = await fetch(url, {
         headers: {
             'Authorization': `Bearer ${token}`
         }
     })
-
-    return await response.json()
+    return fetch(url)
+    .then(response => response.json())
+    .catch(error => console.error(error));
     
 }
 

@@ -5,7 +5,7 @@ import React from "react";
 export const ListItem = (props) => {
 
     return (
-      <div className="flex flex-row align-middle items-center justify-start gap-3 border-2 border-black mt-2 w-full rounded-xl p-3">
+      <button className="flex flex-row align-middle items-center justify-start gap-3 border-2 border-t-white border-r-white border-l-white border-b-black mt-2 w-full p-3">
         <div className="w-1/4 h-full">
           <img src={props.image} alt="" className="w-full h-full"/>
         </div>
@@ -16,6 +16,6 @@ export const ListItem = (props) => {
               <p className="flex flex-row">{props.formacao}</p>
           </div>
         </div>
-      </div>
+      </button>
     );
   }

@@ -6,12 +6,11 @@ import Dog from "../../assets/svg/dogAndCat.svg";
 import Doctor from "../../assets/svg/medico 1.svg";
 import "./css/LandingPage.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container } from 'react-bootstrap';
 import { ListItem } from "./resource/searchArea";
 import { useEffect, useState } from 'react';
 import { FilterByName } from "./filterName";
 import Local from "../../assets/svg/Gps.svg"
-import { getRequest } from "../../services/integrations/filters";
+import { getUsers} from "../../services/integrations/filters";
 import { useForm } from 'react-hook-form';
 
 export const LandingPage = () => {
@@ -28,10 +27,15 @@ export const LandingPage = () => {
 		  if(data.search == ''){
 			setVets([])
 		  }else {
-			let response = await getRequest(data.search);
-			json = response.response;
-			setVets(json)
+			let response = await getUsers(data.search);
+			console.log(response);
+			let result = response.response
+			console.log(result);
+			json = result.filter(item => item.personName.toLowerCase().includes(data.search.toLowerCase()) || item.userName.toLowerCase().includes(data.search.toLowerCase()));;
+			result.map(item => console.log('marmita'))
 			console.log(json);
+			setVets(json)
+			console.log(vets);
 		  }
 		
 	  } catch (error) {
@@ -39,39 +43,48 @@ export const LandingPage = () => {
 	  }
 	};
 
+	function handleClick(event) {
+		document.location.href = "/profile/veterinary";
+		localStorage.setItem("__Vet_Id", event);
+	  }
+
 	return (
 		<section className="">
 			<HeaderWeb />
 			<div className=" flex flex-col pt-20  ml-10 justify-center gap-5 pl-10
     xl:flex-row font-normal texto-2xl  md:flex-row">
-				<div className=" flex flex-row gap-5 bg-white border rounded-lg border-black transition hover:border-green-200 p-5 pl-5 w-80 md:w-1/2 xl:w-1/4">
-					<div className="flex flex-row gap-10">
-						<img className="w-10" src={Doctor} />
-						<input className=" xl:pt-1 w-full h-full text-2xl" placeholder="Pesquisar especialistas" />
+				<div className="w-80 md:w-1/2 xl:w-1/4 static">
+					<div className="w-full static flex flex-col bg-white border rounded-lg border-black transition hover:border-green-200  p-5  ">
+						<div className="flex flex-row gap-10 w-full">
+							<img className="w-10" src={Doctor} />
+							<form onChange={handleSubmit(onSearch)} className="w-full">
+								<input className="xl:w-full h-10 text-2xl" placeholder="Pesquisar especialistas" {...register("search")}/>
+							</form>
+						</div>
+						<div className="absolute w-1/5 bg-white border-2 border-black  mt-16">
+						{vets.map(vet => {
+								console.log(vet);
+								return (
+								<ListItem
+									key={vet.id}
+									Name={vet.userName}
+									image={vet.profilePhoto}
+									bairro={vet.Address.cep}
+									formacao={vet.formation}
+									onChange={handleClick(vet.id)}
+								/>
+							)
+						})}
+					</div>
 					</div>
 				</div>
-
-				<div className="flex flex-col bg-white border rounded-lg border-black transition hover:border-green-200  p-5 w-80 md:w-1/2 xl:w-1/4 ">
-					<div className="flex flex-row gap-10">
+				<div className="static flex flex-row gap-5 bg-white border rounded-lg border-black transition hover:border-green-200 p-5 pl-5 w-80 md:w-1/2 xl:w-1/4">
+					<div className="flex flex-row gap-10 w-full">
 						<img className="w-10" src={Local} />
-						<form onChange={handleSubmit(onSearch)} className="w-full">
-							<input className="xl:w-full h-10 text-2xl" placeholder="Pesquisar veterinários próximos" {...register("search")}/>
+						<form  className="w-full">
+							<input className="xl:w-full h-10 text-2xl" placeholder="Pesquisar veterinários próximos " />
 						</form>
 					</div>
-					<Container>
-					{vets.map(vet => {
-						console.log(vet);
-						return (
-						<ListItem
-							Name={vet.userName}
-							image={vet.profilePhoto}
-							bairro={vet.Address.cep}
-							formacao={vet.formation}
-						/>
-						)
-					})}
-					
-					</Container>
 				</div>
 			</div>
 			<div className="flex flex-row justify-between content center w-auto h-4/5 mt-10 ml-10 ">
@@ -80,9 +93,9 @@ export const LandingPage = () => {
 					<h1
 						className="basis-2/4 flex justify-center items-center font-bold text-3xl h-20 w-full lg:pl-60 pl-4 xl:text-7xl ">Agende
 						suas consultas e forneça o melhor para o seu Pet!</h1>
-					<Link
+					<Link 
 						className="flex text-center justify-center items-center border-2 rounded-xl border-[#9ED1B7] p-1 xl: basis-1-6 mt-10 xl:h-20 w-96 basis-1/6 text-3xl transition hover:bg-[#9ED1B7] hover:text-white hover:shadow-xl hover:scale-110"
-						to="/">Procure um veterinário próximo!</Link>
+						to="/home/searchProfessionals">Procure um veterinário próximo!</Link>
 				</div>
 
 
