@@ -71,7 +71,7 @@ export const LandingPage = () => {
 									image={vet.profilePhoto}
 									bairro={vet.Address.cep}
 									formacao={vet.formation}
-									onChange={handleClick(vet.id)}
+									
 								/>
 							)
 						})}
